@@ -20,11 +20,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-
-//VIvek yadav is hero
-
-// I am hero
-
+// Feature one is added
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
