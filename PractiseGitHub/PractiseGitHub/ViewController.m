@@ -21,6 +21,8 @@
 }
 
 // Feature one is added
+
+// feture two
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
