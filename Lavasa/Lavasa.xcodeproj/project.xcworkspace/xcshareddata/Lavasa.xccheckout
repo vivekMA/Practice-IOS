@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FAB808D1-FA3B-414B-84BE-F87474516FF1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Lavasa</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F9445D56-D316-4C24-B2EF-BD0D79711561</key>
+		<string>https://github.com/zorroblack29/lavasa</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>mobileapp/iOS/Lavasa/Lavasa.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F9445D56-D316-4C24-B2EF-BD0D79711561</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/zorroblack29/lavasa</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F9445D56-D316-4C24-B2EF-BD0D79711561</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F9445D56-D316-4C24-B2EF-BD0D79711561</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Lavasa</string>
+		</dict>
+	</array>
+</dict>
+</plist>
