@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>FAB808D1-FA3B-414B-84BE-F87474516FF1</string>
+	<string>780C1CD3-6AE3-40AA-936C-955BDBC50945</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Lavasa</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>F9445D56-D316-4C24-B2EF-BD0D79711561</key>
-		<string>https://github.com/zorroblack29/lavasa</string>
+		<key>A4153901-EAD5-45CF-90AB-C924DFBAD7BB</key>
+		<string>https://github.com/vivekMA/Practice-IOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>mobileapp/iOS/Lavasa/Lavasa.xcodeproj/project.xcworkspace</string>
+	<string>Lavasa/Lavasa.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F9445D56-D316-4C24-B2EF-BD0D79711561</key>
-		<string>../../../../..</string>
+		<key>A4153901-EAD5-45CF-90AB-C924DFBAD7BB</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/zorroblack29/lavasa</string>
+	<string>https://github.com/vivekMA/Practice-IOS.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F9445D56-D316-4C24-B2EF-BD0D79711561</string>
+	<string>A4153901-EAD5-45CF-90AB-C924DFBAD7BB</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F9445D56-D316-4C24-B2EF-BD0D79711561</string>
+			<string>A4153901-EAD5-45CF-90AB-C924DFBAD7BB</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Lavasa</string>
+			<string>LavasaNew</string>
 		</dict>
 	</array>
 </dict>

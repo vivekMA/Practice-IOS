@@ -27,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.navigationController.navigationBar.hidden=NO;
 //    UINavigationController *navController = [(AttractionTab1*)[[UIApplication sharedApplication] delegate] navigationController];
 //    
 //    navController.navigationBar.tintColor=[UIColor redColor];
@@ -140,6 +140,9 @@
 
 - (IBAction)backAction:(id)sender {
     
+    
+    [self dismissViewControllerAnimated:NO completion:nil];
+    
   //  NSArray *controllerNameArray = [self.tabBarController.navigationController viewControllers];
     
     
@@ -147,7 +150,7 @@
     
    // [self.navigationController popViewControllerAnimated:[controllerNameArray objectAtIndex:0] ];
     
-    [(UINavigationController *)self.tabBarController.selectedViewController popToRootViewControllerAnimated:NO];
+ //   [(UINavigationController *)self.tabBarController.selectedViewController popToRootViewControllerAnimated:NO];
     
        // [self.navigationController popToViewController:[controllerNameArray objectAtIndex:0] animated:YES];
 }

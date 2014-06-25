@@ -64,12 +64,8 @@
     
 }-(void)viewWillAppear:(BOOL)animated
 {
-    self.tabBarController.tabBar.hidden=NO;
-}
-//-(void)viewWillDisappear:(BOOL)animated
-//{
-//    self.tabBarController.tabBar.hidden=YES;
-//}
+  }
+
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
@@ -135,7 +131,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    self.tabBarController.tabBar.hidden=YES;
+  
     if ([[segue identifier] isEqualToString:@"GoToDetail"])
     {
         DetailTabVC *dvc = segue.destinationViewController;

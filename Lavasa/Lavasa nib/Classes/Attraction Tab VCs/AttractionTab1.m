@@ -83,9 +83,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated
 {
-    self.tabBarController.tabBar.hidden=NO;
-    self.navigationController.navigationBar.hidden=NO;
-}
+   }
 #pragma mark - UITableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -158,8 +156,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    self.tabBarController.tabBar.hidden=YES;
-    if ([[segue identifier] isEqualToString:@"GoToDetail"])
+       if ([[segue identifier] isEqualToString:@"GoToDetail"])
     {
         DetailTabVC *dvc = segue.destinationViewController;
         [SharedData sharedObj].DictDetail=[ArrayData objectAtIndex:[sender tag]];

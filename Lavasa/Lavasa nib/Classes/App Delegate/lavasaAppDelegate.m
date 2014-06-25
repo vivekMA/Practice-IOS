@@ -18,8 +18,6 @@
 
 
 @implementation lavasaAppDelegate
-
-
 @synthesize navigationController,WINDOW;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -29,15 +27,19 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+      [GMSServices provideAPIKey:@"AIzaSyDBWIS3hfUJdUVGiHp3zoSZWz2C1__lgyM"];
+ //  [[GPPSignIn sharedInstance] setClientID:KGoogleClientID];
+ //  [[GPPSignIn sharedInstance] setDelegate:self];
     
-    [GMSServices provideAPIKey:@"AIzaSyDBWIS3hfUJdUVGiHp3zoSZWz2C1__lgyM"];
-
-    [[GPPSignIn sharedInstance] setClientID:@"977277172019-g5lpd2gp197l5jkhconbd0ntge1mmpv1.apps.googleusercontent.com"];
-    [[GPPSignIn sharedInstance] setDelegate:self];
+  //   [[GPPSignIn sharedInstance] trySilentAuthentication];
     [DataBaseManager database];
     
-    // Whenever a person opens the app, check for a cached session
-    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+    if ([[GPPSignIn sharedInstance] authentication]) {
+     
+           NSLog(@"Found a cached session");
+        [self AddSlidingWindow];
+        
+    }else  if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
         NSLog(@"Found a cached session");
         // If there's one, just open the session silently, without showing the user the login UI
         [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"]
@@ -48,66 +50,11 @@
                                           // also for intermediate states and NOT just when the session open
                                           [self sessionStateChanged:session state:state error:error];
                                       }];
-    
-    
-      
-        MenuVC * menuViewController = [[MenuVC alloc] init];
-        UIStoryboard *mainStoryboard;
-
-        if (IS_iPad) {
-            mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle: nil];
-        }else mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle: nil];
-        AttractionTabVC *AttTabVC = (AttractionTabVC*)[mainStoryboard instantiateViewControllerWithIdentifier: @"AttractionTabVC"];
-        
-        SWRevealViewController *mainRevealController = [[SWRevealViewController alloc]
-                                                        initWithRearViewController:[[UINavigationController alloc] initWithRootViewController:menuViewController] frontViewController:[[UINavigationController alloc] initWithRootViewController:AttTabVC]];
-        mainRevealController.delegate = self;
-        self.window.rootViewController = mainRevealController;
-        
-        
-     
-        
-        
-        
-        
-//        
-//        SWRevealViewController *mainRevealController = [[SWRevealViewController alloc]
-//                                                        initWithRearViewController:[[UINavigationController alloc] initWithRootViewController:menuViewController] frontViewController:[[UINavigationController alloc] initWithRootViewController:AttTabVC]];
-//        mainRevealController.delegate = self;
-//        
-//        [self.navigationController pushViewController:mainRevealController animated:YES];
-//        self.navigationController.navigationBar.hidden=YES;
-//        
-
-        
-        
-        
-        
+         [self AddSlidingWindow];
       
         // If there's no cached session, we will show a login button
-    }else  if ([[GPPSignIn sharedInstance] trySilentAuthentication])
+    }else
     {
-        // Create the view controller that the user will interact with. We don't
-        // need to pass anything over here, as it can check the state of play using
-        // the |GPPSignIn sharedInstance|.
-        MenuVC *menuViewController = [[MenuVC alloc] init];
-        
-        UIStoryboard *mainStoryboard;
-        if (IS_iPad) {
-            mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle: nil];
-        }else mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle: nil];
-        AttractionTabVC *AttTabVC = (AttractionTabVC*)[mainStoryboard instantiateViewControllerWithIdentifier: @"AttractionTabVC"];
-        
-        SWRevealViewController *mainRevealController = [[SWRevealViewController alloc]
-                                                        initWithRearViewController:[[UINavigationController alloc] initWithRootViewController:menuViewController] frontViewController:[[UINavigationController alloc] initWithRootViewController:AttTabVC]];
-    //    mainRevealController.delegate = self;
-//        [self.navigationController pushViewController:mainRevealController animated:YES];
-//        self.navigationController.navigationBar.hidden=YES;
-
-        mainRevealController.delegate = self;
-        self.window.rootViewController = mainRevealController;
-}
-    else {
          LoginVC *LoginViewController ;
           LoginViewController = [[LoginVC alloc] init];
              self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:LoginViewController];
@@ -116,6 +63,23 @@
     [self createCopyOfDatabaseIfNeeded];
     
     return YES;
+}
+-(void)AddSlidingWindow
+{
+    MenuVC * menuViewController = [[MenuVC alloc] init];
+    UIStoryboard *mainStoryboard;
+    
+    if (IS_iPad) {
+        mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle: nil];
+    }else mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle: nil];
+    AttractionTabVC *AttTabVC = (AttractionTabVC*)[mainStoryboard instantiateViewControllerWithIdentifier: @"AttractionTabVC"];
+    
+    SWRevealViewController *mainRevealController = [[SWRevealViewController alloc]
+                                                    initWithRearViewController:[[UINavigationController alloc] initWithRootViewController:menuViewController] frontViewController:[[UINavigationController alloc] initWithRootViewController:AttTabVC]];
+    mainRevealController.delegate = self;
+    self.window.rootViewController = mainRevealController;
+    
+
 }
 - (void)createCopyOfDatabaseIfNeeded {
     // First, test for existence.

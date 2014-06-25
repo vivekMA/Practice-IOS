@@ -12,6 +12,7 @@
 
 @interface LoginVC : UIViewController<SWRevealViewControllerDelegate,GPPSignInDelegate>
 {
+    __weak IBOutlet GPPSignInButton *GoogleSignBtn;
     MBProgressHUD *objhud;
     GPPSignIn *signIn;
 }

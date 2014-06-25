@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailTab2 : UICollectionViewController
+- (IBAction)backAction:(id)sender;
 
 @end

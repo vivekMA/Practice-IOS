@@ -11,6 +11,7 @@
 #import "lavasaAppDelegate.h"
 #import "loginVC.h"
 #import "AttractionTabVC.h"
+#import "PlanTVC.h"
 @interface MenuVC ()
 @end
 @implementation MenuVC
@@ -80,8 +81,20 @@ return [ArraySectionTitle count];
 }
 -(void)HeaderTappedAction:(UITapGestureRecognizer *)gestureRecognizer
 {
-    
-    if (gestureRecognizer.view.tag==2) {
+    if (gestureRecognizer.view.tag==0) {
+        
+        NSLog(@"CALL REPORT INCIDENT");
+        
+        UIStoryboard *mainStoryboard;
+        if (IS_iPHONE)  mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle: nil];
+        else      mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle: nil];
+        
+        PlanTVC *planVC = (PlanTVC*)[mainStoryboard instantiateViewControllerWithIdentifier: @"PlanTVC"];
+        UINavigationController* navController = (UINavigationController*)self.revealViewController.frontViewController;
+        [navController setViewControllers: @[planVC] animated: NO ];
+        [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
+        
+    }else  if (gestureRecognizer.view.tag==2) {
         
         NSLog(@"CALL REPORT INCIDENT");
         

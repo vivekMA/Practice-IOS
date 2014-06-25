@@ -82,7 +82,7 @@
  }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
- //   self.tabBarController.tabBar.hidden=YES;
+ 
     if ([[segue identifier] isEqualToString:@"GoToPopup"])
     {
         
@@ -105,4 +105,7 @@
 }
 */
 
+- (IBAction)backAction:(id)sender {
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
 @end

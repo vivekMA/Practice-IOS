@@ -58,6 +58,8 @@
     objhud.color=[UIColor colorWithRed:0.23 green:0.50 blue:0.82 alpha:0];
 
     
+    
+    
     signIn = [GPPSignIn sharedInstance];
     signIn.shouldFetchGooglePlusUser = YES;
     signIn.shouldFetchGoogleUserEmail = YES;  // Uncomment to get the user's email
@@ -66,14 +68,16 @@
     signIn.clientID = KGoogleClientID;
     
     // Uncomment one of these two statements for the scope you chose in the previous step
-    signIn.scopes =  [NSArray arrayWithObjects: @"https://www.googleapis.com/auth/plus.login", nil ];
+    signIn.scopes = [NSArray arrayWithObjects:
+                     @"https://www.googleapis.com/auth/plus.login",
+                    nil];
 
 
     // Optional: declare signIn.actions, see "app activities"
     signIn.delegate = self;
     [signIn authenticate];
     
-    //[signIn trySilentAuthentication];
+   
 
 }
 -(void)refreshInterfaceBasedOnSignIn {
@@ -89,7 +93,13 @@
 - (void)finishedWithAuth: (GTMOAuth2Authentication *)auth
                    error: (NSError *) error {
     objhud.hidden=YES;
-
+    if(error)
+        NSLog(@"%@",error);
+        
+        //[  signIn authenticate];
+    else
+        
+    {
     
     MenuVC *menuViewController = [[MenuVC alloc] init];
     
@@ -109,7 +119,7 @@
     
 
     NSLog(@"Received Error %@  and auth object==%@",error,auth);
-    
+    }
     if (error) {
         // Do some error handling here.
     } else {
@@ -154,10 +164,7 @@
                 }];
     }
 }
-- (void)presentSignInViewController:(UIViewController *)viewController {
-    // This is an example of how you can implement it if your app is navigation-based.
-    [[self navigationController] pushViewController:viewController animated:YES];
-}
+
 - (IBAction)fbLogin:(id)sender {
     
     objhud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];

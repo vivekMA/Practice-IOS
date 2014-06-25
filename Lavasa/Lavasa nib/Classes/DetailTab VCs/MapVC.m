@@ -1,41 +1,40 @@
 //
-//  DetailTabVC.m
+//  MapVC.m
 //  Lavasa
 //
-//  Created by Vivek Yadav on 6/17/14.
+//  Created by Vivek Yadav on 6/25/14.
 //  Copyright (c) 2014 Mediaagility. All rights reserved.
 //
 
-#import "DetailTabVC.h"
+#import "MapVC.h"
 
-@interface DetailTabVC ()
+@interface MapVC ()
 
 @end
 
-@implementation DetailTabVC
+@implementation MapVC
 
-@synthesize Dict;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    if (self) {
-//        // Custom initialization
-//    }
-//    return self;
-//}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-  //  NSLog(@"%@",Dict);
-  //  [[self.tabBarController.viewControllers objectAtIndex:0] setDict:Dict];
+    // Do any additional setup after loading the view.
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-//    self.navigationController.navigationBar.hidden=YES;
 }
+
 /*
 #pragma mark - Navigation
 
@@ -47,4 +46,7 @@
 }
 */
 
+- (IBAction)backAction:(id)sender {
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
 @end

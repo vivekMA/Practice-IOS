@@ -78,8 +78,7 @@
     
 }-(void)viewWillAppear:(BOOL)animated
 {
-    self.tabBarController.tabBar.hidden=NO;
-}
+  }
 #pragma mark - UITableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -131,7 +130,7 @@
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    self.tabBarController.tabBar.hidden=YES;
+  
     if ([[segue identifier] isEqualToString:@"GoToDetail"])
     {
         DetailTabVC *dvc = segue.destinationViewController;
