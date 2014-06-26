@@ -5,7 +5,6 @@
 //  Created by Vivek Yadav on 6/9/14.
 //  Copyright (c) 2014 Mediaagility. All rights reserved.
 //
-
 #import "MenuVC.h"
 #import "ReportIncidentTVC.h"
 #import "lavasaAppDelegate.h"
@@ -39,7 +38,6 @@
    
         DictSectionItems  = [[NSMutableDictionary alloc] init];
         [DictSectionItems setValue:[NSArray arrayWithObjects:@"ATTRACTION", @"EVENTS", @"NEAR PLACES",@"TRANSPORT", nil] forKey:[ArraySectionTitle objectAtIndex:1]];
-
 }
 #pragma marl - UITableView Data Source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -90,11 +88,6 @@ return [ArraySectionTitle count];
         UINavigationController* navController = (UINavigationController*)self.revealViewController.frontViewController;
         [navController setViewControllers: @[planVC] animated: NO ];
         [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
-        
-        
-        
-        
-        
         
     }else  if (gestureRecognizer.view.tag==2) {
         

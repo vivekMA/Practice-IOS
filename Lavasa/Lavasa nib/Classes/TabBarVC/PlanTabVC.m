@@ -34,7 +34,10 @@
     self.navigationItem.leftBarButtonItem = ButtonMenu;
 
 }
-
+-(void)viewDidAppear:(BOOL)animated
+{
+      self.navigationController.navigationBar.hidden=YES;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

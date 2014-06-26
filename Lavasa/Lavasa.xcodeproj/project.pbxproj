@@ -75,7 +75,6 @@
 		E22CDF70195AFA8800D8B1D1 /* MapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E22CDF6C195AFA8800D8B1D1 /* MapVC.m */; };
 		E22CDF71195AFA8800D8B1D1 /* ReviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E22CDF6E195AFA8800D8B1D1 /* ReviewVC.m */; };
 		E22CDF74195AFACC00D8B1D1 /* ReviewTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E22CDF73195AFACC00D8B1D1 /* ReviewTableCell.m */; };
-		E22CDF79195AFE9200D8B1D1 /* PlanTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E22CDF78195AFE9200D8B1D1 /* PlanTVC.m */; };
 		E22CDF7B195B02FA00D8B1D1 /* lavasa_web_service.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = E22CDF7A195B02FA00D8B1D1 /* lavasa_web_service.sqlite */; };
 		E26F016A1952AA8300E3F714 /* DetailTab1.m in Sources */ = {isa = PBXBuildFile; fileRef = E26F01691952AA8300E3F714 /* DetailTab1.m */; };
 		E26F01701952C1E700E3F714 /* DetailTab2.m in Sources */ = {isa = PBXBuildFile; fileRef = E26F016F1952C1E700E3F714 /* DetailTab2.m */; };
@@ -128,9 +127,11 @@
 		E2A8EC9919516E5900723FC6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A8EC9819516E5900723FC6 /* MapKit.framework */; };
 		E2DB6709195C032300BE5483 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2DB6708195C032300BE5483 /* FacebookSDK.framework */; };
 		E2DB6710195C048800BE5483 /* PlanTabVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB670F195C048800BE5483 /* PlanTabVC.m */; };
-		E2DB6713195C05AC00BE5483 /* PlanTVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB6712195C05AC00BE5483 /* PlanTVC2.m */; };
-		E2DB6716195C05BA00BE5483 /* PlanTVC3.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB6715195C05BA00BE5483 /* PlanTVC3.m */; };
-		E2DB6719195C05C700BE5483 /* PlanTVC4.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB6718195C05C700BE5483 /* PlanTVC4.m */; };
+		E2DB671F195C180300BE5483 /* PlanTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB671E195C180300BE5483 /* PlanTVCell.m */; };
+		E2DB6728195C1C1200BE5483 /* PlanTVC1.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB6721195C1C1200BE5483 /* PlanTVC1.m */; };
+		E2DB6729195C1C1200BE5483 /* PlanTVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB6723195C1C1200BE5483 /* PlanTVC2.m */; };
+		E2DB672A195C1C1200BE5483 /* PlanTVC3.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB6725195C1C1200BE5483 /* PlanTVC3.m */; };
+		E2DB672B195C1C1200BE5483 /* PlanTVC4.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB6727195C1C1200BE5483 /* PlanTVC4.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,8 +257,6 @@
 		E22CDF6E195AFA8800D8B1D1 /* ReviewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReviewVC.m; path = "Lavasa nib/Classes/DetailTab VCs/ReviewVC.m"; sourceTree = SOURCE_ROOT; };
 		E22CDF72195AFACC00D8B1D1 /* ReviewTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewTableCell.h; sourceTree = "<group>"; };
 		E22CDF73195AFACC00D8B1D1 /* ReviewTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewTableCell.m; sourceTree = "<group>"; };
-		E22CDF77195AFE9200D8B1D1 /* PlanTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanTVC.h; sourceTree = "<group>"; };
-		E22CDF78195AFE9200D8B1D1 /* PlanTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanTVC.m; sourceTree = "<group>"; };
 		E22CDF7A195B02FA00D8B1D1 /* lavasa_web_service.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = lavasa_web_service.sqlite; sourceTree = "<group>"; };
 		E26F01681952AA8300E3F714 /* DetailTab1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailTab1.h; path = "Lavasa nib/Classes/DetailTab VCs/DetailTab1.h"; sourceTree = SOURCE_ROOT; };
 		E26F01691952AA8300E3F714 /* DetailTab1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailTab1.m; path = "Lavasa nib/Classes/DetailTab VCs/DetailTab1.m"; sourceTree = SOURCE_ROOT; };
@@ -331,12 +330,16 @@
 		E2DB6708195C032300BE5483 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "Lavasa nib/Third Party APIs/External framework/FacebookSDK.framework"; sourceTree = "<group>"; };
 		E2DB670E195C048800BE5483 /* PlanTabVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanTabVC.h; sourceTree = "<group>"; };
 		E2DB670F195C048800BE5483 /* PlanTabVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanTabVC.m; sourceTree = "<group>"; };
-		E2DB6711195C05AC00BE5483 /* PlanTVC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanTVC2.h; sourceTree = "<group>"; };
-		E2DB6712195C05AC00BE5483 /* PlanTVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanTVC2.m; sourceTree = "<group>"; };
-		E2DB6714195C05BA00BE5483 /* PlanTVC3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanTVC3.h; sourceTree = "<group>"; };
-		E2DB6715195C05BA00BE5483 /* PlanTVC3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanTVC3.m; sourceTree = "<group>"; };
-		E2DB6717195C05C700BE5483 /* PlanTVC4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanTVC4.h; sourceTree = "<group>"; };
-		E2DB6718195C05C700BE5483 /* PlanTVC4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanTVC4.m; sourceTree = "<group>"; };
+		E2DB671D195C180300BE5483 /* PlanTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanTVCell.h; sourceTree = "<group>"; };
+		E2DB671E195C180300BE5483 /* PlanTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanTVCell.m; sourceTree = "<group>"; };
+		E2DB6720195C1C1200BE5483 /* PlanTVC1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanTVC1.h; sourceTree = "<group>"; };
+		E2DB6721195C1C1200BE5483 /* PlanTVC1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanTVC1.m; sourceTree = "<group>"; };
+		E2DB6722195C1C1200BE5483 /* PlanTVC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanTVC2.h; sourceTree = "<group>"; };
+		E2DB6723195C1C1200BE5483 /* PlanTVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanTVC2.m; sourceTree = "<group>"; };
+		E2DB6724195C1C1200BE5483 /* PlanTVC3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanTVC3.h; sourceTree = "<group>"; };
+		E2DB6725195C1C1200BE5483 /* PlanTVC3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanTVC3.m; sourceTree = "<group>"; };
+		E2DB6726195C1C1200BE5483 /* PlanTVC4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanTVC4.h; sourceTree = "<group>"; };
+		E2DB6727195C1C1200BE5483 /* PlanTVC4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanTVC4.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -560,7 +563,6 @@
 			isa = PBXGroup;
 			children = (
 				E2DB670A195C03F600BE5483 /* PlanTabVCs */,
-				E22CDF76195AFE9200D8B1D1 /* Plan VC */,
 				E2A8EC8819515AAB00723FC6 /* Detail Tabs */,
 				E2A8EC4F19501F2600723FC6 /* Attraction Tab VCs */,
 				E26F01771952C4ED00E3F714 /* CustomCells */,
@@ -718,21 +720,6 @@
 			path = "Sqlite db";
 			sourceTree = "<group>";
 		};
-		E22CDF76195AFE9200D8B1D1 /* Plan VC */ = {
-			isa = PBXGroup;
-			children = (
-				E22CDF77195AFE9200D8B1D1 /* PlanTVC.h */,
-				E22CDF78195AFE9200D8B1D1 /* PlanTVC.m */,
-				E2DB6711195C05AC00BE5483 /* PlanTVC2.h */,
-				E2DB6712195C05AC00BE5483 /* PlanTVC2.m */,
-				E2DB6714195C05BA00BE5483 /* PlanTVC3.h */,
-				E2DB6715195C05BA00BE5483 /* PlanTVC3.m */,
-				E2DB6717195C05C700BE5483 /* PlanTVC4.h */,
-				E2DB6718195C05C700BE5483 /* PlanTVC4.m */,
-			);
-			path = "Plan VC";
-			sourceTree = "<group>";
-		};
 		E26F01771952C4ED00E3F714 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -742,6 +729,8 @@
 				E26F017C1952C51900E3F714 /* DetailTab2Cell.m */,
 				E22CDF72195AFACC00D8B1D1 /* ReviewTableCell.h */,
 				E22CDF73195AFACC00D8B1D1 /* ReviewTableCell.m */,
+				E2DB671D195C180300BE5483 /* PlanTVCell.h */,
+				E2DB671E195C180300BE5483 /* PlanTVCell.m */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -856,6 +845,14 @@
 		E2DB670A195C03F600BE5483 /* PlanTabVCs */ = {
 			isa = PBXGroup;
 			children = (
+				E2DB6720195C1C1200BE5483 /* PlanTVC1.h */,
+				E2DB6721195C1C1200BE5483 /* PlanTVC1.m */,
+				E2DB6722195C1C1200BE5483 /* PlanTVC2.h */,
+				E2DB6723195C1C1200BE5483 /* PlanTVC2.m */,
+				E2DB6724195C1C1200BE5483 /* PlanTVC3.h */,
+				E2DB6725195C1C1200BE5483 /* PlanTVC3.m */,
+				E2DB6726195C1C1200BE5483 /* PlanTVC4.h */,
+				E2DB6727195C1C1200BE5483 /* PlanTVC4.m */,
 			);
 			path = PlanTabVCs;
 			sourceTree = "<group>";
@@ -995,12 +992,13 @@
 				CEB211C11957FD7D005C00DD /* RadarViewPortView.m in Sources */,
 				E27A1F6319471D2D001F9A3C /* SharedData.m in Sources */,
 				CEB211C01957FD7D005C00DD /* Radar.m in Sources */,
+				E2DB672A195C1C1200BE5483 /* PlanTVC3.m in Sources */,
+				E2DB6728195C1C1200BE5483 /* PlanTVC1.m in Sources */,
 				E221433E1945C255003E9535 /* UIButton+WebCache.m in Sources */,
 				E22CDF70195AFA8800D8B1D1 /* MapVC.m in Sources */,
 				E27A1F5A1946FE1D001F9A3C /* LoginVC.m in Sources */,
 				CEB211D619580825005C00DD /* MapViewController.m in Sources */,
 				E2A8EC6A1950204500723FC6 /* AttractionTab2.m in Sources */,
-				E2DB6719195C05C700BE5483 /* PlanTVC4.m in Sources */,
 				E2A8EC6F1950417F00723FC6 /* AttractionTab3.m in Sources */,
 				E221433D1945C255003E9535 /* SDWebImageManager.m in Sources */,
 				E22142CA1945980F003E9535 /* main.m in Sources */,
@@ -1011,9 +1009,7 @@
 				CEB211BD1957FD7D005C00DD /* AugmentedRealityController.m in Sources */,
 				E22CDF6F195AFA8800D8B1D1 /* AddReviewVC.m in Sources */,
 				E22CDF74195AFACC00D8B1D1 /* ReviewTableCell.m in Sources */,
-				E2DB6713195C05AC00BE5483 /* PlanTVC2.m in Sources */,
 				CE10B100194B30A500F20946 /* ReportIncidentTVC.m in Sources */,
-				E22CDF79195AFE9200D8B1D1 /* PlanTVC.m in Sources */,
 				CEB211BA1957FD7D005C00DD /* ARCoordinate.m in Sources */,
 				E22143431945C283003E9535 /* MBProgressHUD.m in Sources */,
 				E27E87061949D87E008509EC /* DLStarRatingControl.m in Sources */,
@@ -1022,6 +1018,7 @@
 				E2A8EC75195041D400723FC6 /* AttractionTab5.m in Sources */,
 				E26F017D1952C51900E3F714 /* DetailTab2Cell.m in Sources */,
 				E2A8EC971951685A00723FC6 /* DetailTab4.m in Sources */,
+				E2DB6729195C1C1200BE5483 /* PlanTVC2.m in Sources */,
 				E22142FA19459A05003E9535 /* lavasaAppDelegate.m in Sources */,
 				E22CDF71195AFA8800D8B1D1 /* ReviewVC.m in Sources */,
 				E27E87071949D87E008509EC /* DLStarView.m in Sources */,
@@ -1042,13 +1039,14 @@
 				CEB211BF1957FD7D005C00DD /* MarkerView.m in Sources */,
 				CEB211BC1957FD7D005C00DD /* ARKit.m in Sources */,
 				E26F01891953F66300E3F714 /* ImagePopupvVC.m in Sources */,
+				E2DB671F195C180300BE5483 /* PlanTVCell.m in Sources */,
 				E221433F1945C255003E9535 /* UIImageView+WebCache.m in Sources */,
 				CEB211DD195809C3005C00DD /* PlaceAnnotation.m in Sources */,
 				E221432A1945C230003E9535 /* webservice.m in Sources */,
 				E221431F1945C107003E9535 /* FMDatabaseAdditions.m in Sources */,
 				E26F01761952C48E00E3F714 /* DetailTabVC.m in Sources */,
-				E2DB6716195C05BA00BE5483 /* PlanTVC3.m in Sources */,
 				E221433B1945C255003E9535 /* SDImageCache.m in Sources */,
+				E2DB672B195C1C1200BE5483 /* PlanTVC4.m in Sources */,
 				E2A8EC72195041AE00723FC6 /* AttractionTab4.m in Sources */,
 				E26F017A1952C4ED00E3F714 /* AttractionTVCell.m in Sources */,
 			);
