@@ -36,13 +36,13 @@ ARViewController    *_arViewController;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    UIButton *backButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 60.0f, 30.0f)];
-    //    UIImage *backImage = [[UIImage imageNamed:@"back_button_normal.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 12.0f, 0, 12.0f)];
-    //    [backButton setBackgroundImage:backImage  forState:UIControlStateNormal];
-    [backButton setTitle:@"Back" forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(popBack) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    self.navigationItem.leftBarButtonItem = backButtonItem;
+//    UIButton *backButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 60.0f, 30.0f)];
+//    //    UIImage *backImage = [[UIImage imageNamed:@"back_button_normal.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 12.0f, 0, 12.0f)];
+//    //    [backButton setBackgroundImage:backImage  forState:UIControlStateNormal];
+//    [backButton setTitle:@"Back" forState:UIControlStateNormal];
+//    [backButton addTarget:self action:@selector(popBack) forControlEvents:UIControlEventTouchUpInside];
+//    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+//    self.navigationItem.leftBarButtonItem = backButtonItem;
     
 //    
 //    SharedData *shared=[SharedData sharedObj];
@@ -112,19 +112,19 @@ ARViewController    *_arViewController;
         
     }
 
-    self.navigationItem.hidesBackButton=YES;
+//    self.navigationItem.hidesBackButton=YES;
 
-    self.motionManager=[[CMMotionManager alloc]init];
-    self.motionManager.accelerometerUpdateInterval=.2;
-    
-    [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error){
-        
-        [self outputAccelertionData:accelerometerData.acceleration];
-        
-        if (error) {
-            NSLog(@"%@",error);
-        }
-    }];
+//    self.motionManager=[[CMMotionManager alloc]init];
+//    self.motionManager.accelerometerUpdateInterval=.2;
+//    
+//    [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error){
+//        
+//        [self outputAccelertionData:accelerometerData.acceleration];
+//        
+//        if (error) {
+//            NSLog(@"%@",error);
+//        }
+//    }];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
@@ -138,16 +138,16 @@ ARViewController    *_arViewController;
         if (annonationView==nil){
             annonationView=mylocation.annotationView;
             
-            UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 30)] ;
-            lbl.backgroundColor = [UIColor blackColor];
-            lbl.textColor = [UIColor whiteColor];
-            lbl.alpha = 0.5;
-            lbl.tag = 42;
-            [annonationView addSubview:lbl];
-            lbl.text=@"delhi";
-            //Following lets the callout still work if you tap on the label...
-            annonationView.canShowCallout = YES;
-            annonationView.frame = lbl.frame;
+//            UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 30)] ;
+//            lbl.backgroundColor = [UIColor blackColor];
+//            lbl.textColor = [UIColor whiteColor];
+//            lbl.alpha = 0.5;
+//            lbl.tag = 42;
+//            [annonationView addSubview:lbl];
+//            lbl.text=@"delhi";
+//            //Following lets the callout still work if you tap on the label...
+//            annonationView.canShowCallout = YES;
+//            annonationView.frame = lbl.frame;
             
 //            annonationView.image=[UIImage imageNamed:@"pin2.png"];
         }
@@ -247,12 +247,8 @@ ARViewController    *_arViewController;
     //
     //          NSLog(@"%@",locationArray);
     
-
-    
     return locationArray;
 }
-
-
 
 - (BOOL)float:(float)aFloat between:(float)minValue and:(float)maxValue {
    
@@ -263,12 +259,20 @@ ARViewController    *_arViewController;
     }
 }
 
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)agumentRealityButtonClicked:(id)sender {
+    
+    _arViewController = [[ARViewController alloc] initWithDelegate:self];
+    _arViewController.showsCloseButton = false;
+    [_arViewController setHidesBottomBarWhenPushed:YES];
+    [_arViewController setRadarRange:400000.0];
+    [_arViewController setOnlyShowItemsWithinRadarRange:YES];
+    [self.navigationController pushViewController:_arViewController animated:NO];
 }
 
 @end

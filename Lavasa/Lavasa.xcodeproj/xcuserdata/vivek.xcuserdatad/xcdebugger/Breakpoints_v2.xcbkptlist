@@ -217,12 +217,12 @@
                   symbolName = "-[AttractionTab3 motionManager]"
                   moduleName = "Lavasa"
                   urlString = "file:///Users/vivek/LavasaNew/Lavasa/Lavasa%20nib/Classes/Attraction%20Tab%20VCs/AttractionTab3.h"
-                  timestampString = "425394946.575824"
+                  timestampString = "425459428.4817"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "46"
                   endingLineNumber = "46"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "24">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -231,12 +231,12 @@
                   symbolName = "-[AttractionTab3 setMotionManager:]"
                   moduleName = "Lavasa"
                   urlString = "file:///Users/vivek/LavasaNew/Lavasa/Lavasa%20nib/Classes/Attraction%20Tab%20VCs/AttractionTab3.h"
-                  timestampString = "425394946.576001"
+                  timestampString = "425459428.482205"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "46"
                   endingLineNumber = "46"
-                  offsetFromSymbolStart = "28">
+                  offsetFromSymbolStart = "31">
                </Location>
             </Locations>
          </BreakpointContent>

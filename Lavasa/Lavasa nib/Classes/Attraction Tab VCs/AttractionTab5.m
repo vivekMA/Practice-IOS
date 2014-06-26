@@ -133,11 +133,19 @@
   
     if ([[segue identifier] isEqualToString:@"GoToDetail"])
     {
-        DetailTabVC *dvc = segue.destinationViewController;
+//        DetailTabVC *dvc = segue.destinationViewController;
         [SharedData sharedObj].DictDetail=[ArrayData objectAtIndex:[sender tag]];
         
         
         NSLog(@"%@",[SharedData sharedObj].DictDetail);
+    }
+    if ([[segue identifier] isEqualToString:@"goToMapVC"]){
+        
+        MapViewController *map=segue.destinationViewController;
+        map.marrlatArray=Latarray;
+        map.marrlongArray=Longarray;
+        map.marrNameArray=namearray;
+        
     }
 }
 #pragma mark - Fetch data from database
@@ -252,17 +260,20 @@
 {
     objhud.hidden=YES;
     
-    self.motionManager=[[CMMotionManager alloc]init];
-    self.motionManager.accelerometerUpdateInterval=.2;
     
-    [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error){
-        
-        [self outputAccelertionData:accelerometerData.acceleration];
-        
-        if (error) {
-            NSLog(@"%@",error);
-        }
-    }];
+    [self performSegueWithIdentifier:@"goToMapVC" sender:self];
+
+//    self.motionManager=[[CMMotionManager alloc]init];
+//    self.motionManager.accelerometerUpdateInterval=.2;
+//    
+//    [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error){
+//        
+//        [self outputAccelertionData:accelerometerData.acceleration];
+//        
+//        if (error) {
+//            NSLog(@"%@",error);
+//        }
+//    }];
     
     
     //    NSLog(@"%d,%d,%lu",[Longarray count],[Latarray count],(unsigned long)[namearray count]);

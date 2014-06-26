@@ -15,7 +15,7 @@
 @property(nonatomic, strong) NSString * Gender;
 @property(nonatomic, strong) NSString * DOB;
 
-@property BOOL *MapViewFirst;
+@property BOOL MapViewFirst;
 
 @property (nonatomic, retain) NSArray *arrLocation;
 
