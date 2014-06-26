@@ -14,6 +14,8 @@
 		CE10B105194B313300F20946 /* PopoverListTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE10B104194B313300F20946 /* PopoverListTVC.m */; };
 		CE84DA0F194F05AE0039720D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE84DA0E194F05AE0039720D /* Main_iPad.storyboard */; };
 		CEACBA24195BDEB200AA1E75 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEACBA23195BDEB200AA1E75 /* FacebookSDK.framework */; };
+		CEACBA26195C023B00AA1E75 /* food_map.png in Resources */ = {isa = PBXBuildFile; fileRef = CEACBA25195C023B00AA1E75 /* food_map.png */; };
+		CEACBA29195C28BC00AA1E75 /* PlacesLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = CEACBA28195C28BC00AA1E75 /* PlacesLoader.m */; };
 		CEB211BA1957FD7D005C00DD /* ARCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB211A91957FD7D005C00DD /* ARCoordinate.m */; };
 		CEB211BB1957FD7D005C00DD /* ARGeoCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB211AB1957FD7D005C00DD /* ARGeoCoordinate.m */; };
 		CEB211BC1957FD7D005C00DD /* ARKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB211AD1957FD7D005C00DD /* ARKit.m */; };
@@ -150,6 +152,9 @@
 		CE10B104194B313300F20946 /* PopoverListTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverListTVC.m; sourceTree = "<group>"; };
 		CE84DA0E194F05AE0039720D /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main_iPad.storyboard; path = "Lavasa nib/Classes/ReportIncident/Main_iPad.storyboard"; sourceTree = "<group>"; };
 		CEACBA23195BDEB200AA1E75 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "Lavasa nib/Third Party APIs/External framework/FacebookSDK.framework"; sourceTree = "<group>"; };
+		CEACBA25195C023B00AA1E75 /* food_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food_map.png; sourceTree = "<group>"; };
+		CEACBA27195C28BC00AA1E75 /* PlacesLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlacesLoader.h; path = "../Webservice NS/PlacesLoader.h"; sourceTree = "<group>"; };
+		CEACBA28195C28BC00AA1E75 /* PlacesLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlacesLoader.m; path = "../Webservice NS/PlacesLoader.m"; sourceTree = "<group>"; };
 		CEB211A81957FD7D005C00DD /* ARCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCoordinate.h; sourceTree = "<group>"; };
 		CEB211A91957FD7D005C00DD /* ARCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARCoordinate.m; sourceTree = "<group>"; };
 		CEB211AA1957FD7D005C00DD /* ARGeoCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARGeoCoordinate.h; sourceTree = "<group>"; };
@@ -785,11 +790,13 @@
 		E2A8EC4F19501F2600723FC6 /* Attraction Tab VCs */ = {
 			isa = PBXGroup;
 			children = (
+				CEB211DA195809C3005C00DD /* PlaceAnnotation.h */,
+				CEB211DB195809C3005C00DD /* PlaceAnnotation.m */,
+				CEACBA27195C28BC00AA1E75 /* PlacesLoader.h */,
+				CEACBA28195C28BC00AA1E75 /* PlacesLoader.m */,
 				CEBA623A19594F290070F064 /* pin.png */,
 				CEB211D8195809C3005C00DD /* Place.h */,
 				CEB211D9195809C3005C00DD /* Place.m */,
-				CEB211DA195809C3005C00DD /* PlaceAnnotation.h */,
-				CEB211DB195809C3005C00DD /* PlaceAnnotation.m */,
 				E2A8EC76195044D300723FC6 /* AttractionTab1.h */,
 				E2A8EC77195044D300723FC6 /* AttractionTab1.m */,
 				E2A8EC681950204500723FC6 /* AttractionTab2.h */,
@@ -801,6 +808,7 @@
 				E2A8EC73195041D400723FC6 /* AttractionTab5.h */,
 				E2A8EC74195041D400723FC6 /* AttractionTab5.m */,
 				CEBA623C19595C710070F064 /* pin2.png */,
+				CEACBA25195C023B00AA1E75 /* food_map.png */,
 				CEB211D319580825005C00DD /* MapViewController.h */,
 				CEB211D419580825005C00DD /* MapViewController.m */,
 				CEB211CB19580389005C00DD /* ARViewController.h */,
@@ -933,6 +941,7 @@
 				E27E87081949D87E008509EC /* star.png in Resources */,
 				CEB211C91957FDF0005C00DD /* bgCalloutDisclosure.png in Resources */,
 				E27A1F9119485DA9001F9A3C /* PLAN.png in Resources */,
+				CEACBA26195C023B00AA1E75 /* food_map.png in Resources */,
 				E22142D01945980F003E9535 /* Images.xcassets in Resources */,
 				CEB211C71957FDF0005C00DD /* bgCallout.png in Resources */,
 				E27A1F9419485DA9001F9A3C /* SETTINGS.png in Resources */,
@@ -972,6 +981,7 @@
 				E27A1F5A1946FE1D001F9A3C /* LoginVC.m in Sources */,
 				CEB211D619580825005C00DD /* MapViewController.m in Sources */,
 				E2A8EC6A1950204500723FC6 /* AttractionTab2.m in Sources */,
+				CEACBA29195C28BC00AA1E75 /* PlacesLoader.m in Sources */,
 				E2A8EC6F1950417F00723FC6 /* AttractionTab3.m in Sources */,
 				E221433D1945C255003E9535 /* SDWebImageManager.m in Sources */,
 				E22142CA1945980F003E9535 /* main.m in Sources */,

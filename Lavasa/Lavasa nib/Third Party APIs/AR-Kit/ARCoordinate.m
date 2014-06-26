@@ -23,11 +23,15 @@
 	[newCoordinate setInclination: newInclination];
 	[newCoordinate setAzimuth: newAzimuth];
 	[newCoordinate setTitle: @""];
+    [newCoordinate setRating: @""];
+
 	
 	return newCoordinate;
 }
 
 - (NSUInteger)hash {
+    
+    
 	return ([[self title] hash] ^ [[self subtitle] hash]) + (int)([self radialDistance] + [self inclination] + [self azimuth]);
 }
 
@@ -53,11 +57,16 @@
 		
 	if (([self title] && [otherCoordinate title]) || ([self title] && ![otherCoordinate title]) || (![self title] && [otherCoordinate title]))
 		equal = equal && [[self title] isEqualToString:[otherCoordinate title]];
+    
+    if (([self rating] && [otherCoordinate rating]) || ([self rating] && ![otherCoordinate rating]) || (![self rating] && [otherCoordinate rating]))
+		equal = equal && [[self rating] isEqualToString:[otherCoordinate rating]];
 	
 	return equal;
 }
 
 - (NSString *)description {
+    
+    
 	return [NSString stringWithFormat:@"%@ r: %.3fm φ: %.3f° θ: %.3f°", [self title], [self radialDistance], radiansToDegrees([self azimuth]), radiansToDegrees([self inclination])];
 }
 

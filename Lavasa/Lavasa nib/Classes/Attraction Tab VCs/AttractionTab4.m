@@ -275,25 +275,25 @@
     //    NSLog(@"%d,%d,%lu",[Longarray count],[Latarray count],(unsigned long)[namearray count]);
     
 }
-
-- (NSMutableArray *)geoLocations{
-    
-    NSMutableArray *locationArray ;
-    locationArray = [[NSMutableArray alloc] init];
-    ARGeoCoordinate *tempCoordinate;
-    CLLocation       *tempLocation;
-    
-    for (int i=0; i<namearray.count; i++) {
-        
-        tempLocation = [[CLLocation alloc] initWithLatitude:[[Latarray objectAtIndex:i] floatValue] longitude:[[Longarray objectAtIndex:i] floatValue]];
-        tempCoordinate = [ARGeoCoordinate coordinateWithLocation:tempLocation locationTitle:[namearray objectAtIndex:i]];
-        
-        tempCoordinate.inclination = 0.8;
-        [locationArray addObject:tempCoordinate];
-        
-    }
-    return locationArray;
-}
+//
+//- (NSMutableArray *)geoLocations{
+//    
+//    NSMutableArray *locationArray ;
+//    locationArray = [[NSMutableArray alloc] init];
+//    ARGeoCoordinate *tempCoordinate;
+//    CLLocation       *tempLocation;
+//    
+//    for (int i=0; i<namearray.count; i++) {
+//        
+//        tempLocation = [[CLLocation alloc] initWithLatitude:[[Latarray objectAtIndex:i] floatValue] longitude:[[Longarray objectAtIndex:i] floatValue]];
+//        tempCoordinate = [ARGeoCoordinate coordinateWithLocation:tempLocation locationTitle:[namearray objectAtIndex:i]];
+//        
+//        tempCoordinate.inclination = 0.8;
+//        [locationArray addObject:tempCoordinate];
+//        
+//    }
+//    return locationArray;
+//}
 
 
 - (void)locationClicked:(ARGeoCoordinate *)coordinate{

@@ -66,7 +66,7 @@
         NSLocale *locale = [NSLocale currentLocale];
         _usesMetric = [[locale objectForKey:NSLocaleUsesMetricSystem] boolValue];
 
-        _lblDistance = [[UILabel alloc] initWithFrame:CGRectMake(0, LABEL_HEIGHT + LABEL_MARGIN, labelSize.width, labelSize.height)];
+        _lblDistance = [[UILabel alloc] initWithFrame:CGRectMake(10, LABEL_HEIGHT + LABEL_MARGIN, 50, labelSize.height)];
 		[_lblDistance setBackgroundColor:    [UIColor clearColor]];
 		[_lblDistance setTextColor:          [UIColor whiteColor]];
 		[_lblDistance setTextAlignment:      NSTextAlignmentCenter];
@@ -78,7 +78,18 @@
         }
         [self addSubview:_lblDistance];
         
-		
+        
+        UILabel *ratingLabel	= [[UILabel alloc] initWithFrame:CGRectMake(65, LABEL_HEIGHT + LABEL_MARGIN, 50, labelSize.height)];
+		[ratingLabel setBackgroundColor: [UIColor clearColor]];
+		[ratingLabel setTextColor:		[UIColor whiteColor]];
+		[ratingLabel setTextAlignment:	NSTextAlignmentCenter];
+        [ratingLabel setFont:            [UIFont fontWithName:@"Helvetica-Bold" size:13.0]];
+        
+        NSLog(@"===%@",[coordinate rating]);
+        
+		[ratingLabel setText:[NSString stringWithFormat:@"Review:%@",[coordinate rating]]];
+        [self addSubview:ratingLabel];
+        
         if(_allowsCallout){
             UIImageView *disclosureImageView = [[UIImageView alloc] initWithFrame:CGRectMake(calloutSize.width - disclosureImage.size.width - DISCLOSURE_MARGIN, DISCLOSURE_MARGIN, disclosureImage.size.width, disclosureImage.size.height)];
             [disclosureImageView setImage:[UIImage imageNamed:@"bgCalloutDisclosure.png"]];

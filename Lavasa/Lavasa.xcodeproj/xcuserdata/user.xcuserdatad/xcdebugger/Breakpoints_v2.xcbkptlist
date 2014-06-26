@@ -4,18 +4,28 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "1"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Lavasa nib/Classes/Attraction Tab VCs/AttractionTab1.m"
-            timestampString = "425454812.196574"
+            filePath = "Lavasa nib/Third Party APIs/AR-Kit/ARCoordinate.m"
+            timestampString = "425477498.131005"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "373"
-            endingLineNumber = "373"
-            landmarkName = "-showAR"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "-isEqualToCoordinate:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

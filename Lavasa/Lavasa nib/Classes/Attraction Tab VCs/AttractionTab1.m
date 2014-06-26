@@ -13,8 +13,21 @@
 #import "DLStarRatingControl.h"
 #import "AttractionTVCell.h"
 #import "DetailTabVC.h"
+#import "PlacesLoader.h"
+#import "Place.h"
+
+
+
 #define KCellDisplay 0;
 #define KSelectedCat @"food"
+
+NSString * const kNameKey = @"name";
+NSString * const kReferenceKey = @"reference";
+NSString * const kAddressKey = @"vicinity";
+NSString * const kLatiudeKeypath = @"geometry.location.lat";
+NSString * const kLongitudeKeypath = @"geometry.location.lng";
+NSString * const kRating = @"rating";
+
 @interface AttractionTab1 ()
 
 @end
@@ -36,6 +49,8 @@
     namearray=[[NSMutableArray alloc]init];
     Longarray=[[NSMutableArray alloc]init];
     Latarray=[[NSMutableArray alloc]init];
+    ratingArrary=[[NSMutableArray alloc]init];
+
 
     self.title=@"food";
     // Do any additional setup after loading the view from its nib.
@@ -85,6 +100,7 @@
 {
    }
 #pragma mark - UITableView
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 	return ArrayData.count;
@@ -160,10 +176,13 @@
     if ([[segue identifier] isEqualToString:@"goToMapVC"]){
     
         MapViewController *map=segue.destinationViewController;
-        map.marrlatArray=Latarray;
-        map.marrlongArray=Longarray;
-        map.marrNameArray=namearray;
+        map.AllPlaces=Places;
         
+//        map.marrlatArray=Latarray;
+//        map.marrlongArray=Longarray;
+//        map.marrNameArray=namearray;
+//        map.marrRatingArray=ratingArrary;
+
     }
 }
 #pragma mark - Fetch data from database
@@ -215,12 +234,50 @@
     objhud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
     objhud.labelText=@"Loading...";
     
-    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/nearbysearch/xml?location=%@,%@&radius=2000&distancesensor=false&types=food&key=AIzaSyALby-zmBjk4ZHRPXmyNXcwIJ5Fj39xaTE",[NSString stringWithFormat:@"%f", coordinateLocal.latitude],[NSString stringWithFormat:@"%f", coordinateLocal.longitude]]]];
+    SharedData *shared=[SharedData sharedObj];
     
-    NSLog(@"%@",theRequest);
+    [[PlacesLoader sharedInstance]loadPOIsForLocation:[shared.arrLocation lastObject] radius:2000 type:@"food" successHandler:^(NSDictionary *response){
+        
+        NSLog(@"Response: %@", response);
+        
+        if([[response objectForKey:@"status"] isEqualToString:@"OK"]) {
+        
+            id places = [response objectForKey:@"results"];
+
+            Places= [[NSMutableArray alloc]init];
+            
+            if([places isKindOfClass:[NSArray class]]) {
+                
+                for(NSDictionary *resultsDict in places) {
+                    
+                    CLLocation *location2 = [[CLLocation alloc] initWithLatitude:[[resultsDict valueForKeyPath:kLatiudeKeypath] floatValue] longitude:[[resultsDict valueForKeyPath:kLongitudeKeypath] floatValue]];
+                    NSString *rating=@"";
+					
+                    if ([resultsDict objectForKey:kRating]){
+                       rating= [resultsDict objectForKey:kRating];
+                    }
+                    Place *currentPlace = [[Place alloc]initWithLocation:location2 name:[resultsDict objectForKey:kNameKey] ratingOfLocation:rating];
+                    
+                    [Places addObject:currentPlace];
+                }
+                
+                
+            }
+            else{
+        NSLog(@"?????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????");
+            }
+            objhud.hidden=YES;
+            [self performSegueWithIdentifier:@"goToMapVC" sender:self];
+        }
+
+    }errorHandler:^(NSError *error){
+        
+        NSLog(@"Error: %@", error);
+
+    }];
     
-	connetion1=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self] ;
-	webData = [NSMutableData data];
+    
+    
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
@@ -271,7 +328,10 @@
     {
         [Longarray addObject:currentData];
     }
-    
+    else  if( [elementName isEqualToString:@"rating"])
+    {
+        [ratingArrary addObject:currentData];
+    }
     
 }
 - (void)parserDidEndDocument:(NSXMLParser *)parser
@@ -300,24 +360,24 @@
     
 }
 
-- (NSMutableArray *)geoLocations{
-    
-    NSMutableArray *locationArray ;
-    locationArray = [[NSMutableArray alloc] init];
-    ARGeoCoordinate *tempCoordinate;
-    CLLocation       *tempLocation;
-    
-    for (int i=0; i<namearray.count; i++) {
-        
-        tempLocation = [[CLLocation alloc] initWithLatitude:[[Latarray objectAtIndex:i] floatValue] longitude:[[Longarray objectAtIndex:i] floatValue]];
-        tempCoordinate = [ARGeoCoordinate coordinateWithLocation:tempLocation locationTitle:[namearray objectAtIndex:i]];
-        
-        tempCoordinate.inclination = 0.8;
-        [locationArray addObject:tempCoordinate];
-        
-    }
-    return locationArray;
-}
+//- (NSMutableArray *)geoLocations{
+//    
+//    NSMutableArray *locationArray ;
+//    locationArray = [[NSMutableArray alloc] init];
+//    ARGeoCoordinate *tempCoordinate;
+//    CLLocation       *tempLocation;
+//    
+//    for (int i=0; i<namearray.count; i++) {
+//        
+//        tempLocation = [[CLLocation alloc] initWithLatitude:[[Latarray objectAtIndex:i] floatValue] longitude:[[Longarray objectAtIndex:i] floatValue]];
+//        tempCoordinate = [ARGeoCoordinate coordinateWithLocation:tempLocation locationTitle:[namearray objectAtIndex:i]];
+//        
+//        tempCoordinate.inclination = 0.8;
+//        [locationArray addObject:tempCoordinate];
+//        
+//    }
+//    return locationArray;
+//}
 
 
 - (void)locationClicked:(ARGeoCoordinate *)coordinate{
@@ -325,66 +385,66 @@
     
     
 }
-
--(void)outputAccelertionData:(CMAcceleration)acceleration
-{
-    
-    BOOL X_axiz=  [self float:acceleration.x between:-.75 and:.75];
-    BOOL Z_axiz=  [self float:acceleration.x between:-.72 and:.70];
-    
-    [self.motionManager stopAccelerometerUpdates];
-    
-    NSLog(@"=============================");
-    
-    if (X_axiz & Z_axiz) { // show Map
-        
-        SharedData *shared=[SharedData sharedObj];
-        shared.MapViewFirst=TRUE;
-        
-        [self performSegueWithIdentifier:@"goToMapVC" sender:self];
-
-        
-//        MapViewController *map=[[MapViewController alloc]initWithNibName:@"MapViewController" bundle:nil];
-//        NSLog(@"LatArrary=======%@",Latarray);
-//        map.marrlatArray=Latarray;
-//        map.marrlongArray=Longarray;
-//        map.marrNameArray=namearray;
-//        [map setHidesBottomBarWhenPushed:YES];
 //
-//        [self.navigationController pushViewController:map animated:YES];
-
-    }
-    else{ // AR
-        
-        SharedData *shared=[SharedData sharedObj];
-        shared.MapViewFirst=FALSE;
-        [self showAR];
-    }
-}
--(void)showAR{
-    
-    _arViewController = [[ARViewController alloc] initWithDelegate:self];
-    _arViewController.showsCloseButton = false;
-    [_arViewController setHidesBottomBarWhenPushed:YES];
-    [_arViewController setRadarRange:400000.0];
-    [_arViewController setOnlyShowItemsWithinRadarRange:YES];
-    [self.navigationController pushViewController:_arViewController animated:YES];
-    
-}
--(void)showMap{
-    
-    // goToMap
-    
-    MapViewController *map=[[MapViewController alloc]initWithNibName:@"MapViewController" bundle:nil];
-    NSLog(@"LatArrary=======%@",Latarray);
-    map.marrlatArray=Latarray;
-    map.marrlongArray=Longarray;
-    map.marrNameArray=namearray;
-    [map setHidesBottomBarWhenPushed:YES];
-    
-    [self.navigationController pushViewController:map animated:YES];
-    
-}
+//-(void)outputAccelertionData:(CMAcceleration)acceleration
+//{
+//    
+//    BOOL X_axiz=  [self float:acceleration.x between:-.75 and:.75];
+//    BOOL Z_axiz=  [self float:acceleration.x between:-.72 and:.70];
+//    
+//    [self.motionManager stopAccelerometerUpdates];
+//    
+//    NSLog(@"=============================");
+//    
+//    if (X_axiz & Z_axiz) { // show Map
+//        
+//        SharedData *shared=[SharedData sharedObj];
+//        shared.MapViewFirst=TRUE;
+//        
+//        [self performSegueWithIdentifier:@"goToMapVC" sender:self];
+//
+//        
+////        MapViewController *map=[[MapViewController alloc]initWithNibName:@"MapViewController" bundle:nil];
+////        NSLog(@"LatArrary=======%@",Latarray);
+////        map.marrlatArray=Latarray;
+////        map.marrlongArray=Longarray;
+////        map.marrNameArray=namearray;
+////        [map setHidesBottomBarWhenPushed:YES];
+////
+////        [self.navigationController pushViewController:map animated:YES];
+//
+//    }
+//    else{ // AR
+//        
+//        SharedData *shared=[SharedData sharedObj];
+//        shared.MapViewFirst=FALSE;
+//        [self showAR];
+//    }
+//}
+//-(void)showAR{
+//    
+//    _arViewController = [[ARViewController alloc] initWithDelegate:self];
+//    _arViewController.showsCloseButton = false;
+//    [_arViewController setHidesBottomBarWhenPushed:YES];
+//    [_arViewController setRadarRange:400000.0];
+//    [_arViewController setOnlyShowItemsWithinRadarRange:YES];
+//    [self.navigationController pushViewController:_arViewController animated:YES];
+//    
+//}
+//-(void)showMap{
+//    
+//    // goToMap
+//    
+//    MapViewController *map=[[MapViewController alloc]initWithNibName:@"MapViewController" bundle:nil];
+//    NSLog(@"LatArrary=======%@",Latarray);
+//    map.marrlatArray=Latarray;
+//    map.marrlongArray=Longarray;
+//    map.marrNameArray=namearray;
+//    [map setHidesBottomBarWhenPushed:YES];
+//    
+//    [self.navigationController pushViewController:map animated:YES];
+//    
+//}
 
 - (void)viewDidAppear:(BOOL)animated{
     

@@ -26,15 +26,20 @@
     // below are the objects for AR
     CLLocationManager *locationManager;
     CLLocation *location;
+    
     NSURLConnection *connetion1;
     NSString *currentData;
     NSMutableData *webData;
-    CLLocation *lastLocation;
     MBProgressHUD *objhud;
     
+    NSMutableArray *Places;
+    
     NSMutableArray *namearray;
+
+    NSMutableArray *ratingArrary;
     NSMutableArray *Longarray;
     NSMutableArray *Latarray;
+    
     CLLocationCoordinate2D coordinateLocal;
 
     NSArray *LocationsUpdated;

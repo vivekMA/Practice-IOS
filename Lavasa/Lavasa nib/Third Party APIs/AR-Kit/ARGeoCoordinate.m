@@ -48,18 +48,19 @@
 	//NSLog(@"distance from %@ is %f, angle is %f, azimuth is %f",[self title], [self distanceFromOrigin],angle,[self azimuth]);
 }
 
-+ (ARGeoCoordinate *)coordinateWithLocation:(CLLocation *)location locationTitle:(NSString *)titleOfLocation {
++ (ARGeoCoordinate *)coordinateWithLocation:(CLLocation *)location locationTitle:(NSString *)titleOfLocation locationRating:(NSString *)ratingOfLocation{
 
 	ARGeoCoordinate *newCoordinate	= [[ARGeoCoordinate alloc] init];
 	[newCoordinate setGeoLocation: location];
 	[newCoordinate setTitle: titleOfLocation];
-	
+	[newCoordinate setRating:ratingOfLocation];
+    
 	return newCoordinate;
 }
 
 + (ARGeoCoordinate *)coordinateWithLocation:(CLLocation *)location fromOrigin:(CLLocation *)origin {
 	
-	ARGeoCoordinate *newCoordinate = [ARGeoCoordinate coordinateWithLocation:location locationTitle:@""];
+	ARGeoCoordinate *newCoordinate = [ARGeoCoordinate coordinateWithLocation:location locationTitle:@"" locationRating:@""];
 	[newCoordinate calibrateUsingOrigin:origin];
 	return newCoordinate;
 }

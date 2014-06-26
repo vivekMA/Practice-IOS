@@ -15,9 +15,10 @@
 @property (nonatomic, strong) CLLocation *location;
 
 @property (nonatomic, copy) NSString *placeName;
+@property (nonatomic, copy) NSString *rating;
 
 
-- (id)initWithLocation:(CLLocation *)location name:(NSString *)name;
+- (id)initWithLocation:(CLLocation *)location name:(NSString *)name ratingOfLocation:(NSString *)rating;
 
 //- (NSString *)infoText;
 

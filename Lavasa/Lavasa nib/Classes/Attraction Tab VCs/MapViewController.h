@@ -14,11 +14,16 @@
 
 }
 @property (strong, nonatomic) CMMotionManager *motionManager;
-@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+//@property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
 @property (strong, nonatomic) NSMutableArray *marrlongArray;
 @property (strong, nonatomic) NSMutableArray *marrlatArray;
 @property (strong, nonatomic) NSMutableArray *marrNameArray;
+@property (strong, nonatomic) NSMutableArray *marrRatingArray;
+
+@property (strong, nonatomic) NSMutableArray *AllPlaces;
+
+
 - (IBAction)agumentRealityButtonClicked:(id)sender;
 
 
