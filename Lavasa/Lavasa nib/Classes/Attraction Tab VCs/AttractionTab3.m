@@ -135,6 +135,7 @@
     if ([[segue identifier] isEqualToString:@"GoToDetail"])
     {
         DetailTabVC *dvc = segue.destinationViewController;
+        dvc=nil;
         [SharedData sharedObj].DictDetail=[ArrayData objectAtIndex:[sender tag]];
         
         

@@ -250,7 +250,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DCv-Pi-4I8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2365" y="-1225"/>
+            <point key="canvasLocation" x="-1997" y="-1209"/>
         </scene>
         <!--Attraction TabVC-->
         <scene sceneID="CZ4-Py-Cgb">
@@ -602,17 +602,23 @@
         <scene sceneID="gfr-Qj-x79">
             <objects>
                 <tableViewController storyboardIdentifier="PlanTVC" id="d57-Mr-NSp" customClass="PlanTVC" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xJE-rr-DC4">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="219" sectionHeaderHeight="22" sectionFooterHeight="22" id="xJE-rr-DC4">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="FJk-bY-aFT">
-                                <rect key="frame" x="0.0" y="86" width="768" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="219" id="FJk-bY-aFT">
+                                <rect key="frame" x="0.0" y="86" width="768" height="219"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FJk-bY-aFT" id="atC-wO-8EA">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="218"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EGu-Oa-JD7">
+                                            <rect key="frame" x="32" y="26" width="315" height="165"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -627,11 +633,11 @@
             </objects>
             <point key="canvasLocation" x="1718" y="6338"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - All-->
         <scene sceneID="tSV-UZ-lwy">
             <objects>
                 <navigationController definesPresentationContext="YES" id="aLS-U1-UjU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="DcS-sL-r5A"/>
+                    <tabBarItem key="tabBarItem" title="All" id="DcS-sL-r5A"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ob6-cD-JDx">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -643,11 +649,11 @@
             </objects>
             <point key="canvasLocation" x="-293" y="5122"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Hospital-->
         <scene sceneID="d2x-IP-QqX">
             <objects>
                 <navigationController definesPresentationContext="YES" id="B4m-Jq-8l8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="iSa-Lc-KiK"/>
+                    <tabBarItem key="tabBarItem" title="Hospital" id="iSa-Lc-KiK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Phz-dg-AIx">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -659,11 +665,11 @@
             </objects>
             <point key="canvasLocation" x="-308" y="2754"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Atm-->
         <scene sceneID="8Dx-f5-x0X">
             <objects>
                 <navigationController definesPresentationContext="YES" id="yzn-Qo-3Y6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="HFt-bk-Wsi"/>
+                    <tabBarItem key="tabBarItem" title="Atm" id="HFt-bk-Wsi"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6LI-zh-DX8">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -675,11 +681,11 @@
             </objects>
             <point key="canvasLocation" x="-316" y="3914"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Food-->
         <scene sceneID="qMI-EE-UmK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SNa-ne-Zp8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" systemItem="mostRecent" id="B0W-nw-bhn">
+                    <tabBarItem key="tabBarItem" title="Food" id="B0W-nw-bhn">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -696,11 +702,11 @@
             </objects>
             <point key="canvasLocation" x="-325" y="325"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Park-->
         <scene sceneID="hDi-g7-2Yt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Epy-S3-dng" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="vz5-7Y-h7h"/>
+                    <tabBarItem key="tabBarItem" title="Park" id="vz5-7Y-h7h"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q5g-b8-j8B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
