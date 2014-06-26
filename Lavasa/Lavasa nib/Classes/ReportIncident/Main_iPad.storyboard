@@ -1510,7 +1510,7 @@
         <scene sceneID="6pg-0O-IPZ">
             <objects>
                 <tabBarController storyboardIdentifier="PlanTabVC" definesPresentationContext="YES" id="4d8-Qv-o8G" customClass="PlanTabVC" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="xbd-nT-dNX">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -1753,7 +1753,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="mCj-If-GQt"/>
+        <segue reference="XT0-Qs-i3f"/>
         <segue reference="YyY-l3-3O4"/>
         <segue reference="aUx-YD-ghf"/>
     </inferredMetricsTieBreakers>

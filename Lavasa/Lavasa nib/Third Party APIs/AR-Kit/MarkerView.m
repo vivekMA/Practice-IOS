@@ -87,7 +87,7 @@
         
         NSLog(@"===%@",[coordinate rating]);
         
-		[ratingLabel setText:[NSString stringWithFormat:@"Review:%@",[coordinate rating]]];
+		[ratingLabel setText:[NSString stringWithFormat:@"R:%@",[coordinate rating]]];
         [self addSubview:ratingLabel];
         
         if(_allowsCallout){
