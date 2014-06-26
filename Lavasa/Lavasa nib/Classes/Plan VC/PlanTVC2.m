@@ -1,18 +1,18 @@
 //
-//  PlanTVC.m
+//  PlanTVC2.m
 //  Lavasa
 //
-//  Created by Vivek Yadav on 6/25/14.
+//  Created by Vivek Yadav on 6/26/14.
 //  Copyright (c) 2014 Mediaagility. All rights reserved.
 //
 
-#import "PlanTVC.h"
+#import "PlanTVC2.h"
 
-@interface PlanTVC ()
+@interface PlanTVC2 ()
 
 @end
 
-@implementation PlanTVC
+@implementation PlanTVC2
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,10 +27,7 @@
 {
     [super viewDidLoad];
     
-    
-    self.title=@"Plan";
-    
-  }
+ }
 
 - (void)didReceiveMemoryWarning
 {

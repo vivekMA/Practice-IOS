@@ -11,7 +11,7 @@
 #import "lavasaAppDelegate.h"
 #import "loginVC.h"
 #import "AttractionTabVC.h"
-#import "PlanTVC.h"
+#import "PlanTabVC.h"
 @interface MenuVC ()
 @end
 @implementation MenuVC
@@ -45,7 +45,6 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
 return [ArraySectionTitle count];
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if ([[ArrayBool objectAtIndex:section] boolValue]) {
@@ -73,10 +72,8 @@ return [ArraySectionTitle count];
     LblTitle.text=[ArraySectionTitle objectAtIndex:section];
     [ViewHeader addSubview:LblTitle];
  
-    
     UITapGestureRecognizer  *TapGesture   = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(HeaderTappedAction:)];
     [ViewHeader addGestureRecognizer:TapGesture];
-
     return ViewHeader;
 }
 -(void)HeaderTappedAction:(UITapGestureRecognizer *)gestureRecognizer
@@ -89,10 +86,15 @@ return [ArraySectionTitle count];
         if (IS_iPHONE)  mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle: nil];
         else      mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle: nil];
         
-        PlanTVC *planVC = (PlanTVC*)[mainStoryboard instantiateViewControllerWithIdentifier: @"PlanTVC"];
+        PlanTabVC *planVC = (PlanTabVC*)[mainStoryboard instantiateViewControllerWithIdentifier: @"PlanTabVC"];
         UINavigationController* navController = (UINavigationController*)self.revealViewController.frontViewController;
         [navController setViewControllers: @[planVC] animated: NO ];
         [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
+        
+        
+        
+        
+        
         
     }else  if (gestureRecognizer.view.tag==2) {
         
