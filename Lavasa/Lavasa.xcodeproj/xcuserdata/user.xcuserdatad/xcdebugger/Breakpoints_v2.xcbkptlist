@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Lavasa nib/Classes/Attraction Tab VCs/AttractionTab5.m"
-            timestampString = "425208096.528344"
+            filePath = "Lavasa nib/Classes/Attraction Tab VCs/AttractionTab1.m"
+            timestampString = "425454812.196574"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
-            landmarkName = "-MapButtonClicked:"
+            startingLineNumber = "373"
+            endingLineNumber = "373"
+            landmarkName = "-showAR"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

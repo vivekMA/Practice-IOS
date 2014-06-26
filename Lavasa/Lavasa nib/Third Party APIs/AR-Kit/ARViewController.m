@@ -22,13 +22,13 @@
 - (id)initWithDelegate:(id<ARLocationDelegate>)aDelegate{
 	
    
-    UIButton *backButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 60.0f, 30.0f)];
-    //    UIImage *backImage = [[UIImage imageNamed:@"back_button_normal.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 12.0f, 0, 12.0f)];
-    //    [backButton setBackgroundImage:backImage  forState:UIControlStateNormal];
-    [backButton setTitle:@"Back" forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(popBack) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    self.navigationItem.leftBarButtonItem = backButtonItem;
+//    UIButton *backButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 60.0f, 30.0f)];
+//    //    UIImage *backImage = [[UIImage imageNamed:@"back_button_normal.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 12.0f, 0, 12.0f)];
+//    //    [backButton setBackgroundImage:backImage  forState:UIControlStateNormal];
+//    [backButton setTitle:@"Back" forState:UIControlStateNormal];
+//    [backButton addTarget:self action:@selector(popBack) forControlEvents:UIControlEventTouchUpInside];
+//    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+//    self.navigationItem.leftBarButtonItem = backButtonItem;
     
 	[self setDelegate:aDelegate];
 	
@@ -86,53 +86,53 @@
 	[super viewDidAppear:animated];
 }
 
--(void) popBack {
-    
-    NSArray* tempVCA = [self.navigationController viewControllers];
-    
-    for(UIViewController *tempVC in tempVCA)
-    {
-        if([tempVC isKindOfClass:[MapViewController class]])
-        {
-            [tempVC removeFromParentViewController];
-            
-            //            [tempNavBarItems removeFromParentViewController];
-        }
-    }
-    self.navigationItem.leftBarButtonItem=nil;
-
-    
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
-- (BOOL)shouldAutorotate
-{
-    return NO;
-}
-
-- (NSUInteger)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
-}
+//-(void) popBack {
+//    
+//    NSArray* tempVCA = [self.navigationController viewControllers];
+//    
+//    for(UIViewController *tempVC in tempVCA)
+//    {
+//        if([tempVC isKindOfClass:[MapViewController class]])
+//        {
+//            [tempVC removeFromParentViewController];
+//            
+//            //            [tempNavBarItems removeFromParentViewController];
+//        }
+//    }
+//    self.navigationItem.leftBarButtonItem=nil;
+//
+//    
+//    
+//    [self.navigationController popViewControllerAnimated:YES];
+//}
+//- (BOOL)shouldAutorotate
+//{
+//    return NO;
+//}
+//
+//- (NSUInteger)supportedInterfaceOrientations
+//{
+//    return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
+//}
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
     
-    self.navigationItem.hidesBackButton=YES;
-
-    
-    self.motionManager=[[CMMotionManager alloc]init];
-    self.motionManager.accelerometerUpdateInterval=.2;
-    
-    [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error){
-        
-        
-        [self outputAccelertionData:accelerometerData.acceleration];
-        
-        if (error) {
-            NSLog(@"%@",error);
-        }
-        
-    }];
+//    self.navigationItem.hidesBackButton=YES;
+//
+//    
+//    self.motionManager=[[CMMotionManager alloc]init];
+//    self.motionManager.accelerometerUpdateInterval=.2;
+//    
+//    [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error){
+//        
+//        
+//        [self outputAccelertionData:accelerometerData.acceleration];
+//        
+//        if (error) {
+//            NSLog(@"%@",error);
+//        }
+//        
+//    }];
     
     if(_showsCloseButton == YES) {
 //        UIButton *closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
@@ -147,55 +147,55 @@
 //        [[self view] addSubview:closeBtn];
     }
 }
--(void)outputAccelertionData:(CMAcceleration)acceleration
-{
-//    NSLog(@"1");
-
-    
-    BOOL X_axiz=  [self float:acceleration.x between:-.75 and:.75];
-    BOOL Z_axiz=  [self float:acceleration.x between:-.72 and:.70];
-    
-    if (X_axiz & Z_axiz) {
-        [self.motionManager stopAccelerometerUpdates];
-
-
-        //show map
-        SharedData *shared=[SharedData sharedObj];
-        if(shared.MapViewFirst){ // disssmiss
-            
-            [self.navigationController popViewControllerAnimated:NO];
-            
-        }else{
-        
-            MapViewController *map=[[MapViewController alloc]initWithNibName:@"MapViewController" bundle:nil];
-
-            NSArray *viewControlles = [self.navigationController viewControllers];
-            
-            for (int i = 0 ; i <viewControlles.count; i++){
-                if ([map isKindOfClass:[viewControlles objectAtIndex:i]]) {
-                    //Execute your code
-                    
-                    [map removeFromParentViewController];
-
-                }
-            }
-            
-            [self.navigationController pushViewController:map animated:NO];
-
-        }
-    }
-    else{
-        // do nothing because its already AR
-    }
-}
-
-- (BOOL)float:(float)aFloat between:(float)minValue and:(float)maxValue {
-    if (aFloat >= minValue && aFloat <= maxValue) {
-        return YES;
-    } else {
-        return NO;
-    }
-}
+//-(void)outputAccelertionData:(CMAcceleration)acceleration
+//{
+////    NSLog(@"1");
+//
+//    
+//    BOOL X_axiz=  [self float:acceleration.x between:-.75 and:.75];
+//    BOOL Z_axiz=  [self float:acceleration.x between:-.72 and:.70];
+//    
+//    if (X_axiz & Z_axiz) {
+//        [self.motionManager stopAccelerometerUpdates];
+//
+//
+//        //show map
+//        SharedData *shared=[SharedData sharedObj];
+//        if(shared.MapViewFirst){ // disssmiss
+//            
+//            [self.navigationController popViewControllerAnimated:NO];
+//            
+//        }else{
+//        
+//            MapViewController *map=[[MapViewController alloc]initWithNibName:@"MapViewController" bundle:nil];
+//
+//            NSArray *viewControlles = [self.navigationController viewControllers];
+//            
+//            for (int i = 0 ; i <viewControlles.count; i++){
+//                if ([map isKindOfClass:[viewControlles objectAtIndex:i]]) {
+//                    //Execute your code
+//                    
+//                    [map removeFromParentViewController];
+//
+//                }
+//            }
+//            
+//            [self.navigationController pushViewController:map animated:NO];
+//
+//        }
+//    }
+//    else{
+//        // do nothing because its already AR
+//    }
+//}
+//
+//- (BOOL)float:(float)aFloat between:(float)minValue and:(float)maxValue {
+//    if (aFloat >= minValue && aFloat <= maxValue) {
+//        return YES;
+//    } else {
+//        return NO;
+//    }
+//}
 
 //- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 //	return YES;

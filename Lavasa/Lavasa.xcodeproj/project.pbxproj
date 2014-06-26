@@ -13,6 +13,7 @@
 		CE10B102194B311100F20946 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE10B101194B311100F20946 /* Main_iPhone.storyboard */; };
 		CE10B105194B313300F20946 /* PopoverListTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE10B104194B313300F20946 /* PopoverListTVC.m */; };
 		CE84DA0F194F05AE0039720D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE84DA0E194F05AE0039720D /* Main_iPad.storyboard */; };
+		CEACBA24195BDEB200AA1E75 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEACBA23195BDEB200AA1E75 /* FacebookSDK.framework */; };
 		CEB211BA1957FD7D005C00DD /* ARCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB211A91957FD7D005C00DD /* ARCoordinate.m */; };
 		CEB211BB1957FD7D005C00DD /* ARGeoCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB211AB1957FD7D005C00DD /* ARGeoCoordinate.m */; };
 		CEB211BC1957FD7D005C00DD /* ARKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB211AD1957FD7D005C00DD /* ARKit.m */; };
@@ -27,7 +28,6 @@
 		CEB211CA1957FDF0005C00DD /* bgCalloutDisclosure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB211C61957FDF0005C00DD /* bgCalloutDisclosure@2x.png */; };
 		CEB211CD19580389005C00DD /* ARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB211CC19580389005C00DD /* ARViewController.m */; };
 		CEB211D619580825005C00DD /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB211D419580825005C00DD /* MapViewController.m */; };
-		CEB211D719580825005C00DD /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB211D519580825005C00DD /* MapViewController.xib */; };
 		CEB211DC195809C3005C00DD /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB211D9195809C3005C00DD /* Place.m */; };
 		CEB211DD195809C3005C00DD /* PlaceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB211DB195809C3005C00DD /* PlaceAnnotation.m */; };
 		CEB343C8195A916A0047E6C4 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CEB343C6195A916A0047E6C4 /* GoogleMaps.bundle */; };
@@ -72,7 +72,6 @@
 		E221433F1945C255003E9535 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E221433A1945C255003E9535 /* UIImageView+WebCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E22143431945C283003E9535 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E22143421945C283003E9535 /* MBProgressHUD.m */; };
 		E221434E1945C49F003E9535 /* Lavasa.db in Resources */ = {isa = PBXBuildFile; fileRef = E221434D1945C49F003E9535 /* Lavasa.db */; };
-		E22CDF5F195AF9E100D8B1D1 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E22CDF5E195AF9E100D8B1D1 /* FacebookSDK.framework */; };
 		E22CDF6F195AFA8800D8B1D1 /* AddReviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E22CDF6A195AFA8800D8B1D1 /* AddReviewVC.m */; };
 		E22CDF70195AFA8800D8B1D1 /* MapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E22CDF6C195AFA8800D8B1D1 /* MapVC.m */; };
 		E22CDF71195AFA8800D8B1D1 /* ReviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E22CDF6E195AFA8800D8B1D1 /* ReviewVC.m */; };
@@ -150,6 +149,7 @@
 		CE10B103194B313300F20946 /* PopoverListTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverListTVC.h; sourceTree = "<group>"; };
 		CE10B104194B313300F20946 /* PopoverListTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverListTVC.m; sourceTree = "<group>"; };
 		CE84DA0E194F05AE0039720D /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main_iPad.storyboard; path = "Lavasa nib/Classes/ReportIncident/Main_iPad.storyboard"; sourceTree = "<group>"; };
+		CEACBA23195BDEB200AA1E75 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "Lavasa nib/Third Party APIs/External framework/FacebookSDK.framework"; sourceTree = "<group>"; };
 		CEB211A81957FD7D005C00DD /* ARCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCoordinate.h; sourceTree = "<group>"; };
 		CEB211A91957FD7D005C00DD /* ARCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARCoordinate.m; sourceTree = "<group>"; };
 		CEB211AA1957FD7D005C00DD /* ARGeoCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARGeoCoordinate.h; sourceTree = "<group>"; };
@@ -176,7 +176,6 @@
 		CEB211CC19580389005C00DD /* ARViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARViewController.m; path = "../../Third Party APIs/AR-Kit/ARViewController.m"; sourceTree = "<group>"; };
 		CEB211D319580825005C00DD /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		CEB211D419580825005C00DD /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		CEB211D519580825005C00DD /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		CEB211D8195809C3005C00DD /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		CEB211D9195809C3005C00DD /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		CEB211DA195809C3005C00DD /* PlaceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceAnnotation.h; sourceTree = "<group>"; };
@@ -246,7 +245,6 @@
 		E22143411945C283003E9535 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		E22143421945C283003E9535 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		E221434D1945C49F003E9535 /* Lavasa.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lavasa.db; sourceTree = "<group>"; };
-		E22CDF5E195AF9E100D8B1D1 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "Lavasa nib/Third Party APIs/External framework/FacebookSDK.framework"; sourceTree = "<group>"; };
 		E22CDF69195AFA8800D8B1D1 /* AddReviewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddReviewVC.h; path = "Lavasa nib/Classes/DetailTab VCs/AddReviewVC.h"; sourceTree = SOURCE_ROOT; };
 		E22CDF6A195AFA8800D8B1D1 /* AddReviewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddReviewVC.m; path = "Lavasa nib/Classes/DetailTab VCs/AddReviewVC.m"; sourceTree = SOURCE_ROOT; };
 		E22CDF6B195AFA8800D8B1D1 /* MapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapVC.h; path = "Lavasa nib/Classes/DetailTab VCs/MapVC.h"; sourceTree = SOURCE_ROOT; };
@@ -355,7 +353,7 @@
 				E27A1F6D1947224D001F9A3C /* AddressBook.framework in Frameworks */,
 				E22143241945C140003E9535 /* libsqlite3.0.dylib in Frameworks */,
 				E27A1F6B19472233001F9A3C /* GooglePlus.framework in Frameworks */,
-				E22CDF5F195AF9E100D8B1D1 /* FacebookSDK.framework in Frameworks */,
+				CEACBA24195BDEB200AA1E75 /* FacebookSDK.framework in Frameworks */,
 				CEB343C9195A916B0047E6C4 /* GoogleMaps.framework in Frameworks */,
 				E22142C21945980F003E9535 /* UIKit.framework in Frameworks */,
 				E22142BE1945980F003E9535 /* Foundation.framework in Frameworks */,
@@ -453,7 +451,7 @@
 		E22142BC1945980F003E9535 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E22CDF5E195AF9E100D8B1D1 /* FacebookSDK.framework */,
+				CEACBA23195BDEB200AA1E75 /* FacebookSDK.framework */,
 				CEB343DA195A9B070047E6C4 /* CoreData.framework */,
 				CEB343D6195A92380047E6C4 /* OpenGLES.framework */,
 				CEB343D4195A92280047E6C4 /* libz.dylib */,
@@ -805,7 +803,6 @@
 				CEBA623C19595C710070F064 /* pin2.png */,
 				CEB211D319580825005C00DD /* MapViewController.h */,
 				CEB211D419580825005C00DD /* MapViewController.m */,
-				CEB211D519580825005C00DD /* MapViewController.xib */,
 				CEB211CB19580389005C00DD /* ARViewController.h */,
 				CEB211CC19580389005C00DD /* ARViewController.m */,
 			);
@@ -922,7 +919,6 @@
 				E27A1F9619485F98001F9A3C /* lavasa.png in Resources */,
 				E221430419459A46003E9535 /* MenuVC.xib in Resources */,
 				E27E86F61949D2C0008509EC /* loginFb.png in Resources */,
-				CEB211D719580825005C00DD /* MapViewController.xib in Resources */,
 				E27E870C1949D87E008509EC /* star_highlighted.png in Resources */,
 				E27A1F8E19485DA9001F9A3C /* HELP_SELECT.png in Resources */,
 				E27A1F9219485DA9001F9A3C /* reveal-icon.png in Resources */,
@@ -1260,6 +1256,11 @@
 					Party,
 					APIs/External,
 					framework,
+					"$(PROJECT_DIR)/Lavasa",
+					nib/Third,
+					Party,
+					APIs/External,
+					framework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Lavasa nib/Lavasa-Prefix.pch";
@@ -1389,6 +1390,11 @@
 					APIs/External,
 					framework,
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Lavasa",
+					nib/Third,
+					Party,
+					APIs/External,
+					framework,
 					"$(PROJECT_DIR)/Lavasa",
 					nib/Third,
 					Party,

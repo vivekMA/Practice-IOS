@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSMutableArray *marrlongArray;
 @property (strong, nonatomic) NSMutableArray *marrlatArray;
 @property (strong, nonatomic) NSMutableArray *marrNameArray;
+- (IBAction)agumentRealityButtonClicked:(id)sender;
 
 
 @end

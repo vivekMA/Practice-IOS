@@ -151,23 +151,27 @@
 }
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
   //  self.myRow = indexPath;
-    NSLog(@"tapped button at row: %i",indexPath.row);
+//    NSLog(@"tapped button at row: %i",indexPath.row);
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
        if ([[segue identifier] isEqualToString:@"GoToDetail"])
     {
-        DetailTabVC *dvc = segue.destinationViewController;
+//        DetailTabVC *dvc = segue.destinationViewController;
         [SharedData sharedObj].DictDetail=[ArrayData objectAtIndex:[sender tag]];
         
       //  self.navigationController.navigationBar.hidden=YES;
         NSLog(@"%@",[SharedData sharedObj].DictDetail);
     }
-//    if ([[segue identifier] isEqualToString:@"goToMapVC"]){
-//        
-//        
-//    }
+    if ([[segue identifier] isEqualToString:@"goToMapVC"]){
+    
+        MapViewController *map=segue.destinationViewController;
+        map.marrlatArray=Latarray;
+        map.marrlongArray=Longarray;
+        map.marrNameArray=namearray;
+        
+    }
 }
 #pragma mark - Fetch data from database
 
@@ -281,17 +285,22 @@
 {
     objhud.hidden=YES;
     
-    self.motionManager=[[CMMotionManager alloc]init];
-    self.motionManager.accelerometerUpdateInterval=.2;
+    [self performSegueWithIdentifier:@"goToMapVC" sender:self];
+
     
-    [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error){
-        
-        [self outputAccelertionData:accelerometerData.acceleration];
-        
-        if (error) {
-            NSLog(@"%@",error);
-        }
-    }];
+//    [self showMap];
+    
+//    self.motionManager=[[CMMotionManager alloc]init];
+//    self.motionManager.accelerometerUpdateInterval=.2;
+//    
+//    [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error){
+//        
+//        [self outputAccelertionData:accelerometerData.acceleration];
+//        
+//        if (error) {
+//            NSLog(@"%@",error);
+//        }
+//    }];
 
     
     //    NSLog(@"%d,%d,%lu",[Longarray count],[Latarray count],(unsigned long)[namearray count]);
@@ -332,23 +341,25 @@
     
     [self.motionManager stopAccelerometerUpdates];
     
+    NSLog(@"=============================");
+    
     if (X_axiz & Z_axiz) { // show Map
         
         SharedData *shared=[SharedData sharedObj];
         shared.MapViewFirst=TRUE;
         
-        MapViewController *map=[[MapViewController alloc]initWithNibName:@"MapViewController" bundle:nil];
-       
-        
-        NSLog(@"LatArrary=======%@",Latarray);
-        
-        map.marrlatArray=Latarray;
-        map.marrlongArray=Longarray;
-        map.marrNameArray=namearray;
-        [map setHidesBottomBarWhenPushed:YES];
+        [self performSegueWithIdentifier:@"goToMapVC" sender:self];
 
-        [self.navigationController pushViewController:map animated:YES];
         
+//        MapViewController *map=[[MapViewController alloc]initWithNibName:@"MapViewController" bundle:nil];
+//        NSLog(@"LatArrary=======%@",Latarray);
+//        map.marrlatArray=Latarray;
+//        map.marrlongArray=Longarray;
+//        map.marrNameArray=namearray;
+//        [map setHidesBottomBarWhenPushed:YES];
+//
+//        [self.navigationController pushViewController:map animated:YES];
+
     }
     else{ // AR
         
@@ -367,9 +378,25 @@
     [self.navigationController pushViewController:_arViewController animated:YES];
     
 }
+-(void)showMap{
+    
+    // goToMap
+    
+    MapViewController *map=[[MapViewController alloc]initWithNibName:@"MapViewController" bundle:nil];
+    NSLog(@"LatArrary=======%@",Latarray);
+    map.marrlatArray=Latarray;
+    map.marrlongArray=Longarray;
+    map.marrNameArray=namearray;
+    [map setHidesBottomBarWhenPushed:YES];
+    
+    [self.navigationController pushViewController:map animated:YES];
+    
+}
 
 - (void)viewDidAppear:(BOOL)animated{
-    _arViewController = nil;
+    
+//    _arViewController = nil;
+    
 }
 - (BOOL)float:(float)aFloat between:(float)minValue and:(float)maxValue {
     if (aFloat >= minValue && aFloat <= maxValue) {
@@ -378,4 +405,5 @@
         return NO;
     }
 }
+
 @end
