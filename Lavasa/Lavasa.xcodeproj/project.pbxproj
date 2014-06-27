@@ -51,6 +51,8 @@
 		CEB665AD195D4317002E415B /* lavasaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB665AC195D4317002E415B /* lavasaAppDelegate.m */; };
 		CEB665B3195D4654002E415B /* AppConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB665B2195D4654002E415B /* AppConstant.m */; };
 		CEB665B6195D4A26002E415B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB665B5195D4A26002E415B /* AppDelegate.m */; };
+		CEB665B9195D5411002E415B /* PlanDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB665B8195D5411002E415B /* PlanDetailTVC.m */; };
+		CEB665BC195D5495002E415B /* sehrawat.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB665BB195D5495002E415B /* sehrawat.m */; };
 		CEBA623B19594F290070F064 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA623A19594F290070F064 /* pin.png */; };
 		CEBA623D19595C710070F064 /* pin2.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA623C19595C710070F064 /* pin2.png */; };
 		E22142BE1945980F003E9535 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E22142BD1945980F003E9535 /* Foundation.framework */; };
@@ -220,6 +222,10 @@
 		CEB665B2195D4654002E415B /* AppConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConstant.m; sourceTree = "<group>"; };
 		CEB665B4195D4A26002E415B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CEB665B5195D4A26002E415B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CEB665B7195D5411002E415B /* PlanDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanDetailTVC.h; sourceTree = "<group>"; };
+		CEB665B8195D5411002E415B /* PlanDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanDetailTVC.m; sourceTree = "<group>"; };
+		CEB665BA195D5495002E415B /* sehrawat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sehrawat.h; sourceTree = "<group>"; };
+		CEB665BB195D5495002E415B /* sehrawat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sehrawat.m; sourceTree = "<group>"; };
 		CEBA623A19594F290070F064 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
 		CEBA623C19595C710070F064 /* pin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin2.png; sourceTree = "<group>"; };
 		E22142BA1945980F003E9535 /* Lavasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lavasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -423,6 +429,8 @@
 				CEACBA33195C4CC200AA1E75 /* PlanTVC3.m */,
 				CEACBA34195C4CC200AA1E75 /* PlanTVC4.h */,
 				CEACBA35195C4CC200AA1E75 /* PlanTVC4.m */,
+				CEB665B7195D5411002E415B /* PlanDetailTVC.h */,
+				CEB665B8195D5411002E415B /* PlanDetailTVC.m */,
 			);
 			path = PlanTabVCs;
 			sourceTree = "<group>";
@@ -479,6 +487,8 @@
 		E22142B11945980F003E9535 = {
 			isa = PBXGroup;
 			children = (
+				CEB665BA195D5495002E415B /* sehrawat.h */,
+				CEB665BB195D5495002E415B /* sehrawat.m */,
 				CE84DA0E194F05AE0039720D /* Main_iPad.storyboard */,
 				CE10B101194B311100F20946 /* Main_iPhone.storyboard */,
 				E27A1F7C19472353001F9A3C /* Constants.h */,
@@ -1008,6 +1018,7 @@
 			files = (
 				E27E870E1949D87E008509EC /* UIView+Subviews.m in Sources */,
 				CEB211C11957FD7D005C00DD /* RadarViewPortView.m in Sources */,
+				CEB665BC195D5495002E415B /* sehrawat.m in Sources */,
 				E27A1F6319471D2D001F9A3C /* SharedData.m in Sources */,
 				CEB211C01957FD7D005C00DD /* Radar.m in Sources */,
 				CEACBA3C195C4CF900AA1E75 /* PlanTVCell.m in Sources */,
@@ -1033,6 +1044,7 @@
 				CE10B100194B30A500F20946 /* ReportIncidentTVC.m in Sources */,
 				CEB211BA1957FD7D005C00DD /* ARCoordinate.m in Sources */,
 				E22143431945C283003E9535 /* MBProgressHUD.m in Sources */,
+				CEB665B9195D5411002E415B /* PlanDetailTVC.m in Sources */,
 				E27E87061949D87E008509EC /* DLStarRatingControl.m in Sources */,
 				E22143201945C107003E9535 /* FMDatabasePool.m in Sources */,
 				E22143211945C107003E9535 /* FMDatabaseQueue.m in Sources */,
