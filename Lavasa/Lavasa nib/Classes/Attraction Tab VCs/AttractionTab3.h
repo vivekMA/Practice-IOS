@@ -23,7 +23,8 @@
     NSMutableArray *ArrayData;
     int NumCellCount,Datacount;
     ARViewController    *_arViewController;
-    
+    NSMutableArray *Places;
+
     // below are the objects for AR
     CLLocationManager *locationManager;
     CLLocation *location;

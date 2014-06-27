@@ -62,8 +62,7 @@ ARViewController    *_arViewController;
     marker.map = mapView;
 
     for (int i=0; i<self.AllPlaces.count; i++) {
-        
-        
+       
         Place *place=[self.AllPlaces objectAtIndex:i];
         
         GMSMarker *marker = [[GMSMarker alloc] init];
