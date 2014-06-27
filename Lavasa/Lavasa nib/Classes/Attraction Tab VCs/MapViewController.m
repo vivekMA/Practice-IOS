@@ -36,18 +36,6 @@ ARViewController    *_arViewController;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    
-    
-    
-//    UIButton *backButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 60.0f, 30.0f)];
-//    //    UIImage *backImage = [[UIImage imageNamed:@"back_button_normal.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 12.0f, 0, 12.0f)];
-//    //    [backButton setBackgroundImage:backImage  forState:UIControlStateNormal];
-//    [backButton setTitle:@"Back" forState:UIControlStateNormal];
-//    [backButton addTarget:self action:@selector(popBack) forControlEvents:UIControlEventTouchUpInside];
-//    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-//    self.navigationItem.leftBarButtonItem = backButtonItem;
-    
-//    
     SharedData *shared=[SharedData sharedObj];
      CLLocation *lastLocation = [shared.arrLocation lastObject];
 
@@ -76,23 +64,6 @@ ARViewController    *_arViewController;
 //    marker.animated = YES; not found currently
 
 }
-
-//-(void) popBack {
-//    
-//    NSArray* tempVCA = [self.navigationController viewControllers];
-//    
-//    for(UIViewController *tempVC in tempVCA)
-//    {
-//        if([tempVC isKindOfClass:[ARViewController class]])
-//        {
-//            [tempVC removeFromParentViewController];
-//            
-//        }
-//    }
-//    self.navigationItem.leftBarButtonItem=nil;
-//
-//    [self.navigationController popViewControllerAnimated:YES];
-//}
 -(void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];

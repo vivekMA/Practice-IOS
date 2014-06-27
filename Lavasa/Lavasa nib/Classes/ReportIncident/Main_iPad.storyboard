@@ -373,7 +373,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ft-cU-gGr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3076" y="58"/>
+            <point key="canvasLocation" x="2852" y="1066"/>
         </scene>
         <!--Attraction Tab3 - Root View Controller-->
         <scene sceneID="ZvV-rr-IAb">
@@ -989,7 +989,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="895-wr-Z3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2012" y="2732"/>
+            <point key="canvasLocation" x="2812" y="2733"/>
         </scene>
         <!--Detail Tab2-->
         <scene sceneID="aUV-RP-cOb">
@@ -1043,21 +1043,15 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czW-y5-JAq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3915" y="2754"/>
+            <point key="canvasLocation" x="4995" y="2725"/>
         </scene>
-        <!--MapVC - Map-->
+        <!--Detail MapVC - Map-->
         <scene sceneID="V1K-wS-NgU">
             <objects>
-                <viewController id="w3x-it-1nW" customClass="MapVC" sceneMemberID="viewController">
+                <viewController id="w3x-it-1nW" customClass="DetailMapVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NtV-y1-FLp">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="nR4-J5-Min">
-                                <rect key="frame" x="0.0" y="65" width="768" height="959"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </mapView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="562-Wg-M8L">
@@ -1070,7 +1064,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Niu-Zj-JD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3960" y="5058"/>
+            <point key="canvasLocation" x="5040" y="5029"/>
         </scene>
         <!--Detail Tab1-->
         <scene sceneID="TER-dq-4qh">
@@ -1175,7 +1169,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dZU-Hz-vQN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3905" y="1560"/>
+            <point key="canvasLocation" x="4985" y="1531"/>
         </scene>
         <!--Navigation Controller - Gallery-->
         <scene sceneID="KZQ-lJ-lSq">
@@ -1194,7 +1188,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SIA-yb-77O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3029" y="2762"/>
+            <point key="canvasLocation" x="4109" y="2733"/>
         </scene>
         <!--Navigation Controller - Reviews-->
         <scene sceneID="YEZ-EE-7cY">
@@ -1213,7 +1207,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJi-e0-hJ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3050" y="3890"/>
+            <point key="canvasLocation" x="4130" y="3861"/>
         </scene>
         <!--Navigation Controller - Map-->
         <scene sceneID="MiA-UU-9kd">
@@ -1233,7 +1227,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zVj-s3-4PE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3034" y="5082"/>
+            <point key="canvasLocation" x="4114" y="5053"/>
         </scene>
         <!--Navigation Controller - Detail-->
         <scene sceneID="PDD-aZ-Fve">
@@ -1252,7 +1246,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6A-W5-i7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3029" y="1560"/>
+            <point key="canvasLocation" x="4109" y="1531"/>
         </scene>
         <!--ReviewVC - Reviews-->
         <scene sceneID="qXR-uE-Whw">
@@ -1355,7 +1349,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AoD-sI-s9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3955" y="3944"/>
+            <point key="canvasLocation" x="5035" y="3915"/>
         </scene>
         <!--Add ReviewVC-->
         <scene sceneID="cTj-qL-OdR">
@@ -1446,7 +1440,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYl-F5-Phm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4825" y="3944"/>
+            <point key="canvasLocation" x="5905" y="3915"/>
         </scene>
         <!--Image PopupvVC-->
         <scene sceneID="smG-ng-RTY">
@@ -1480,7 +1474,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4923" y="2754"/>
+            <point key="canvasLocation" x="6003" y="2725"/>
         </scene>
         <!--Navigation Controller - Plan-->
         <scene sceneID="UFD-aa-iIR">
