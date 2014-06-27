@@ -28,16 +28,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:lastLocation.coordinate.latitude
-    //                                                            longitude:lastLocation.coordinate.longitude
-    //                                                                 zoom:15];
-    //    GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    //
-    //    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(lastLocation.coordinate.latitude, lastLocation.coordinate.longitude);
-    //    GMSMarker *marker = [GMSMarker markerWithPosition:position];
-    //    marker.title = @"I am here";
-    //    marker.map = mapView;
-    //
+//    SharedData *shared=[SharedData sharedObj];
+//    CLLocation *lastLocation = [shared.arrLocation lastObject];
+    
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:28.6100
+                                                               longitude:77.2300
+                                                                     zoom:15];
+    GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    
+    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(28.6100, 77.2300);
+    GMSMarker *marker = [GMSMarker markerWithPosition:position];
+//   marker.icon = [UIImage imageNamed:@"food_map.png"];
+    marker.map = mapView;
+    self.view = mapView;
+    mapView.delegate=self;
     //    for (int i=0; i<self.AllPlaces.count; i++) {
     //
     //        Place *place=[self.AllPlaces objectAtIndex:i];
@@ -52,6 +56,15 @@
     //
     
 }
+-(BOOL) mapView:(GMSMapView *) mapView didTapMarker:(GMSMarker *)marker
+{
+    NSLog(@"try");
+    return YES;
+}
+- (void) mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate{
+    
+}
+
 
 - (void)didReceiveMemoryWarning
 {

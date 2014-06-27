@@ -1045,10 +1045,10 @@
             </objects>
             <point key="canvasLocation" x="4995" y="2725"/>
         </scene>
-        <!--Detail MapVC - Map-->
+        <!--Map DetailVC - Map-->
         <scene sceneID="V1K-wS-NgU">
             <objects>
-                <viewController id="w3x-it-1nW" customClass="DetailMapVC" sceneMemberID="viewController">
+                <viewController id="w3x-it-1nW" customClass="MapDetailVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NtV-y1-FLp">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
