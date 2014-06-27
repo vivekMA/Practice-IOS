@@ -50,6 +50,7 @@
 		CEB665A8195D4028002E415B /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB665A7195D4028002E415B /* GoogleMaps.framework */; };
 		CEB665AD195D4317002E415B /* lavasaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB665AC195D4317002E415B /* lavasaAppDelegate.m */; };
 		CEB665B3195D4654002E415B /* AppConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB665B2195D4654002E415B /* AppConstant.m */; };
+		CEB665B6195D4A26002E415B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB665B5195D4A26002E415B /* AppDelegate.m */; };
 		CEBA623B19594F290070F064 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA623A19594F290070F064 /* pin.png */; };
 		CEBA623D19595C710070F064 /* pin2.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA623C19595C710070F064 /* pin2.png */; };
 		E22142BE1945980F003E9535 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E22142BD1945980F003E9535 /* Foundation.framework */; };
@@ -217,6 +218,8 @@
 		CEB665AC195D4317002E415B /* lavasaAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lavasaAppDelegate.m; sourceTree = "<group>"; };
 		CEB665B1195D4654002E415B /* AppConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
 		CEB665B2195D4654002E415B /* AppConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConstant.m; sourceTree = "<group>"; };
+		CEB665B4195D4A26002E415B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CEB665B5195D4A26002E415B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CEBA623A19594F290070F064 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
 		CEBA623C19595C710070F064 /* pin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin2.png; sourceTree = "<group>"; };
 		E22142BA1945980F003E9535 /* Lavasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lavasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -467,6 +470,8 @@
 				CEB665AC195D4317002E415B /* lavasaAppDelegate.m */,
 				CEB665B1195D4654002E415B /* AppConstant.h */,
 				CEB665B2195D4654002E415B /* AppConstant.m */,
+				CEB665B4195D4A26002E415B /* AppDelegate.h */,
+				CEB665B5195D4A26002E415B /* AppDelegate.m */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -1037,6 +1042,7 @@
 				CEB665AD195D4317002E415B /* lavasaAppDelegate.m in Sources */,
 				E2A8EC971951685A00723FC6 /* DetailTab4.m in Sources */,
 				E22CDF71195AFA8800D8B1D1 /* ReviewVC.m in Sources */,
+				CEB665B6195D4A26002E415B /* AppDelegate.m in Sources */,
 				E27E87071949D87E008509EC /* DLStarView.m in Sources */,
 				E221430319459A46003E9535 /* MenuVC.m in Sources */,
 				E221432B1945C230003E9535 /* XMLReader.m in Sources */,
