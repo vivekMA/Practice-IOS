@@ -13,6 +13,7 @@
 @end
 
 @implementation PlanDetailTVC
+@synthesize PackegeId;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -25,6 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+  
+    
+    
 }
 - (void)didReceiveMemoryWarning
 {

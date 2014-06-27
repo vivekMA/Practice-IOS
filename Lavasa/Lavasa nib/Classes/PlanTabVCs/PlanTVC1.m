@@ -8,6 +8,9 @@
 
 #import "PlanTVC1.h"
 #import "PlanTVCell.h"
+#import "AppDataBase.h"
+#import "FMDatabase.h"
+#import "PlanDetailTVC.h"
 @interface PlanTVC1 ()
 
 @end
@@ -27,7 +30,7 @@
 {
     [super viewDidLoad];
     
-  self.title=@"Plan 1";
+    self.title=@"Plan 1";
     self.navigationController.navigationBar.hidden=NO;
     SWRevealViewController *revealController = [self revealViewController];
     
@@ -36,6 +39,20 @@
     ButtonMenu.tintColor=[UIColor blackColor];
     self.navigationItem.leftBarButtonItem = ButtonMenu;
 
+    
+    ArrayData=[[NSMutableArray alloc]init];
+    AppDataBase *DBM=[AppDataBase database];
+    
+  FMResultSet *Result =[DBM reportIncidentWithCatName:@"" LocationName:@"" Description:@"" ImageUrl:@"" isSync:0];
+    while([Result next]) {
+        NSLog(@"%@",[Result stringForColumn:@"name"]);
+        
+        [ArrayData addObject:[[NSDictionary alloc]initWithObjectsAndKeys:[Result stringForColumn:@"id"],@"id",[Result stringForColumn:@"name"],@"name",[Result stringForColumn:@"duration"],@"duration",nil]];
+        
+        NSLog(@"%@",ArrayData);
+
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,7 +64,7 @@
 #pragma mark - UITableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return 1;
+	return ArrayData.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -66,32 +83,41 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath{
  
     
-//    PlanTVCell *PlanCell = (PlanTVCell *) cell;
-//    PlanCell.LblName.text=[[ArrayData objectAtIndex:indexPath.row] objectForKey:@"name"];
-//    
-//     PlanCell.LblPrice.text=[[ArrayData objectAtIndex:indexPath.row] objectForKey:@"name"];
-//    
-//     PlanCell.LblDescription.text=[[ArrayData objectAtIndex:indexPath.row] objectForKey:@"name"];
-//    
-//    PlanCell.LblDuration.text=[[ArrayData objectAtIndex:indexPath.row] objectForKey:@"address"];
-//    [PlanCell.ImgViewCat setImageWithURL:[NSURL URLWithString:[[ArrayData objectAtIndex:indexPath.row] objectForKey:@"icon"]] placeholderImage:[UIImage imageNamed:@"loading.png"]];
-//    PlanCell.btnBook.tag=indexPath.row;
-//    
-//    
-//    //  DLStarRatingControl *customNumberOfStars = (DLStarRatingControl *)[cell viewWithTag:1001];
-//    PlanCell.ImgStar.rating = [[[ArrayData objectAtIndex:indexPath.row] objectForKey:@"overall_rating"] floatValue];
+    PlanTVCell *PlanCell = (PlanTVCell *) cell;
+    PlanCell.LblName.text=[[ArrayData objectAtIndex:indexPath.row] objectForKey:@"name"];
     
+  //   PlanCell.LblPrice.text=[[ArrayData objectAtIndex:indexPath.row] objectForKey:@"name"];
+    
+  //   PlanCell.LblDescription.text=[[ArrayData objectAtIndex:indexPath.row] objectForKey:@"duration"];
+    
+    PlanCell.LblDuration.text=[NSString stringWithFormat:@"Dutration: %@",[[ArrayData objectAtIndex:indexPath.row] objectForKey:@"duration"]];
+//    [PlanCell.ImgViewCat setImageWithURL:[NSURL URLWithString:[[ArrayData objectAtIndex:indexPath.row] objectForKey:@"icon"]] placeholderImage:[UIImage imageNamed:@"loading.png"]];
+    PlanCell.BtnBook.tag=indexPath.row;
+    
+    
+    //  DLStarRatingControl *customNumberOfStars = (DLStarRatingControl *)[cell viewWithTag:1001];
+   
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"GoToPlanDetail"])
+    {
+        PlanDetailTVC *pdvc= segue.destinationViewController;
+        NSLog(@"%@", [[ArrayData objectAtIndex:[sender tag]]objectForKey:@"id"]);
+
+        pdvc.PackegeId=[NSString stringWithFormat:@"%@",[[ArrayData objectAtIndex:[sender tag]]objectForKey:@"id"]];
+//        NSLog(@"%@",[ArrayData objectAtIndex:[sender tag]]);
+    
+    }
 }
 -(void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath*)indexPath
 {
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
 }
 - (void)reloadRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation
 {
-    
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

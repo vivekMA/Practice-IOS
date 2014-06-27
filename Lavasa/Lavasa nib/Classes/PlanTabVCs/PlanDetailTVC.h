@@ -10,4 +10,5 @@
 
 @interface PlanDetailTVC : UITableViewController
 
+@property (copy, nonatomic) NSString *PackegeId;
 @end

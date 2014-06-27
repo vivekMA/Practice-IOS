@@ -217,11 +217,11 @@
                   symbolName = "-[AttractionTab3 motionManager]"
                   moduleName = "Lavasa"
                   urlString = "file:///Users/vivek/LavasaNew/Lavasa/Lavasa%20nib/Classes/Attraction%20Tab%20VCs/AttractionTab3.h"
-                  timestampString = "425546112.504121"
+                  timestampString = "425566215.332303"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
                   offsetFromSymbolStart = "24">
                </Location>
                <Location
@@ -231,11 +231,11 @@
                   symbolName = "-[AttractionTab3 setMotionManager:]"
                   moduleName = "Lavasa"
                   urlString = "file:///Users/vivek/LavasaNew/Lavasa/Lavasa%20nib/Classes/Attraction%20Tab%20VCs/AttractionTab3.h"
-                  timestampString = "425546112.504369"
+                  timestampString = "425566215.332481"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
                   offsetFromSymbolStart = "31">
                </Location>
             </Locations>
@@ -318,6 +318,22 @@
             startingLineNumber = "48"
             endingLineNumber = "48"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Lavasa nib/Classes/PlanTabVCs/PlanDetailTVC.m"
+            timestampString = "425566123.323328"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
