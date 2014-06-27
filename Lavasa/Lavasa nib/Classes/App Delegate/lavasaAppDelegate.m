@@ -1,10 +1,8 @@
 //
 //  lavasaAppDelegate.m
 //  Lavasa nib
-//
 //  Created by Vivek Yadav on 6/9/14.
 //  Copyright (c) 2014 Mediaagility. All rights reserved.
-//
 
 #import "lavasaAppDelegate.h"
 #import "AttractionTab1.h"
@@ -16,12 +14,11 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "Constants.h"
 
-
 @implementation lavasaAppDelegate
+
 @synthesize navigationController,WINDOW;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
 //    static NSString * const kClientId = @"YOUR_CLIENT_ID";
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -51,17 +48,14 @@
                                           [self sessionStateChanged:session state:state error:error];
                                       }];
          [self AddSlidingWindow];
-      
-        // If there's no cached session, we will show a login button
     }else
     {
          LoginVC *LoginViewController ;
-          LoginViewController = [[LoginVC alloc] init];
-             self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:LoginViewController];
+         LoginViewController = [[LoginVC alloc] init];
+         self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:LoginViewController];
     }
     [self.window makeKeyAndVisible];
     [self createCopyOfDatabaseIfNeeded];
-    
     return YES;
 }
 -(void)AddSlidingWindow

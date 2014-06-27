@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lavasa nib/Classes/App Delegate/lavasaAppDelegate.m"
-            timestampString = "424693227.877873"
+            timestampString = "425541362.228788"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "-createCopyOfDatabaseIfNeeded"
             landmarkType = "5">
          </BreakpointContent>
