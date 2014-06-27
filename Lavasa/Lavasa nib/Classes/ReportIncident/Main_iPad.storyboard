@@ -655,7 +655,7 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <segue destination="1MR-Pm-dwZ" kind="push" id="Q5u-Bu-ZyW"/>
+                                                <segue destination="1MR-Pm-dwZ" kind="push" identifier="GoToPlanDetail" id="Q5u-Bu-ZyW"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p6a-2w-WzD">
@@ -671,14 +671,8 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y6R-Q1-YQD">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y6R-Q1-YQD">
                                             <rect key="frame" x="33" y="251" width="593" height="43"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yDb-x4-biR">
-                                            <rect key="frame" x="572" y="220" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
@@ -691,7 +685,6 @@
                                     <outlet property="LblDescription" destination="y6R-Q1-YQD" id="Ofn-Bb-tBA"/>
                                     <outlet property="LblDuration" destination="k2o-uP-aP5" id="6eG-Tt-PNp"/>
                                     <outlet property="LblName" destination="p6a-2w-WzD" id="7VH-cS-Jma"/>
-                                    <outlet property="LblPrice" destination="yDb-x4-biR" id="qtG-MB-1IP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -707,10 +700,10 @@
             </objects>
             <point key="canvasLocation" x="462" y="6518"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Plan DetailTVC-->
         <scene sceneID="vxn-bb-YBP">
             <objects>
-                <tableViewController id="1MR-Pm-dwZ" sceneMemberID="viewController">
+                <tableViewController id="1MR-Pm-dwZ" customClass="PlanDetailTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="200" sectionHeaderHeight="50" sectionFooterHeight="10" id="PC1-O3-nBg">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

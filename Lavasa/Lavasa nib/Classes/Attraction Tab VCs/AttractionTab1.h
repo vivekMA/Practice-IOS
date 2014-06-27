@@ -43,6 +43,8 @@
     CLLocationCoordinate2D coordinateLocal;
 
     NSArray *LocationsUpdated;
+    
+
 
 }
 - (IBAction)MapButtonClicked:(id)sender;

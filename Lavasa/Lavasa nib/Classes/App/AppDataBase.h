@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "FMDatabase.h"
 @interface AppDataBase : NSObject
 
 
 
 +(AppDataBase *)database;
 
--(BOOL)reportIncidentWithCatName:(NSString *)categoryName LocationName:(NSString *)Loci Description:(NSString *)desc ImageUrl:(NSString *)ImgUrl isSync:(int)Syn; // zero= false
+//-(BOOL)reportIncidentWithCatName:(NSString *)categoryName LocationName:(NSString *)Loci Description:(NSString *)desc ImageUrl:(NSString *)ImgUrl isSync:(int)Syn; // zero= false
 
-
+-(FMResultSet *)reportIncidentWithCatName:(NSString *)categoryName LocationName:(NSString *)Loci Description:(NSString *)desc ImageUrl:(NSString *)ImgUrl  isSync:(int)Syn;
 
 @end

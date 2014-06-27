@@ -49,7 +49,6 @@
 		CEB665AD195D4317002E415B /* lavasaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB665AC195D4317002E415B /* lavasaAppDelegate.m */; };
 		CEB665B3195D4654002E415B /* AppConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB665B2195D4654002E415B /* AppConstant.m */; };
 		CEB665B6195D4A26002E415B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB665B5195D4A26002E415B /* AppDelegate.m */; };
-		CEB665C4195D6E2C002E415B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB665C3195D6E2C002E415B /* FacebookSDK.framework */; };
 		CEB665C6195D6E63002E415B /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB665C5195D6E63002E415B /* GoogleMaps.framework */; };
 		CEB665CF195D78E4002E415B /* AppDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB665CE195D78E4002E415B /* AppDataBase.m */; };
 		CEB665D2195D7D36002E415B /* MapDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB665D1195D7D36002E415B /* MapDetailVC.m */; };
@@ -140,6 +139,7 @@
 		E2DB6738195D51CC00BE5483 /* PlanDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB6737195D51CC00BE5483 /* PlanDetailTVC.m */; };
 		E2DB673B195D51E600BE5483 /* PlanDetailTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB673A195D51E600BE5483 /* PlanDetailTVCell.m */; };
 		E2DB6740195D546F00BE5483 /* yadav.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB673F195D546F00BE5483 /* yadav.m */; };
+		E2DB6742195D84B500BE5483 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2DB6741195D84B500BE5483 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,7 +222,6 @@
 		CEB665B2195D4654002E415B /* AppConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConstant.m; sourceTree = "<group>"; };
 		CEB665B4195D4A26002E415B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CEB665B5195D4A26002E415B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CEB665C3195D6E2C002E415B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "Lavasa nib/Third Party APIs/External framework/FacebookSDK.framework"; sourceTree = "<group>"; };
 		CEB665C5195D6E63002E415B /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		CEB665CD195D78E4002E415B /* AppDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDataBase.h; sourceTree = "<group>"; };
 		CEB665CE195D78E4002E415B /* AppDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDataBase.m; sourceTree = "<group>"; };
@@ -363,6 +362,7 @@
 		E2DB673A195D51E600BE5483 /* PlanDetailTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanDetailTVCell.m; sourceTree = "<group>"; };
 		E2DB673E195D546F00BE5483 /* yadav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yadav.h; sourceTree = "<group>"; };
 		E2DB673F195D546F00BE5483 /* yadav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = yadav.m; sourceTree = "<group>"; };
+		E2DB6741195D84B500BE5483 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "Lavasa nib/Third Party APIs/External framework/FacebookSDK.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -391,7 +391,7 @@
 				E27A1F6D1947224D001F9A3C /* AddressBook.framework in Frameworks */,
 				E22143241945C140003E9535 /* libsqlite3.0.dylib in Frameworks */,
 				E27A1F6B19472233001F9A3C /* GooglePlus.framework in Frameworks */,
-				CEB665C4195D6E2C002E415B /* FacebookSDK.framework in Frameworks */,
+				E2DB6742195D84B500BE5483 /* FacebookSDK.framework in Frameworks */,
 				CEB665C6195D6E63002E415B /* GoogleMaps.framework in Frameworks */,
 				E22142C21945980F003E9535 /* UIKit.framework in Frameworks */,
 				E22142BE1945980F003E9535 /* Foundation.framework in Frameworks */,
@@ -522,8 +522,8 @@
 		E22142BC1945980F003E9535 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E2DB6741195D84B500BE5483 /* FacebookSDK.framework */,
 				CEB665C5195D6E63002E415B /* GoogleMaps.framework */,
-				CEB665C3195D6E2C002E415B /* FacebookSDK.framework */,
 				CEB343DA195A9B070047E6C4 /* CoreData.framework */,
 				CEB343D6195A92380047E6C4 /* OpenGLES.framework */,
 				CEB343D4195A92280047E6C4 /* libz.dylib */,
@@ -1218,6 +1218,11 @@
 					APIs/External,
 					framework,
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Lavasa",
+					nib/Third,
+					Party,
+					APIs/External,
+					framework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Lavasa nib/Lavasa-Prefix.pch";
@@ -1244,6 +1249,11 @@
 					APIs/External,
 					framework,
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Lavasa",
+					nib/Third,
+					Party,
+					APIs/External,
+					framework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Lavasa nib/Lavasa-Prefix.pch";
