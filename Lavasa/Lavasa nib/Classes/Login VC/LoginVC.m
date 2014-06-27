@@ -7,7 +7,6 @@
 //
 
 #import "LoginVC.h"
-#import "lavasaAppDelegate.h"
 #import "AttractionTab1.h"
 #import "MenuVC.h"
 #import "Constants.h"

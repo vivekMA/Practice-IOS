@@ -136,6 +136,9 @@
 		E2A8EC941951683400723FC6 /* DetailTab3.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A8EC931951683400723FC6 /* DetailTab3.m */; };
 		E2A8EC971951685A00723FC6 /* DetailTab4.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A8EC961951685A00723FC6 /* DetailTab4.m */; };
 		E2A8EC9919516E5900723FC6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A8EC9819516E5900723FC6 /* MapKit.framework */; };
+		E2DB672F195D2EBD00BE5483 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2DB672E195D2EBD00BE5483 /* FacebookSDK.framework */; };
+		E2DB6732195D43D800BE5483 /* PlanDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB6731195D43D800BE5483 /* PlanDetailTVC.m */; };
+		E2DB6735195D444200BE5483 /* PlanDetailTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB6734195D444200BE5483 /* PlanDetailTVCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -351,6 +354,11 @@
 		E2A8EC951951685A00723FC6 /* DetailTab4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailTab4.h; path = "Lavasa nib/Classes/DetailTab VCs/DetailTab4.h"; sourceTree = SOURCE_ROOT; };
 		E2A8EC961951685A00723FC6 /* DetailTab4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailTab4.m; path = "Lavasa nib/Classes/DetailTab VCs/DetailTab4.m"; sourceTree = SOURCE_ROOT; };
 		E2A8EC9819516E5900723FC6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E2DB672E195D2EBD00BE5483 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "Lavasa nib/Third Party APIs/External framework/FacebookSDK.framework"; sourceTree = "<group>"; };
+		E2DB6730195D43D800BE5483 /* PlanDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanDetailTVC.h; sourceTree = "<group>"; };
+		E2DB6731195D43D800BE5483 /* PlanDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanDetailTVC.m; sourceTree = "<group>"; };
+		E2DB6733195D444200BE5483 /* PlanDetailTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanDetailTVCell.h; sourceTree = "<group>"; };
+		E2DB6734195D444200BE5483 /* PlanDetailTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanDetailTVCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -379,8 +387,13 @@
 				E27A1F6D1947224D001F9A3C /* AddressBook.framework in Frameworks */,
 				E22143241945C140003E9535 /* libsqlite3.0.dylib in Frameworks */,
 				E27A1F6B19472233001F9A3C /* GooglePlus.framework in Frameworks */,
+<<<<<<< HEAD
+				E2DB672F195D2EBD00BE5483 /* FacebookSDK.framework in Frameworks */,
+				CEB343C9195A916B0047E6C4 /* GoogleMaps.framework in Frameworks */,
+=======
 				CEB665A6195D400D002E415B /* FacebookSDK.framework in Frameworks */,
 				CEB665A8195D4028002E415B /* GoogleMaps.framework in Frameworks */,
+>>>>>>> afa5cc5c0030885b6c7adc554bb6f1be85c0b256
 				E22142C21945980F003E9535 /* UIKit.framework in Frameworks */,
 				E22142BE1945980F003E9535 /* Foundation.framework in Frameworks */,
 			);
@@ -423,6 +436,8 @@
 				CEACBA33195C4CC200AA1E75 /* PlanTVC3.m */,
 				CEACBA34195C4CC200AA1E75 /* PlanTVC4.h */,
 				CEACBA35195C4CC200AA1E75 /* PlanTVC4.m */,
+				E2DB6730195D43D800BE5483 /* PlanDetailTVC.h */,
+				E2DB6731195D43D800BE5483 /* PlanDetailTVC.m */,
 			);
 			path = PlanTabVCs;
 			sourceTree = "<group>";
@@ -504,8 +519,12 @@
 		E22142BC1945980F003E9535 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+				E2DB672E195D2EBD00BE5483 /* FacebookSDK.framework */,
+=======
 				CEB665A7195D4028002E415B /* GoogleMaps.framework */,
 				CEB665A5195D400D002E415B /* FacebookSDK.framework */,
+>>>>>>> afa5cc5c0030885b6c7adc554bb6f1be85c0b256
 				CEB343DA195A9B070047E6C4 /* CoreData.framework */,
 				CEB343D6195A92380047E6C4 /* OpenGLES.framework */,
 				CEB343D4195A92280047E6C4 /* libz.dylib */,
@@ -760,6 +779,8 @@
 				E26F017C1952C51900E3F714 /* DetailTab2Cell.m */,
 				E22CDF72195AFACC00D8B1D1 /* ReviewTableCell.h */,
 				E22CDF73195AFACC00D8B1D1 /* ReviewTableCell.m */,
+				E2DB6733195D444200BE5483 /* PlanDetailTVCell.h */,
+				E2DB6734195D444200BE5483 /* PlanDetailTVCell.m */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -1009,6 +1030,7 @@
 				E27E870E1949D87E008509EC /* UIView+Subviews.m in Sources */,
 				CEB211C11957FD7D005C00DD /* RadarViewPortView.m in Sources */,
 				E27A1F6319471D2D001F9A3C /* SharedData.m in Sources */,
+				E2DB6732195D43D800BE5483 /* PlanDetailTVC.m in Sources */,
 				CEB211C01957FD7D005C00DD /* Radar.m in Sources */,
 				CEACBA3C195C4CF900AA1E75 /* PlanTVCell.m in Sources */,
 				CEACBA38195C4CC200AA1E75 /* PlanTVC3.m in Sources */,
@@ -1060,6 +1082,7 @@
 				CEB211BF1957FD7D005C00DD /* MarkerView.m in Sources */,
 				CEB211BC1957FD7D005C00DD /* ARKit.m in Sources */,
 				E26F01891953F66300E3F714 /* ImagePopupvVC.m in Sources */,
+				E2DB6735195D444200BE5483 /* PlanDetailTVCell.m in Sources */,
 				E221433F1945C255003E9535 /* UIImageView+WebCache.m in Sources */,
 				CEB211DD195809C3005C00DD /* PlaceAnnotation.m in Sources */,
 				E221432A1945C230003E9535 /* webservice.m in Sources */,
@@ -1194,6 +1217,34 @@
 					APIs/External,
 					framework,
 					"$(PROJECT_DIR)",
+<<<<<<< HEAD
+					"$(PROJECT_DIR)/Lavasa",
+					nib/Third,
+					Party,
+					APIs/External,
+					framework,
+					"$(PROJECT_DIR)/Lavasa",
+					nib/Third,
+					Party,
+					APIs/External,
+					framework,
+					"$(PROJECT_DIR)/Lavasa",
+					nib/Third,
+					Party,
+					APIs/External,
+					framework,
+					"$(PROJECT_DIR)/Lavasa",
+					nib/Third,
+					Party,
+					APIs/External,
+					framework,
+					"$(PROJECT_DIR)/Lavasa",
+					nib/Third,
+					Party,
+					APIs/External,
+					framework,
+=======
+>>>>>>> afa5cc5c0030885b6c7adc554bb6f1be85c0b256
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Lavasa nib/Lavasa-Prefix.pch";
@@ -1220,6 +1271,34 @@
 					APIs/External,
 					framework,
 					"$(PROJECT_DIR)",
+<<<<<<< HEAD
+					"$(PROJECT_DIR)/Lavasa",
+					nib/Third,
+					Party,
+					APIs/External,
+					framework,
+					"$(PROJECT_DIR)/Lavasa",
+					nib/Third,
+					Party,
+					APIs/External,
+					framework,
+					"$(PROJECT_DIR)/Lavasa",
+					nib/Third,
+					Party,
+					APIs/External,
+					framework,
+					"$(PROJECT_DIR)/Lavasa",
+					nib/Third,
+					Party,
+					APIs/External,
+					framework,
+					"$(PROJECT_DIR)/Lavasa",
+					nib/Third,
+					Party,
+					APIs/External,
+					framework,
+=======
+>>>>>>> afa5cc5c0030885b6c7adc554bb6f1be85c0b256
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Lavasa nib/Lavasa-Prefix.pch";

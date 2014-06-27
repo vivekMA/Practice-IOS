@@ -14,6 +14,7 @@
 #import <CoreMotion/CoreMotion.h>
 #import "SharedData.h"
 #import "MapViewController.h"
+
 @interface AttractionTab2 : UITableViewController<ARLocationDelegate,CLLocationManagerDelegate,NSXMLParserDelegate>
 
 {
@@ -23,6 +24,8 @@
     int NumCellCount,Datacount;
     ARViewController    *_arViewController;
     
+    NSMutableArray *Places;
+
     // below are the objects for AR
     CLLocationManager *locationManager;
     CLLocation *location;

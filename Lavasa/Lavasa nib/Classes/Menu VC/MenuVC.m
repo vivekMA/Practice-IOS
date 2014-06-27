@@ -7,7 +7,7 @@
 //
 #import "MenuVC.h"
 #import "ReportIncidentTVC.h"
-#import "lavasaAppDelegate.h"
+#import "AppDelegate.h"
 #import "loginVC.h"
 #import "AttractionTabVC.h"
 #import "PlanTabVC.h"
@@ -104,7 +104,7 @@ return [ArraySectionTitle count];
     
     }else if (gestureRecognizer.view.tag==5)
     {
-        lavasaAppDelegate *appDelegate = (lavasaAppDelegate *)[[UIApplication sharedApplication] delegate];
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         LoginVC *login=[[LoginVC alloc]init];
         appDelegate.self.window.rootViewController=[[UINavigationController alloc]initWithRootViewController:login];
        

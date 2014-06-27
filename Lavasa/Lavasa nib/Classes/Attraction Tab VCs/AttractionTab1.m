@@ -15,18 +15,13 @@
 #import "DetailTabVC.h"
 #import "PlacesLoader.h"
 #import "Place.h"
-
+#import "AppConstant.h"
 
 
 #define KCellDisplay 0;
 #define KSelectedCat @"food"
 
-NSString * const kNameKey = @"name";
-NSString * const kReferenceKey = @"reference";
-NSString * const kAddressKey = @"vicinity";
-NSString * const kLatiudeKeypath = @"geometry.location.lat";
-NSString * const kLongitudeKeypath = @"geometry.location.lng";
-NSString * const kRating = @"rating";
+
 
 @interface AttractionTab1 ()
 
@@ -250,7 +245,7 @@ NSString * const kRating = @"rating";
                 
                 for(NSDictionary *resultsDict in places) {
                     
-                    CLLocation *location2 = [[CLLocation alloc] initWithLatitude:[[resultsDict valueForKeyPath:kLatiudeKeypath] floatValue] longitude:[[resultsDict valueForKeyPath:kLongitudeKeypath] floatValue]];
+                CLLocation *location2 = [[CLLocation alloc] initWithLatitude:[[resultsDict valueForKeyPath:kLatiudeKeypath] floatValue] longitude:[[resultsDict valueForKeyPath:kLongitudeKeypath] floatValue]];
                     NSString *rating=@"";
 					
                     if ([resultsDict objectForKey:kRating]){
@@ -261,7 +256,7 @@ NSString * const kRating = @"rating";
                     [Places addObject:currentPlace];
                 }
                 
-                
+         
             }
             else{
         NSLog(@"?????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????");
@@ -280,65 +275,65 @@ NSString * const kRating = @"rating";
     
 }
 
--(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
-	[webData setLength: 0];
-}
--(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
-	[webData appendData:data];
-}
--(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
-    
-    //  [ShowAlert showMyAlert:@"Network Alert" :@"Slow Network Connection or Error in Network"];
-    NSLog(@"didFailWithError");
-    objhud.hidden=YES;
-
-    NSLog(@"%@", [error localizedDescription]);
-
-}
--(void)connectionDidFinishLoading:(NSURLConnection *)connection{
-	[self startParshing];
-}
--(void)startParshing
-{
-    NSXMLParser* parser = [[NSXMLParser alloc] initWithData:webData];
-	[parser setDelegate:self];
-	[parser setShouldProcessNamespaces:NO];
-    [parser setShouldReportNamespacePrefixes:NO];
-    [parser setShouldResolveExternalEntities:NO];
-	[parser parse];
-}
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
-	currentData=@"";
-}
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-	currentData = [[currentData stringByAppendingString:string] mutableCopy];
-}
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
-    
-    if( [elementName isEqualToString:@"name"])
-    {
-        [namearray addObject:currentData];
-    }
-    else  if( [elementName isEqualToString:@"lat"])
-    {
-        [Latarray addObject:currentData];
-    }
-    else  if( [elementName isEqualToString:@"lng"])
-    {
-        [Longarray addObject:currentData];
-    }
-    else  if( [elementName isEqualToString:@"rating"])
-    {
-        [ratingArrary addObject:currentData];
-    }
-    
-}
-- (void)parserDidEndDocument:(NSXMLParser *)parser
-{
-    objhud.hidden=YES;
-    
-    [self performSegueWithIdentifier:@"goToMapVC" sender:self];
+//-(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+//	[webData setLength: 0];
+//}
+//-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
+//	[webData appendData:data];
+//}
+//-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
+//    
+//    //  [ShowAlert showMyAlert:@"Network Alert" :@"Slow Network Connection or Error in Network"];
+//    NSLog(@"didFailWithError");
+//    objhud.hidden=YES;
+//
+//    NSLog(@"%@", [error localizedDescription]);
+//
+//}
+//-(void)connectionDidFinishLoading:(NSURLConnection *)connection{
+//	[self startParshing];
+//}
+//-(void)startParshing
+//{
+//    NSXMLParser* parser = [[NSXMLParser alloc] initWithData:webData];
+//	[parser setDelegate:self];
+//	[parser setShouldProcessNamespaces:NO];
+//    [parser setShouldReportNamespacePrefixes:NO];
+//    [parser setShouldResolveExternalEntities:NO];
+//	[parser parse];
+//}
+//- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
+//	currentData=@"";
+//}
+//- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+//	currentData = [[currentData stringByAppendingString:string] mutableCopy];
+//}
+//- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
+//{
+//    
+//    if( [elementName isEqualToString:@"name"])
+//    {
+//        [namearray addObject:currentData];
+//    }
+//    else  if( [elementName isEqualToString:@"lat"])
+//    {
+//        [Latarray addObject:currentData];
+//    }
+//    else  if( [elementName isEqualToString:@"lng"])
+//    {
+//        [Longarray addObject:currentData];
+//    }
+//    else  if( [elementName isEqualToString:@"rating"])
+//    {
+//        [ratingArrary addObject:currentData];
+//    }
+//    
+//}
+//- (void)parserDidEndDocument:(NSXMLParser *)parser
+//{
+//    objhud.hidden=YES;
+//    
+//    [self performSegueWithIdentifier:@"goToMapVC" sender:self];
 
     
 //    [self showMap];
@@ -358,7 +353,7 @@ NSString * const kRating = @"rating";
     
     //    NSLog(@"%d,%d,%lu",[Longarray count],[Latarray count],(unsigned long)[namearray count]);
     
-}
+//}
 
 //- (NSMutableArray *)geoLocations{
 //    
@@ -451,12 +446,6 @@ NSString * const kRating = @"rating";
 //    _arViewController = nil;
     
 }
-- (BOOL)float:(float)aFloat between:(float)minValue and:(float)maxValue {
-    if (aFloat >= minValue && aFloat <= maxValue) {
-        return YES;
-    } else {
-        return NO;
-    }
-}
+
 
 @end

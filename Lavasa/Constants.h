@@ -12,9 +12,6 @@
 //SELECT rowid, place_type,place_name, icon_url, formatted_address FROM tbl_places  where place_type='food' and rowid not in ( SELECT rowid  FROM tbl_places   order by rowid limit 0,0 ) order by rowid limit 5
 
 
-
-
-
 #define IS_iPHONE ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
 
 
