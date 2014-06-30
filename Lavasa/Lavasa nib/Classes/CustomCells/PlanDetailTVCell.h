@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DLStarRatingControl.h"
 @interface PlanDetailTVCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *ImgPlace;
+@property (weak, nonatomic) IBOutlet UIImageView *ImgIternary;
+
+@property (weak, nonatomic) IBOutlet UILabel *LblIternaryAddress;
+@property (weak, nonatomic) IBOutlet DLStarRatingControl *RatingView;
+@property (weak, nonatomic) IBOutlet UILabel *LblIterninaryName;
 
 @end

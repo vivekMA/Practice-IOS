@@ -34,13 +34,41 @@ static AppDataBase *_database;
     NSString *doucmentsDirectory=paths[0];
     return [doucmentsDirectory stringByAppendingPathComponent:@"lavasa_web_service.sqlite"];
 }
--(FMResultSet *)reportIncidentWithCatName:(NSString *)categoryName LocationName:(NSString *)Loci Description:(NSString *)desc ImageUrl:(NSString *)ImgUrl  isSync:(int)Syn{
+
+//PlanVC Method
+
+-(FMResultSet *)PlanCatDetail:(NSString *)Keyword {
     
     FMDatabase *database=[FMDatabase databaseWithPath:[self databasePath]];
     [database open];
     
-    NSString *query=[NSString stringWithFormat:@"select package.* from package inner join package_keyword on package.id=package_keyword.package_id  where package_keyword.[keyword_id]=1" ];
+    NSString *query;
+    if ([Keyword isEqualToString:@"4"]) {
+         query=[NSString stringWithFormat:@"select package.* from package inner join package_keyword on package.id=package_keyword.package_id " ];
+    }else
+    {
+       query=[NSString stringWithFormat:@"select package.* from package inner join package_keyword on package.id=package_keyword.package_id  where package_keyword.[keyword_id]=%@",Keyword ];
+        
+    }
+    
+  
 
+    FMResultSet *results;
+    results = [database executeQuery:query];
+    return results;
+}
+
+//PlanDetailVC Method
+
+-(FMResultSet *)PlanDetailwithPackageID:(NSString *)PackageId {
+    
+    FMDatabase *database=[FMDatabase databaseWithPath:[self databasePath]];
+    [database open];
+    
+    NSString *query=[NSString stringWithFormat:@"select place.* from package_itinerary inner join itinerary on package_itinerary.itinerary_id=itinerary.id inner join place on itinerary.place_id=place.id where package_itinerary.[package_id]=%@",PackageId ];
+    
+  
+    
     FMResultSet *results;
     results = [database executeQuery:query];
     return results;

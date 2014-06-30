@@ -1223,6 +1223,11 @@
 					Party,
 					APIs/External,
 					framework,
+					"$(PROJECT_DIR)/Lavasa",
+					nib/Third,
+					Party,
+					APIs/External,
+					framework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Lavasa nib/Lavasa-Prefix.pch";
@@ -1249,6 +1254,11 @@
 					APIs/External,
 					framework,
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Lavasa",
+					nib/Third,
+					Party,
+					APIs/External,
+					framework,
 					"$(PROJECT_DIR)/Lavasa",
 					nib/Third,
 					Party,
