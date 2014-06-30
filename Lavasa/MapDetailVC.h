@@ -8,7 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
+#import "DLStarRatingControl.h"
 
-@interface MapDetailVC : UIViewController<GMSMapViewDelegate>
+
+@interface MapDetailVC : UIViewController<GMSMapViewDelegate>{
+    
+    GMSMapView *mapView ;
+    BOOL ShowOverLay;
+}
+@property (strong, nonatomic) IBOutlet UIView *OverLayView;
+@property (strong, nonatomic) IBOutlet UILabel *nameLbl;
+@property (strong, nonatomic) IBOutlet UILabel *addressLbl;
+@property (strong, nonatomic) IBOutlet DLStarRatingControl *ratingView;
+
+- (IBAction)getMeThere:(id)sender;
+- (IBAction)nearByPlaces:(id)sender;
 
 @end
