@@ -5,7 +5,11 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
+<<<<<<< HEAD
+	<string>7F284930-1E8E-45D4-BC01-F59819315D78</string>
+=======
 	<string>9436D3C4-EC87-47F8-8CC4-0547482EA2D1</string>
+>>>>>>> 54da92397b1af8e766a69387211f5e4e25f4e9dc
 	<key>IDESourceControlProjectName</key>
 	<string>Lavasa</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>

@@ -28,6 +28,7 @@ ReviewTableCell *reviewCell;
 {
     [super viewDidLoad];
     ArrayData=[[NSMutableArray alloc]init];
+    
   }
 -(void)viewDidAppear:(BOOL)animated
 {

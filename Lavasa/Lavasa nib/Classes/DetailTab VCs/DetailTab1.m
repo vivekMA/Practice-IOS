@@ -45,6 +45,7 @@
  //   [[[self.tabBarController.navigationController viewControllers] objectAtIndex:0] navigationController].navigationBar.backgroundColor=[UIColor redColor];
     
     NSLog(@"%@",[SharedData sharedObj].DictDetail);
+    
     [self.ImgPlace setImageWithURL:[NSURL URLWithString:[[SharedData sharedObj].DictDetail objectForKey:@"icon"]] placeholderImage:[UIImage imageNamed:@"loading.png"]];
     self.LblName.text=[[SharedData sharedObj].DictDetail objectForKey:@"name"];
     self.LblAddress.text=[[SharedData sharedObj].DictDetail objectForKey:@"address"];
