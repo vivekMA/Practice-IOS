@@ -171,7 +171,7 @@
     int i=0;
     while([results next]) {
         i++;
-        [ArrayData addObject:[[NSDictionary alloc]initWithObjectsAndKeys:[results stringForColumn:@"place_name"],@"name",[results stringForColumn:@"formatted_address"],@"address",[results stringForColumn:@"icon_url"],@"icon",[results stringForColumn:@"place_type"],@"place_type" ,[results stringForColumn:@"overall_rating"],@"overall_rating" ,nil]];
+        [ArrayData addObject:[[NSDictionary alloc]initWithObjectsAndKeys:[results stringForColumn:@"place_name"],@"name",[results stringForColumn:@"formatted_address"],@"address",[results stringForColumn:@"icon_url"],@"icon",[results stringForColumn:@"place_type"],@"place_type" ,[results stringForColumn:@"overall_rating"],@"overall_rating" ,[results stringForColumn:@"id"],@"id",[results stringForColumn:@"lng"],@"lng",[results stringForColumn:@"lat"],@"lat",nil]];
         
         NSLog(@"%@",ArrayData);
     }
@@ -229,7 +229,7 @@
                         
                         rating= [resultsDict objectForKey:kRating];
                     }
-                    Place *currentPlace = [[Place alloc]initWithLocation:location2 name:[resultsDict objectForKey:kNameKey] ratingOfLocation:rating];
+                    Place *currentPlace = [[Place alloc]initWithLocation:location2 name:[resultsDict objectForKey:kNameKey] ratingOfLocation:rating address:[resultsDict objectForKey:kAddressKey] placeId:kPlaceId];
                     
                     [Places addObject:currentPlace];
                 }

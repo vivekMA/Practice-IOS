@@ -11,6 +11,7 @@
 #import "SharedData.h"
 #import "Place.h"
 #import "PlacesLoader.h"
+#import "AppConstant.h"
 
 
 @interface MapDetailVC ()
@@ -35,25 +36,35 @@
     
     // Do any additional setup after loading the view.
     
+    PlaceLocation= [[NSMutableArray alloc]init];
+
     SharedData *shared=[SharedData sharedObj];
     
     CLLocationDegrees lat=[[shared.DictDetail objectForKey:@"lat"] doubleValue ];
     CLLocationDegrees lng=[[shared.DictDetail objectForKey:@"lng"] doubleValue ];
-    self.ratingView.rating=[[shared.DictDetail objectForKey:@"overall_rating"] floatValue];
-    self.nameLbl.text=[shared.DictDetail objectForKey:@"name"];
-    self.addressLbl.text=[shared.DictDetail objectForKey:@"address"];
     
     
-//    CLLocation *lastLocation = [shared.arrLocation lastObject];
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:lat longitude:lng];
+    
+    NSString *locationName=[shared.DictDetail objectForKey:@"name"];
+    NSString *rating =[shared.DictDetail objectForKey:@"overall_rating"];
+    NSString *address=[shared.DictDetail objectForKey:@"address"];
+    NSString *placeId=[shared.DictDetail objectForKey:@"id"];
+
+    Place *currentPlace = [[Place alloc] initWithLocation:location name:locationName ratingOfLocation:rating address:address placeId:placeId];
+    [PlaceLocation addObject:currentPlace.location];
+    
     
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:lat longitude:lng zoom:16];
     mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     
     CLLocationCoordinate2D position = CLLocationCoordinate2DMake(lat, lng);
+    
     GMSMarker *marker = [GMSMarker markerWithPosition:position];
 //   marker.icon = [UIImage imageNamed:@"food_map.png"];
     marker.map = mapView;
-    marker.userData=@"vivek";
+    marker.title=currentPlace.placeName;
+    marker.userData=currentPlace;
 
     self.view = mapView;
 
@@ -97,6 +108,12 @@
 
 -(BOOL) mapView:(GMSMapView *) mapView didTapMarker:(GMSMarker *)marker
 {
+
+    Place *place=marker.userData;
+    
+    self.ratingView.rating=[place.rating floatValue];
+    self.nameLbl.text=place.placeName;
+    self.addressLbl.text=place.address;
     
     markerPosition=marker.position;
     
@@ -116,11 +133,7 @@
         }completion:^(BOOL finished){
             ShowOverLay=FALSE;
         }];
-        
     }
-    
-    
-    
 //    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(28.6100, 77.2300);
     
 //    if ([marker.position == position]) {
@@ -135,7 +148,7 @@
 //    self.OverLayView.frame=CGRectMake(0, screenHeight-200, screenWidth, 200);
 
     NSLog(@"try");
-    return YES;
+    return NO;
 }
 - (void) mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate{
     
@@ -180,10 +193,12 @@
     
     CLLocation *location=[[CLLocation alloc]initWithLatitude:markerPosition.latitude longitude:markerPosition.longitude];
     
+    NSLog(@" %@ ",location);
+    
     objhud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
     objhud.labelText=@"Loading...";
     
-    [[PlacesLoader sharedInstance]loadPOIsForLocation:location radius:2000 type:@"establishment" successHandler:^(NSDictionary *response){
+    [[PlacesLoader sharedInstance]loadPOIsForLocation:location radius:500 type:@"establishment" successHandler:^(NSDictionary *response){
         
         NSLog(@"Response: %@", response);
         
@@ -191,26 +206,53 @@
             
             id places = [response objectForKey:@"results"];
             
-            Places= [[NSMutableArray alloc]init];
             
             if([places isKindOfClass:[NSArray class]]) {
                 
                 for(NSDictionary *resultsDict in places) {
                     
                     
+                    
+                    CLLocation *location = [[CLLocation alloc] initWithLatitude:[[resultsDict valueForKeyPath:kLatiudeKeypath] floatValue] longitude:[[resultsDict valueForKeyPath:kLongitudeKeypath] floatValue]];
+                    
+                    
+                    
+//
+                    NSString *rating=@"";
+					
+                    if ([resultsDict objectForKey:kRating]){
+                        
+                        
+                        
+                        rating= [resultsDict objectForKey:kRating];
+                    }
+                    
+                    NSString *locationName=[resultsDict objectForKey:kNameKey];
+                    NSString *address=[resultsDict objectForKey:kAddressKey];
+                    NSString *placeId=[resultsDict objectForKey:kPlaceId];
+
+                    Place *currentPlace = [[Place alloc] initWithLocation:location name:locationName ratingOfLocation:rating address:address placeId:placeId] ;
+                    
                     CLLocationCoordinate2D position = CLLocationCoordinate2DMake([[resultsDict valueForKeyPath:kLatiudeKeypath]floatValue] , [[resultsDict valueForKeyPath:kLongitudeKeypath] floatValue]);
                     
-                    GMSMarker *marker = [[GMSMarker alloc] init];
-                    marker.position = position;
-                
-                    marker.appearAnimation=TRUE;
-                    marker.icon = [UIImage imageNamed:@"food_map.png"];
-                    
-                    marker.map = mapView;
-                    self.view = mapView;
+                    if (![PlaceLocation containsObject:currentPlace.placeID]) {
+                        // this is to check the duplicate places
+                        
+                        GMSMarker *marker = [[GMSMarker alloc] init];
+                        marker.position = position;
+                        marker.userData=currentPlace;
+                        marker.title=currentPlace.placeName;
 
-                    
-                    
+                        marker.appearAnimation=TRUE;
+                        marker.icon = [UIImage imageNamed:@"food_map.png"];
+                        
+                        marker.map = mapView;
+                        self.view = mapView;
+                        [PlaceLocation addObject:currentPlace.placeID];
+
+                    }
+//                    Place *currentPlace = [[Place alloc]initWithLocation:location2 name:[resultsDict objectForKey:kNameKey] ratingOfLocation:rating address:[resultsDict objectForKey:kAddressKey]];
+
 //                    CLLocation *location2 = [[CLLocation alloc] initWithLatitude:[[resultsDict valueForKeyPath:kLatiudeKeypath] floatValue] longitude:[[resultsDict valueForKeyPath:kLongitudeKeypath] floatValue]];
 //                    NSString *rating=@"";
 //					

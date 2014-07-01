@@ -18,10 +18,7 @@
     BOOL ShowOverLay;
     CLLocationCoordinate2D markerPosition;
     MBProgressHUD *objhud;
-    NSMutableArray *Places;
-    
-
-    
+    NSMutableArray *PlaceLocation;
 }
 @property (strong, nonatomic) IBOutlet UIView *OverLayView;
 @property (strong, nonatomic) IBOutlet UILabel *nameLbl;

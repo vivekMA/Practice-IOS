@@ -9,7 +9,7 @@
 #import "AppConstant.h"
 
 NSString * const kNameKey = @"name";
-NSString * const kReferenceKey = @"reference";
+NSString * const kPlaceId = @"id";
 NSString * const kAddressKey = @"vicinity";
 NSString * const kLatiudeKeypath = @"geometry.location.lat";
 NSString * const kLongitudeKeypath = @"geometry.location.lng";

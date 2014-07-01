@@ -10,7 +10,7 @@
 
 
 extern NSString * const kNameKey;
-extern NSString * const kReferenceKey;
+extern NSString * const kPlaceId;
 extern NSString * const kAddressKey;
 extern NSString * const kLatiudeKeypath;
 extern NSString * const kLongitudeKeypath;

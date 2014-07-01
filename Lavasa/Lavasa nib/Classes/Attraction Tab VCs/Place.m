@@ -13,11 +13,14 @@
 
 
 
-- (id)initWithLocation:(CLLocation *)location name:(NSString *)name ratingOfLocation:(NSString *)rating{
+- (id)initWithLocation:(CLLocation *)location name:(NSString *)name ratingOfLocation:(NSString *)rating address:(NSString *)address placeId:(NSString *)placeId{
 	if((self = [super init])) {
 		_location = location;
 		_placeName = [name copy];
         _rating=[rating copy];
+        _address = [address copy];
+        _placeID=[placeId copy];
+
 	}
 	
 	return self;
