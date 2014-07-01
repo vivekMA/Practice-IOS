@@ -140,6 +140,7 @@
 		E2DB673B195D51E600BE5483 /* PlanDetailTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB673A195D51E600BE5483 /* PlanDetailTVCell.m */; };
 		E2DB6740195D546F00BE5483 /* yadav.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB673F195D546F00BE5483 /* yadav.m */; };
 		E2DB6742195D84B500BE5483 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2DB6741195D84B500BE5483 /* FacebookSDK.framework */; };
+		E2DB674719618CB300BE5483 /* BookingPackageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB674619618CB300BE5483 /* BookingPackageVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -363,6 +364,8 @@
 		E2DB673E195D546F00BE5483 /* yadav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yadav.h; sourceTree = "<group>"; };
 		E2DB673F195D546F00BE5483 /* yadav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = yadav.m; sourceTree = "<group>"; };
 		E2DB6741195D84B500BE5483 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "Lavasa nib/Third Party APIs/External framework/FacebookSDK.framework"; sourceTree = "<group>"; };
+		E2DB674519618CB300BE5483 /* BookingPackageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingPackageVC.h; sourceTree = "<group>"; };
+		E2DB674619618CB300BE5483 /* BookingPackageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingPackageVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -437,6 +440,8 @@
 				CEACBA35195C4CC200AA1E75 /* PlanTVC4.m */,
 				E2DB6736195D51CC00BE5483 /* PlanDetailTVC.h */,
 				E2DB6737195D51CC00BE5483 /* PlanDetailTVC.m */,
+				E2DB674519618CB300BE5483 /* BookingPackageVC.h */,
+				E2DB674619618CB300BE5483 /* BookingPackageVC.m */,
 			);
 			path = PlanTabVCs;
 			sourceTree = "<group>";
@@ -1081,6 +1086,7 @@
 				E2A8EC941951683400723FC6 /* DetailTab3.m in Sources */,
 				E2A8EC78195044D300723FC6 /* AttractionTab1.m in Sources */,
 				CEB211BF1957FD7D005C00DD /* MarkerView.m in Sources */,
+				E2DB674719618CB300BE5483 /* BookingPackageVC.m in Sources */,
 				CEB211BC1957FD7D005C00DD /* ARKit.m in Sources */,
 				E26F01891953F66300E3F714 /* ImagePopupvVC.m in Sources */,
 				E221433F1945C255003E9535 /* UIImageView+WebCache.m in Sources */,
