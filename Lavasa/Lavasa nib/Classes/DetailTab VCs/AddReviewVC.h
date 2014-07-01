@@ -15,8 +15,10 @@
      MBProgressHUD *objhud;
     GPPSignIn  *signIn;
 }
+
 - (IBAction)CancelAction:(id)sender;
 - (IBAction)DoneAction:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UITextView *TextViewDescrip;
 @property (weak, nonatomic) IBOutlet UITextField *TextfieldTitle;
 @property (weak, nonatomic) IBOutlet DLStarRatingControl *Rating;

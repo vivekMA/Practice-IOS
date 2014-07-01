@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PlanTVC2 : UITableViewController
-
+{
+         NSMutableArray *ArrayData;
+}
 @end

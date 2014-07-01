@@ -217,7 +217,7 @@
                   symbolName = "-[AttractionTab3 motionManager]"
                   moduleName = "Lavasa"
                   urlString = "file:///Users/vivek/LavasaNew/Lavasa/Lavasa%20nib/Classes/Attraction%20Tab%20VCs/AttractionTab3.h"
-                  timestampString = "425566215.332303"
+                  timestampString = "425802693.317907"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "47"
@@ -231,7 +231,7 @@
                   symbolName = "-[AttractionTab3 setMotionManager:]"
                   moduleName = "Lavasa"
                   urlString = "file:///Users/vivek/LavasaNew/Lavasa/Lavasa%20nib/Classes/Attraction%20Tab%20VCs/AttractionTab3.h"
-                  timestampString = "425566215.332481"
+                  timestampString = "425802693.318114"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "47"
@@ -318,22 +318,6 @@
             startingLineNumber = "48"
             endingLineNumber = "48"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Lavasa nib/Classes/PlanTabVCs/PlanDetailTVC.m"
-            timestampString = "425566123.323328"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

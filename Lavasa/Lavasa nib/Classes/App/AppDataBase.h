@@ -15,7 +15,7 @@
 +(AppDataBase *)database;
 
 //-(BOOL)reportIncidentWithCatName:(NSString *)categoryName LocationName:(NSString *)Loci Description:(NSString *)desc ImageUrl:(NSString *)ImgUrl isSync:(int)Syn; // zero= false
-
--(FMResultSet *)reportIncidentWithCatName:(NSString *)categoryName LocationName:(NSString *)Loci Description:(NSString *)desc ImageUrl:(NSString *)ImgUrl  isSync:(int)Syn;
+-(FMResultSet *)PlanDetailwithPackageID:(NSString *)categoryName ;
+-(FMResultSet *)PlanCatDetail:(NSString *)Keyword;
 
 @end

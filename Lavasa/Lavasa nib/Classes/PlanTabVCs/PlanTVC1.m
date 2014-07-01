@@ -39,22 +39,17 @@
     ButtonMenu.tintColor=[UIColor blackColor];
     self.navigationItem.leftBarButtonItem = ButtonMenu;
 
-    
     ArrayData=[[NSMutableArray alloc]init];
     AppDataBase *DBM=[AppDataBase database];
     
-  FMResultSet *Result =[DBM reportIncidentWithCatName:@"" LocationName:@"" Description:@"" ImageUrl:@"" isSync:0];
+    FMResultSet *Result =[DBM PlanCatDetail:@"1" ];
     while([Result next]) {
+       
         NSLog(@"%@",[Result stringForColumn:@"name"]);
-        
         [ArrayData addObject:[[NSDictionary alloc]initWithObjectsAndKeys:[Result stringForColumn:@"id"],@"id",[Result stringForColumn:@"name"],@"name",[Result stringForColumn:@"duration"],@"duration",nil]];
-        
-        NSLog(@"%@",ArrayData);
-
-        
+       NSLog(@"%@",ArrayData);
     }
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -105,7 +100,7 @@
         PlanDetailTVC *pdvc= segue.destinationViewController;
         NSLog(@"%@", [[ArrayData objectAtIndex:[sender tag]]objectForKey:@"id"]);
 
-        pdvc.PackegeId=[NSString stringWithFormat:@"%@",[[ArrayData objectAtIndex:[sender tag]]objectForKey:@"id"]];
+        pdvc.DictPackage=[ArrayData objectAtIndex:[sender tag]];
 //        NSLog(@"%@",[ArrayData objectAtIndex:[sender tag]]);
     
     }
