@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface BookingPackageVC : UITableViewController
-
+#import "PopoverTableView.h"
+@interface BookingPackageVC : UITableViewController<UIPopoverControllerDelegate,PopoverTableViewDelagate>
+{
+    
+     PopoverTableView *objList;
+      UIPopoverController *popover;
+}
 - (IBAction)AddBtnAction:(id)sender;
 
 @end

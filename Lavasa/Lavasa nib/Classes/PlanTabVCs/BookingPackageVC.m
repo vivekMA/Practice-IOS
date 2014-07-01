@@ -7,13 +7,23 @@
 //
 
 #import "BookingPackageVC.h"
-
+#import "BookingTVCell.h"
 @interface BookingPackageVC ()
+{
+    UIPopoverController *popOverForDatePicker;
+    UIDatePicker *datepicker;
+    NSMutableArray *ArrMembers;
+    NSMutableArray *ArrAge,*ArrGender;
+}
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldFirstName;
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldLastName;
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldGender;
-@property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *TextFieldAge;
+@property (weak, nonatomic) IBOutlet UITextField *TextFieldAge;
+
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldDate;
+
+#define IS_IPAD ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+#define IS_IPHONE ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
 @end
 @implementation BookingPackageVC
 
@@ -30,11 +40,37 @@
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    ArrMembers=[[NSMutableArray alloc]init];
+
+  ArrGender=[NSMutableArray arrayWithObjects:@"Male",@"Female", nil];
+    ArrAge=[[NSMutableArray alloc]init];
+    for (int i=1; i<101;i++) {
+        [ArrAge addObject:[NSString stringWithFormat:@"%d",i]];
+    }
+    UIViewController *viewController = [[UIViewController alloc]init];
+    UIView *viewForDatePicker = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 300, 200)];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    datepicker = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, 0, 300, 200)];
+    datepicker.datePickerMode = UIDatePickerModeDate;
+    datepicker.hidden = NO;
+    datepicker.date = [NSDate date];
+    [datepicker addTarget:self action:@selector(DateChange:) forControlEvents:UIControlEventValueChanged];
+    
+    [viewForDatePicker addSubview:datepicker];
+    [viewController.view addSubview:viewForDatePicker];
+    
+    popOverForDatePicker = [[UIPopoverController alloc]initWithContentViewController:viewController];
+    [popOverForDatePicker setPopoverContentSize:CGSizeMake(300, 200) animated:NO];
+    
+   //    popOverForDatePicker.delegate = self;
+}
+
+-(void)DateChange :(id)sender
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    self.TextFieldDate.text =[NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:[datepicker date]]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,81 +80,146 @@
 }
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
+#pragma mark - UITableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+	return ArrMembers.count;
 }
-
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    static NSString *CellIdentifier = @"BookingTVCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
-*/
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    BookingTVCell  *BookCell = (BookingTVCell *) cell;
+    BookCell.self.CellTextAge.text=[[ArrMembers objectAtIndex:indexPath.row] objectForKey:@"age"];
+    BookCell.self.CellTextFirstName.text=[[ArrMembers objectAtIndex:indexPath.row] objectForKey:@"firstname"];
+    BookCell.self.CellTextLastName.text=[[ArrMembers objectAtIndex:indexPath.row] objectForKey:@"lastname"];
+    BookCell.self.CellTextGender.text=[[ArrMembers objectAtIndex:indexPath.row] objectForKey:@"gender"];
+    BookCell.self.lblSerialNo.text=[NSString stringWithFormat:@"%d",indexPath.row+1];
+}
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
+    NSLog(@"tapped button at row: %@",self.navigationController.viewControllers);
+}
+#pragma popover delegate
+-(void)popoverListSelctedItem:(NSString *)categoryName :(NSString *)CatType
+{
+    if ([CatType isEqualToString:@"age"]) {
+        self.TextFieldAge.text = categoryName;
+    }else
+    {
+        self.TextFieldGender.text = categoryName;
+    }
+ 
+     objList=nil;
+    [popover dismissPopoverAnimated:YES];
+   
+}
+#pragma textfield methods
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
     return YES;
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    if (textField==self.TextFieldDate)
+    {
+        [popOverForDatePicker presentPopoverFromRect:datepicker.frame inView:self.TextFieldDate  permittedArrowDirections:(UIPopoverArrowDirectionUp|UIPopoverArrowDirectionDown| UIPopoverArrowDirectionLeft|UIPopoverArrowDirectionRight) animated:YES];
+    }
+    else if (textField==self.TextFieldGender  )
+    {
+        if (objList == nil)
+        {
+            objList = [[PopoverTableView alloc]initWithStyle:UITableViewStylePlain];
+            objList.delegate = self;
+            [objList setSizeForPopover:ArrGender:@"gender"];
+        }
+        
+        if (IS_IPAD)
+        {
+            if ([objList respondsToSelector:@selector(preferredContentSize)])
+            {
+            }
+            else
+            {
+                objList.contentSizeForViewInPopover = CGSizeMake(objList.contentSizeForViewInPopover.width, 0);
+            }
+            popover = [[UIPopoverController alloc]initWithContentViewController:objList];
+            [popover presentPopoverFromRect:self.TextFieldGender.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+        }
+        else
+        {
+            [objList setTitle:@"Select category"];
+            
+            //            objList =[self.storyboard instantiateViewControllerWithIdentifier:@"PopOverList"];
+            //            [objList setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+            //            [self presentViewController:objList animated:YES completion:nil];
+            
+            UINavigationController *navControllerList = [[UINavigationController alloc]initWithRootViewController:objList];
+            
+            [self presentViewController:navControllerList animated:YES completion:^{
+                
+            }];
+        }
+        return NO;
+    }else if (textField==self.TextFieldAge)
+    {
+        if (objList == nil)
+        {
+            objList = [[PopoverTableView alloc]initWithStyle:UITableViewStylePlain];
+            objList.delegate = self;
+            [objList setSizeForPopover:ArrAge:@"age"];
+          
+        }
+        if (IS_IPAD)
+        {
+            if ([objList respondsToSelector:@selector(preferredContentSize)])
+            {
+            }
+            else
+            {
+                objList.contentSizeForViewInPopover = CGSizeMake(objList.contentSizeForViewInPopover.width, 0);
+            }
+            popover = [[UIPopoverController alloc]initWithContentViewController:objList];
+            [popover presentPopoverFromRect:self.TextFieldAge.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+        }
+        else
+        {
+            [objList setTitle:@"Select category"];
+            
+            //            objList =[self.storyboard instantiateViewControllerWithIdentifier:@"PopOverList"];
+            //            [objList setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+            //            [self presentViewController:objList animated:YES completion:nil];
+            
+            UINavigationController *navControllerList = [[UINavigationController alloc]initWithRootViewController:objList];
+            
+            [self presentViewController:navControllerList animated:YES completion:^{
+                
+            }];
+        }
+        return NO;
+    }
+    
+    return NO;
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)AddBtnAction:(id)sender {
+   
+    [ArrMembers addObject:[[NSDictionary alloc]initWithObjectsAndKeys:self.TextFieldFirstName.text,@"firstname",self.TextFieldLastName.text,@"lastname",self.TextFieldAge.text,@"age",self.TextFieldDate.text,@"date",self.TextFieldGender.text,@"gender", nil]];
+    
+    [self.tableView reloadData];
+}
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)pc {
+    popOverForDatePicker = nil;
 }
 @end
