@@ -86,8 +86,10 @@
 	[super viewDidAppear:animated];
 }
 
-//-(void) popBack {
-//    
+-(void) popBack {
+    
+    
+    
 //    NSArray* tempVCA = [self.navigationController viewControllers];
 //    
 //    for(UIViewController *tempVC in tempVCA)
@@ -104,7 +106,7 @@
 //    
 //    
 //    [self.navigationController popViewControllerAnimated:YES];
-//}
+}
 //- (BOOL)shouldAutorotate
 //{
 //    return NO;

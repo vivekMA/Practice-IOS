@@ -373,7 +373,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ft-cU-gGr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2852" y="1066"/>
+            <point key="canvasLocation" x="2724" y="674"/>
         </scene>
         <!--Attraction Tab3 - Root View Controller-->
         <scene sceneID="ZvV-rr-IAb">
@@ -932,7 +932,15 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rO6-2l-erj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="2363" y="8242"/>
+=======
+<<<<<<< HEAD
+            <point key="canvasLocation" x="1904" y="10096"/>
+=======
+            <point key="canvasLocation" x="2350" y="8236"/>
+>>>>>>> 3e1c708470afae5a4f1278676b05aecdb9cd139b
+>>>>>>> 76ef457ccac9eb4481d5e3aec465ff55ac880855
         </scene>
         <!--Navigation Controller - All-->
         <scene sceneID="tSV-UZ-lwy">
@@ -1189,6 +1197,53 @@
                     <view key="view" contentMode="scaleToFill" id="NtV-y1-FLp">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="D55-9u-Zp3">
+                                <rect key="frame" x="20" y="774" width="768" height="200"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yrx-1w-Ubc">
+                                        <rect key="frame" x="20" y="150" width="125" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Get me there">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getMeThere:" destination="w3x-it-1nW" eventType="touchUpInside" id="YGc-Pb-TZQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HRd-pX-chp">
+                                        <rect key="frame" x="576" y="150" width="169" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Near by places">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nearByPlaces:" destination="w3x-it-1nW" eventType="touchUpInside" id="xEk-IN-pDU"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bOh-9p-P6f">
+                                        <rect key="frame" x="20" y="28" width="212" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ckg-Eh-JO2">
+                                        <rect key="frame" x="20" y="57" width="248" height="61"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" id="ZPm-6Y-Vpd" customClass="DLStarRatingControl">
+                                        <rect key="frame" x="463" y="20" width="256" height="65"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.21499360919999999" green="1" blue="0.984823856" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="562-Wg-M8L">
@@ -1198,10 +1253,16 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="OverLayView" destination="D55-9u-Zp3" id="SfH-o3-Mas"/>
+                        <outlet property="addressLbl" destination="ckg-Eh-JO2" id="1nA-Kq-wmR"/>
+                        <outlet property="nameLbl" destination="bOh-9p-P6f" id="ZtS-K7-Ckh"/>
+                        <outlet property="ratingView" destination="ZPm-6Y-Vpd" id="mxu-UN-bAj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Niu-Zj-JD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5040" y="5029"/>
+            <point key="canvasLocation" x="5092" y="5053"/>
         </scene>
         <!--Detail Tab1-->
         <scene sceneID="TER-dq-4qh">
@@ -1486,7 +1547,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AoD-sI-s9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5035" y="3915"/>
+            <point key="canvasLocation" x="5219" y="3907"/>
         </scene>
         <!--Add ReviewVC-->
         <scene sceneID="cTj-qL-OdR">
@@ -1559,7 +1620,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dgt-PU-GdB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5711" y="3944"/>
+            <point key="canvasLocation" x="7299" y="3956"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kap-BU-l9d">
@@ -1577,7 +1638,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYl-F5-Phm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5905" y="3915"/>
+            <point key="canvasLocation" x="6257" y="3963"/>
         </scene>
         <!--Image PopupvVC-->
         <scene sceneID="smG-ng-RTY">
@@ -1611,7 +1672,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="6003" y="2725"/>
+            <point key="canvasLocation" x="6131" y="2733"/>
         </scene>
         <!--Navigation Controller - Plan-->
         <scene sceneID="UFD-aa-iIR">
