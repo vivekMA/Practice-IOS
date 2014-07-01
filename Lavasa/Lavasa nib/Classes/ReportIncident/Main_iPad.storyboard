@@ -806,7 +806,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfG-I1-nhP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1488" y="8236"/>
+            <point key="canvasLocation" x="1848" y="8228"/>
         </scene>
         <!--Booking PackageVC-->
         <scene sceneID="M5j-fT-mEw">
@@ -885,33 +885,53 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="89" id="3dS-gT-u0n">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookingTVCell" rowHeight="89" id="3dS-gT-u0n" customClass="BookingTVCell">
                                 <rect key="frame" x="0.0" y="229" width="768" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3dS-gT-u0n" id="yjX-gK-v6X">
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="vso-XT-bSO">
-                                            <rect key="frame" x="42" y="29" width="268" height="30"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="vso-XT-bSO">
+                                            <rect key="frame" x="89" y="29" width="155" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Pbc-P2-owf">
-                                            <rect key="frame" x="337" y="29" width="151" height="30"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="Pbc-P2-owf">
+                                            <rect key="frame" x="272" y="29" width="151" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="vff-qM-JJh">
-                                            <rect key="frame" x="519" y="29" width="109" height="30"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="vff-qM-JJh">
+                                            <rect key="frame" x="453" y="29" width="109" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="mbQ-mz-08e">
+                                            <rect key="frame" x="594" y="29" width="97" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v0f-nL-udr">
+                                            <rect key="frame" x="20" y="38" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="CellTextAge" destination="vff-qM-JJh" id="eVI-jQ-ZEI"/>
+                                    <outlet property="CellTextFirstName" destination="vso-XT-bSO" id="EmU-Mz-TFw"/>
+                                    <outlet property="CellTextGender" destination="mbQ-mz-08e" id="BHL-O4-ax2"/>
+                                    <outlet property="CellTextLastName" destination="Pbc-P2-owf" id="sQN-6h-7Zr"/>
+                                    <outlet property="lblSerialNo" destination="v0f-nL-udr" id="gmi-Da-2mm"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -923,16 +943,16 @@
                         <nil key="title"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="TextFieldAge" destination="xPt-5a-ixI" id="fZy-oU-nwD"/>
                         <outlet property="TextFieldDate" destination="d4i-yk-igW" id="h0S-JQ-GRR"/>
                         <outlet property="TextFieldFirstName" destination="JOh-eI-ZcE" id="3lk-Tv-gEO"/>
                         <outlet property="TextFieldGender" destination="4g0-HY-6Vr" id="gVt-Uf-WAV"/>
                         <outlet property="TextFieldLastName" destination="0ZU-ux-fDN" id="LmY-7v-7d1"/>
-                        <outletCollection property="TextFieldAge" destination="xPt-5a-ixI" id="pM5-Cj-UGJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rO6-2l-erj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2363" y="8242"/>
+            <point key="canvasLocation" x="2947" y="8258"/>
         </scene>
         <!--Navigation Controller - All-->
         <scene sceneID="tSV-UZ-lwy">
