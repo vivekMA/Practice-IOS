@@ -9,12 +9,19 @@
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
 #import "DLStarRatingControl.h"
+#import "MBProgressHUD.h"
 
 
 @interface MapDetailVC : UIViewController<GMSMapViewDelegate>{
     
     GMSMapView *mapView ;
     BOOL ShowOverLay;
+    CLLocationCoordinate2D markerPosition;
+    MBProgressHUD *objhud;
+    NSMutableArray *Places;
+    
+
+    
 }
 @property (strong, nonatomic) IBOutlet UIView *OverLayView;
 @property (strong, nonatomic) IBOutlet UILabel *nameLbl;

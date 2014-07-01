@@ -8,6 +8,10 @@
 
 #import "MapDetailVC.h"
 #import "UIApplication+AppDimension.h"
+#import "SharedData.h"
+#import "Place.h"
+#import "PlacesLoader.h"
+
 
 @interface MapDetailVC ()
 
@@ -31,18 +35,26 @@
     
     // Do any additional setup after loading the view.
     
-//    SharedData *shared=[SharedData sharedObj];
+    SharedData *shared=[SharedData sharedObj];
+    
+    CLLocationDegrees lat=[[shared.DictDetail objectForKey:@"lat"] doubleValue ];
+    CLLocationDegrees lng=[[shared.DictDetail objectForKey:@"lng"] doubleValue ];
+    self.ratingView.rating=[[shared.DictDetail objectForKey:@"overall_rating"] floatValue];
+    self.nameLbl.text=[shared.DictDetail objectForKey:@"name"];
+    self.addressLbl.text=[shared.DictDetail objectForKey:@"address"];
+    
+    
 //    CLLocation *lastLocation = [shared.arrLocation lastObject];
     
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:28.6100
-                                                               longitude:77.2300
-                                                                     zoom:13];
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:lat longitude:lng zoom:16];
     mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     
-    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(28.6100, 77.2300);
+    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(lat, lng);
     GMSMarker *marker = [GMSMarker markerWithPosition:position];
 //   marker.icon = [UIImage imageNamed:@"food_map.png"];
     marker.map = mapView;
+    marker.userData=@"vivek";
+
     self.view = mapView;
 
     mapView.delegate=self;
@@ -85,6 +97,9 @@
 
 -(BOOL) mapView:(GMSMapView *) mapView didTapMarker:(GMSMarker *)marker
 {
+    
+    markerPosition=marker.position;
+    
     if (!ShowOverLay) {
         CGSize screenSize=[UIApplication currentSize];
         [UIView animateWithDuration:.3 animations:^{
@@ -158,8 +173,78 @@
 */
 
 - (IBAction)getMeThere:(id)sender {
+    
 }
 
 - (IBAction)nearByPlaces:(id)sender {
+    
+    CLLocation *location=[[CLLocation alloc]initWithLatitude:markerPosition.latitude longitude:markerPosition.longitude];
+    
+    objhud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    objhud.labelText=@"Loading...";
+    
+    [[PlacesLoader sharedInstance]loadPOIsForLocation:location radius:2000 type:@"establishment" successHandler:^(NSDictionary *response){
+        
+        NSLog(@"Response: %@", response);
+        
+        if([[response objectForKey:@"status"] isEqualToString:@"OK"]) {
+            
+            id places = [response objectForKey:@"results"];
+            
+            Places= [[NSMutableArray alloc]init];
+            
+            if([places isKindOfClass:[NSArray class]]) {
+                
+                for(NSDictionary *resultsDict in places) {
+                    
+                    
+                    CLLocationCoordinate2D position = CLLocationCoordinate2DMake([[resultsDict valueForKeyPath:kLatiudeKeypath]floatValue] , [[resultsDict valueForKeyPath:kLongitudeKeypath] floatValue]);
+                    
+                    GMSMarker *marker = [[GMSMarker alloc] init];
+                    marker.position = position;
+                
+                    marker.appearAnimation=TRUE;
+                    marker.icon = [UIImage imageNamed:@"food_map.png"];
+                    
+                    marker.map = mapView;
+                    self.view = mapView;
+
+                    
+                    
+//                    CLLocation *location2 = [[CLLocation alloc] initWithLatitude:[[resultsDict valueForKeyPath:kLatiudeKeypath] floatValue] longitude:[[resultsDict valueForKeyPath:kLongitudeKeypath] floatValue]];
+//                    NSString *rating=@"";
+//					
+//                    if ([resultsDict objectForKey:kRating]){
+//                        
+//                        rating= [resultsDict objectForKey:kRating];
+//                    }
+//                    Place *currentPlace = [[Place alloc]initWithLocation:location2 name:[resultsDict objectForKey:kNameKey] ratingOfLocation:rating];
+//                    
+//                    [Places addObject:currentPlace];
+                }
+            }
+            else{
+                NSLog(@"?????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????");
+            }
+            objhud.hidden=YES;
+            if (ShowOverLay) {
+                CGSize screenSize=[UIApplication currentSize];
+                [UIView animateWithDuration:.3 animations:^{
+                    self.OverLayView.frame=CGRectMake(0, screenSize.height, screenSize.width, 200);
+                }completion:^(BOOL finished){
+                    ShowOverLay=FALSE;
+                }];
+            }
+            
+        }
+    }errorHandler:^(NSError *error){
+        NSLog(@"Error: %@", error);
+    }];
+
+    
+    
+  
+    
+    
 }
 @end

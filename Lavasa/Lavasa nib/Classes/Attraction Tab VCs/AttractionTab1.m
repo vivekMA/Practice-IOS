@@ -194,7 +194,7 @@
     int i=0;
     while([results next]) {
         i++;
-        [ArrayData addObject:[[NSDictionary alloc]initWithObjectsAndKeys:[results stringForColumn:@"place_name"],@"name",[results stringForColumn:@"formatted_address"],@"address",[results stringForColumn:@"icon_url"],@"icon",[results stringForColumn:@"place_type"],@"place_type" ,[results stringForColumn:@"overall_rating"],@"overall_rating" ,nil]];
+        [ArrayData addObject:[[NSDictionary alloc]initWithObjectsAndKeys:[results stringForColumn:@"place_name"],@"name",[results stringForColumn:@"formatted_address"],@"address",[results stringForColumn:@"icon_url"],@"icon",[results stringForColumn:@"place_type"],@"place_type" ,[results stringForColumn:@"overall_rating"],@"overall_rating",[results stringForColumn:@"id"],@"id",[results stringForColumn:@"lat"],@"lat",[results stringForColumn:@"lng"],@"lng"   ,nil]];
         
         NSLog(@"%@",ArrayData);
     }
