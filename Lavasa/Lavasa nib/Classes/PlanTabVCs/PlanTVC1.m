@@ -25,10 +25,17 @@
     }
     return self;
 }
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.tabBarController.tabBar.hidden=NO;
+}
 
-- (void)viewDidLoad
+-(void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+   
     
     self.title=@"Plan 1";
     self.navigationController.navigationBar.hidden=NO;

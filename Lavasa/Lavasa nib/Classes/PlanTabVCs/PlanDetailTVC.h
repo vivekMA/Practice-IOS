@@ -12,7 +12,6 @@
 {
     NSMutableArray *ArrayData;
 }
-- (IBAction)goToMap:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *LblPackage;
 @property (weak, nonatomic) IBOutlet UILabel *LblAddress;
