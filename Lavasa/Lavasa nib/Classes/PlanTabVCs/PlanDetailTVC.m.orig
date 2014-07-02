@@ -133,6 +133,19 @@
        
       
         
+        PlanMapVC *planMap=segue.destinationViewController;
+        
+//        NSMutableArray *filterLatLong=[NSMutableArray new];
+//       
+//        for (NSDictionary *dict in ArrayData) {
+//            
+//            CLLocationDegrees lat=[[dict objectForKey:@"lat"] doubleValue ];
+//            CLLocationDegrees lng=[[dict objectForKey:@"lng"] doubleValue ];
+//            
+//            CLLocation *location = [[CLLocation alloc] initWithLatitude:lat longitude:lng];
+//            [filterLatLong addObject:location];
+//        }
+        planMap.latLongitudes=ArrayData;
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

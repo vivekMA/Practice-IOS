@@ -15,11 +15,11 @@
 #import "AppConstant.h"
 
 @interface PlanMapVC ()
-
+// AIzaSyAzAYkAVXp2GkQeCEY1GLyQw8N0XfNmsVo key
 @end
 
 @implementation PlanMapVC
-@synthesize OverLayView;
+@synthesize OverLayView,latLongitudes;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,56 +35,61 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
-    
-    PlaceLocation= [[NSMutableArray alloc]init];
-    
-    SharedData *shared=[SharedData sharedObj];
-    
-    CLLocationDegrees lat=[[shared.DictDetail objectForKey:@"lat"] doubleValue ];
-    CLLocationDegrees lng=[[shared.DictDetail objectForKey:@"lng"] doubleValue ];
-    
-    
-    CLLocation *location = [[CLLocation alloc] initWithLatitude:lat longitude:lng];
-    
-    NSString *locationName=[shared.DictDetail objectForKey:@"name"];
-    NSString *rating =[shared.DictDetail objectForKey:@"overall_rating"];
-    NSString *address=[shared.DictDetail objectForKey:@"address"];
-    NSString *placeId=[shared.DictDetail objectForKey:@"id"];
-    
-    Place *currentPlace = [[Place alloc] initWithLocation:location name:locationName ratingOfLocation:rating address:address placeId:placeId];
-    [PlaceLocation addObject:currentPlace.location];
-    
-    
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:lat longitude:lng zoom:16];
-    mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    
-    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(lat, lng);
-    
-    GMSMarker *marker = [GMSMarker markerWithPosition:position];
-    //   marker.icon = [UIImage imageNamed:@"food_map.png"];
-    marker.map = mapView;
-    marker.title=currentPlace.placeName;
-    marker.userData=currentPlace;
-    
-    self.view = mapView;
-    
-    mapView.delegate=self;
-    //    for (int i=0; i<self.AllPlaces.count; i++) {
-    //
-    //        Place *place=[self.AllPlaces objectAtIndex:i];
-    //
-    //        GMSMarker *marker = [[GMSMarker alloc] init];
-    //        marker.position = CLLocationCoordinate2DMake(place.location.coordinate.latitude, place.location.coordinate.longitude);
-    //        marker.icon = [UIImage imageNamed:@"food_map.png"];
-    //        marker.map = mapView;
-    //        self.view = mapView;
-    //
-    //    }
-    //
-    
     ShowOverLay=FALSE;
+
+    PlaceLocation= [[NSMutableArray alloc]init];
+    GMSCameraPosition *camera;
+    
+    CLLocationDegrees lat=[[[latLongitudes objectAtIndex:0] objectForKey:@"lat"] doubleValue];
+    CLLocationDegrees lng=[[[latLongitudes objectAtIndex:0] objectForKey:@"lng"] doubleValue ];
+        
+    camera = [GMSCameraPosition cameraWithLatitude:lat longitude:lng zoom:12];
+    mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    mapView.delegate=self;
+
+    
+    for (NSDictionary *dict in latLongitudes) {
+        
+        CLLocationDegrees lat=[[dict objectForKey:@"lat"]doubleValue];
+        CLLocationDegrees lng=[[dict objectForKey:@"lng"]doubleValue];
+        
+        CLLocation *location = [[CLLocation alloc] initWithLatitude:lat longitude:lng];
+        NSLog(@"%@",location);
+
+        NSString *locationName=[dict objectForKey:@"name"];
+        NSString *rating =[dict objectForKey:@"overall_rating"];
+        NSString *address=[dict objectForKey:@"address"];
+        NSString *placeId=[dict objectForKey:@"id"];
+        
+        Place *currentPlace = [[Place alloc] initWithLocation:location name:locationName ratingOfLocation:rating address:address placeId:placeId];
+        [PlaceLocation addObject:currentPlace.location];
+        
+        
+        CLLocationCoordinate2D position = CLLocationCoordinate2DMake(lat, lng);
+        
+//        GMSMarker *marker = [GMSMarker markerWithPosition:position];
+//        //   marker.icon = [UIImage imageNamed:@"food_map.png"];
+//        marker.map = mapView;
+//        marker.title=currentPlace.placeName;
+//        marker.userData=currentPlace;
+//        self.view = mapView;
+//        mapView.delegate=self;
+        
+        
+        GMSMarker *marker = [[GMSMarker alloc] init];
+        marker.position = position;
+        marker.userData=currentPlace;
+        marker.title=currentPlace.placeName;
+        marker.appearAnimation=TRUE;
+        marker.icon = [UIImage imageNamed:@"food_map.png"];
+        
+        marker.map = mapView;
+        self.view = mapView;
+
+    }
+  
     CGSize screenSize=[UIApplication currentSize];
-    self.OverLayView.frame=CGRectMake(0, screenSize.height, screenSize.width, 200);
+    self.OverLayView.frame=CGRectMake(0, screenSize.height+50, screenSize.width, 200);
     [mapView addSubview:OverLayView];
     
 }
@@ -94,7 +99,7 @@
     CGSize screenSize=[UIApplication sizeInOrientation:toInterfaceOrientation];
     
     if (ShowOverLay) {
-        self.OverLayView.frame=CGRectMake(0, screenSize.height-235, screenSize.width, 200);
+        self.OverLayView.frame=CGRectMake(0, screenSize.height-170, screenSize.width, 200);
     }
     
     
@@ -120,7 +125,7 @@
     if (!ShowOverLay) {
         CGSize screenSize=[UIApplication currentSize];
         [UIView animateWithDuration:.3 animations:^{
-            self.OverLayView.frame=CGRectMake(0, screenSize.height-235, screenSize.width, 200);
+            self.OverLayView.frame=CGRectMake(0, screenSize.height-170, screenSize.width, 200);
         }completion:^(BOOL finished){
             ShowOverLay=TRUE;
         }];
@@ -129,7 +134,7 @@
         
         CGSize screenSize=[UIApplication currentSize];
         [UIView animateWithDuration:.3 animations:^{
-            self.OverLayView.frame=CGRectMake(0, screenSize.height, screenSize.width, 200);
+            self.OverLayView.frame=CGRectMake(0, screenSize.height+50, screenSize.width, 200);
         }completion:^(BOOL finished){
             ShowOverLay=FALSE;
         }];
@@ -156,7 +161,7 @@
     if (ShowOverLay) {
         CGSize screenSize=[UIApplication currentSize];
         [UIView animateWithDuration:.3 animations:^{
-            self.OverLayView.frame=CGRectMake(0, screenSize.height, screenSize.width, 200);
+            self.OverLayView.frame=CGRectMake(0, screenSize.height+50, screenSize.width, 200);
         }completion:^(BOOL finished){
             ShowOverLay=FALSE;
         }];
@@ -272,7 +277,7 @@
             if (ShowOverLay) {
                 CGSize screenSize=[UIApplication currentSize];
                 [UIView animateWithDuration:.3 animations:^{
-                    self.OverLayView.frame=CGRectMake(0, screenSize.height, screenSize.width, 200);
+                    self.OverLayView.frame=CGRectMake(0, screenSize.height+50, screenSize.width, 200);
                 }completion:^(BOOL finished){
                     ShowOverLay=FALSE;
                 }];

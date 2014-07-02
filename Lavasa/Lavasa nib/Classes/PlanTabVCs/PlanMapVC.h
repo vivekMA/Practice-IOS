@@ -19,6 +19,7 @@
     MBProgressHUD *objhud;
     NSMutableArray *PlaceLocation;
 }
+@property(nonatomic,retain)NSMutableArray *latLongitudes;
 @property (strong, nonatomic) IBOutlet UIView *OverLayView;
 @property (strong, nonatomic) IBOutlet UILabel *nameLbl;
 @property (strong, nonatomic) IBOutlet UILabel *addressLbl;

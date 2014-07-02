@@ -9,8 +9,6 @@
 #import "PlanDetailTVC.h"
 #import "PlanDetailTVCell.h"
 #import "AppDataBase.h"
-#import "PlanMapVC.h"
-
 @interface PlanDetailTVC ()
 
 @end
@@ -119,13 +117,6 @@
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
     
 }
-
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"goToPlanMap"]) {
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"GoToParanoma"])
@@ -134,12 +125,4 @@
       
         
     }
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
-- (IBAction)goToMap:(id)sender {
-    [self performSegueWithIdentifier:@"goToPlanMap" sender:nil];
-}
-@end
 }@end

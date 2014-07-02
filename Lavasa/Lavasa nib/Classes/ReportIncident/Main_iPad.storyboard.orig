@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="Ogt-Vn-Bpz">
     <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
@@ -779,11 +780,10 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wfQ-IH-Rvy">
-                                            <rect key="frame" x="653" y="85" width="115" height="38"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="17w-P5-ceU">
+                                            <rect key="frame" x="682" y="89" width="76" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="Panaroma View">
+                                            <state key="normal" title="360 Tour">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -797,6 +797,7 @@
                                     <outlet property="LblIternaryAddress" destination="vcd-cU-8M5" id="NqD-Zq-YCV"/>
                                     <outlet property="LblIterninaryName" destination="gPc-gx-XAe" id="sUf-ec-Rk3"/>
                                     <outlet property="RatingView" destination="dXF-BM-zXV" id="SZt-Cf-3ss"/>
+                                    <outlet property="paranomaBtnAction" destination="17w-P5-ceU" id="Ffi-zF-36p"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -805,25 +806,18 @@
                             <outlet property="delegate" destination="1MR-Pm-dwZ" id="kFa-BP-1YB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Xm2-SI-RpE">
-                        <barButtonItem key="rightBarButtonItem" title="Map" id="FpW-LD-w7C">
-                            <connections>
-                                <action selector="goToMap:" destination="1MR-Pm-dwZ" id="xGw-6l-Cg0"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="Xm2-SI-RpE"/>
                     <connections>
                         <outlet property="BtnBook" destination="bJh-fo-Rub" id="AYz-Nd-YHD"/>
                         <outlet property="ImgPackage" destination="rtT-6F-o65" id="4rP-dA-NdY"/>
                         <outlet property="LblAddress" destination="pLK-Lp-Nxx" id="75M-z3-Zdv"/>
                         <outlet property="LblPackage" destination="nAe-6Z-EWe" id="bb7-cz-ZbX"/>
                         <outlet property="LblPrice" destination="M2F-x1-HnN" id="UX4-9L-oDl"/>
-                        <segue destination="DdN-1T-Ycs" kind="push" identifier="goToPlanMap" id="4te-Jq-fz7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfG-I1-nhP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2016" y="8108"/>
+            <point key="canvasLocation" x="1848" y="8228"/>
         </scene>
         <!--Booking PackageVC-->
         <scene sceneID="M5j-fT-mEw">
@@ -1422,7 +1416,11 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
+<<<<<<< HEAD
+                        <segue destination="ZEf-5K-0yJ" kind="relationship" relationship="rootViewController" id="8LW-K2-0uQ"/>
+=======
                         <segue destination="w3x-it-1nW" kind="relationship" relationship="rootViewController" id="h6p-7D-RkP"/>
+>>>>>>> 19e70ac013a387f7dc3ff08e4d0b55fee841630c
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zVj-s3-4PE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2011,6 +2009,7 @@
             </objects>
             <point key="canvasLocation" x="-376" y="8842"/>
         </scene>
+<<<<<<< HEAD
         <!--Map DetailVC - Map-->
         <scene sceneID="1UJ-vu-oGY">
             <objects>
@@ -2157,6 +2156,8 @@
             </objects>
             <point key="canvasLocation" x="3524" y="7285"/>
         </scene>
+=======
+>>>>>>> 19e70ac013a387f7dc3ff08e4d0b55fee841630c
     </scenes>
     <resources>
         <image name="EXPLORE_SELECT.png" width="54" height="54"/>
@@ -2168,7 +2169,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Q5u-Bu-ZyW"/>
+        <segue reference="FLY-MM-6Jt"/>
         <segue reference="YyY-l3-3O4"/>
         <segue reference="aUx-YD-ghf"/>
         <segue reference="i4Q-u1-9vD"/>
