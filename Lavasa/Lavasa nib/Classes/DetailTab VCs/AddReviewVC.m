@@ -74,51 +74,9 @@
         
         NSLog(@"email %@ ",[NSString stringWithFormat:@"Email: %@",signIn.userEmail]);
 
-        
-        // Do some error handling here.
     } else {
-        //  [self refreshInterfaceBasedOnSignIn];
-        
-        
           [self insertData];
-        
-        
-        
-//        NSLog(@"email %@ ",[NSString stringWithFormat:@"Email: %@",signIn.userEmail]);
-//        NSLog(@"email %@ ",[NSString stringWithFormat:@"Email: %@",signIn.init]);
-// 
-//        
-//        // 1. Create a |GTLServicePlus| instance to send a request to Google+.
-//        GTLServicePlus* plusService = [[GTLServicePlus alloc] init] ;
-//        plusService.retryEnabled = YES;
-//        
-//        // 2. Set a valid |GTMOAuth2Authentication| object as the authorizer.
-//        [plusService setAuthorizer:[GPPSignIn sharedInstance].authentication];
-//        
-//        
-//        GTLQueryPlus *query = [GTLQueryPlus queryForPeopleGetWithUserId:@"me"];
-//        
-//        // *4. Use the "v1" version of the Google+ API.*
-//        plusService.apiVersion = @"v1";
-//        
-//        [plusService executeQuery:query
-//                completionHandler:^(GTLServiceTicket *ticket,
-//                                    GTLPlusPerson *person,
-//                                    NSError *error) {
-//                    if (error) {
-//                        
-//                        //Handle Error
-//                        
-//                    } else
-//                    {
-//                        NSLog(@"Email= %@",[GPPSignIn sharedInstance].authentication.userEmail);
-//                        NSLog(@"GoogleID=%@",person.identifier);
-//                        NSLog(@"User Name=%@",[person.name.givenName stringByAppendingFormat:@" %@",person.name.familyName]);
-//                        NSLog(@"Gender=%@",person.gender);
-//                        
-//                    }
-//                }];
-    }
+      }
 }
 -(void)insertData
 {
@@ -128,8 +86,10 @@
     NSString *rating=[NSString stringWithFormat:@"%f",self.Rating.rating];
     NSString *description=self.TextViewDescrip.text;
     NSString *title=self.TextfieldTitle.text;
+    NSString *url=@"http://icons.iconarchive.com/icons/benjigarner/softdimension/256/Image-ready-CS-2-icon.png";
     
-    NSString *query=[NSString stringWithFormat:@"INSERT INTO review_demo (rating,description,title,icon) VALUES ('%@','%@','%@','%@')",rating,description,title,@"http://icons.iconarchive.com/icons/benjigarner/softdimension/256/Image-ready-CS-2-icon.png"];
+    NSString *query=[NSString stringWithFormat:@"INSERT INTO review (id,rating,review,user_profile_name,gplus_url,user_id,place_id) VALUES ('%d','%@','%@','%@','%@','%d','%d')",34,rating,description,title,url,88,1];
+    NSLog(@"%@",query);
     
     BOOL success= [database executeUpdate:query];
     

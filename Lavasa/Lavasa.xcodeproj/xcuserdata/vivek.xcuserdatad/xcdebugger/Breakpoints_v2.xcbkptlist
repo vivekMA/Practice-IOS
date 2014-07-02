@@ -217,12 +217,12 @@
                   symbolName = "-[AttractionTab3 motionManager]"
                   moduleName = "Lavasa"
                   urlString = "file:///Users/vivek/LavasaNew/Lavasa/Lavasa%20nib/Classes/Attraction%20Tab%20VCs/AttractionTab3.h"
-                  timestampString = "425980320.904948"
+                  timestampString = "425990860.449569"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "47"
                   endingLineNumber = "47"
-                  offsetFromSymbolStart = "24">
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -231,12 +231,12 @@
                   symbolName = "-[AttractionTab3 setMotionManager:]"
                   moduleName = "Lavasa"
                   urlString = "file:///Users/vivek/LavasaNew/Lavasa/Lavasa%20nib/Classes/Attraction%20Tab%20VCs/AttractionTab3.h"
-                  timestampString = "425980320.905288"
+                  timestampString = "425990860.449762"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "47"
                   endingLineNumber = "47"
-                  offsetFromSymbolStart = "31">
+                  offsetFromSymbolStart = "28">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -254,38 +254,6 @@
             startingLineNumber = "146"
             endingLineNumber = "146"
             landmarkName = "-backAction:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Lavasa nib/Classes/DetailTab VCs/ReviewVC.m"
-            timestampString = "425394292.027084"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "-GetData"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Lavasa nib/Classes/DetailTab VCs/ReviewVC.m"
-            timestampString = "425394819.911204"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "-databasePath"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
