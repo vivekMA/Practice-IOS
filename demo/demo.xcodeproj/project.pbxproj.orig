@@ -23,7 +23,11 @@
 		CEAF1A601964317B00894725 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAF1A3F1964317B00894725 /* UIKit.framework */; };
 		CEAF1A681964317B00894725 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEAF1A661964317B00894725 /* InfoPlist.strings */; };
 		CEAF1A6A1964317B00894725 /* demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAF1A691964317B00894725 /* demoTests.m */; };
+<<<<<<< HEAD
+		CEAF1A8019644A2C00894725 /* sehrawat.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAF1A7F19644A2C00894725 /* sehrawat.m */; };
+=======
 		E2DB67EB196449F900BE5483 /* yadav.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB67EA196449F900BE5483 /* yadav.m */; };
+>>>>>>> 8404606a6adffb151bc2452c86582a2c68987d33
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +62,15 @@
 		CEAF1A651964317B00894725 /* demoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "demoTests-Info.plist"; sourceTree = "<group>"; };
 		CEAF1A671964317B00894725 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CEAF1A691964317B00894725 /* demoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = demoTests.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		CEAF1A7E19644A2C00894725 /* sehrawat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sehrawat.h; sourceTree = "<group>"; };
+		CEAF1A7F19644A2C00894725 /* sehrawat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sehrawat.m; sourceTree = "<group>"; };
+		D829D4929EA243A786D5F58B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+=======
 		D829D4929EA243A786D5F58B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2DB67E9196449F900BE5483 /* yadav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yadav.h; sourceTree = "<group>"; };
 		E2DB67EA196449F900BE5483 /* yadav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = yadav.m; sourceTree = "<group>"; };
+>>>>>>> 8404606a6adffb151bc2452c86582a2c68987d33
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,10 +139,17 @@
 				CEAF1A501964317B00894725 /* Main_iPad.storyboard */,
 				CEAF1A531964317B00894725 /* ViewController.h */,
 				CEAF1A541964317B00894725 /* ViewController.m */,
+<<<<<<< HEAD
+				CEAF1A561964317B00894725 /* Images.xcassets */,
+				CEAF1A421964317B00894725 /* Supporting Files */,
+				CEAF1A7E19644A2C00894725 /* sehrawat.h */,
+				CEAF1A7F19644A2C00894725 /* sehrawat.m */,
+=======
 				E2DB67E9196449F900BE5483 /* yadav.h */,
 				E2DB67EA196449F900BE5483 /* yadav.m */,
 				CEAF1A561964317B00894725 /* Images.xcassets */,
 				CEAF1A421964317B00894725 /* Supporting Files */,
+>>>>>>> 8404606a6adffb151bc2452c86582a2c68987d33
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -299,10 +316,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
+				CEAF1A8019644A2C00894725 /* sehrawat.m in Sources */,
+				CEAF1A551964317B00894725 /* ViewController.m in Sources */,
+				CEAF1A4C1964317B00894725 /* AppDelegate.m in Sources */,
+				CEAF1A481964317B00894725 /* main.m in Sources */,
+=======
 				CEAF1A551964317B00894725 /* ViewController.m in Sources */,
 				CEAF1A4C1964317B00894725 /* AppDelegate.m in Sources */,
 				CEAF1A481964317B00894725 /* main.m in Sources */,
 				E2DB67EB196449F900BE5483 /* yadav.m in Sources */,
+>>>>>>> 8404606a6adffb151bc2452c86582a2c68987d33
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
