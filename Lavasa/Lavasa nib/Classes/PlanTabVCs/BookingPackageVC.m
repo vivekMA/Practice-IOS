@@ -39,10 +39,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.editing=YES;
     
     ArrMembers=[[NSMutableArray alloc]init];
 
-  ArrGender=[NSMutableArray arrayWithObjects:@"Male",@"Female", nil];
+    ArrGender=[NSMutableArray arrayWithObjects:@"Male",@"Female", nil];
     ArrAge=[[NSMutableArray alloc]init];
     for (int i=1; i<101;i++) {
         [ArrAge addObject:[NSString stringWithFormat:@"%d",i]];
@@ -61,8 +62,6 @@
     
     popOverForDatePicker = [[UIPopoverController alloc]initWithContentViewController:viewController];
     [popOverForDatePicker setPopoverContentSize:CGSizeMake(300, 200) animated:NO];
-    
-   //    popOverForDatePicker.delegate = self;
 }
 
 -(void)DateChange :(id)sender
@@ -110,6 +109,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"tapped button at row: %@",self.navigationController.viewControllers);
+}
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(editingStyle == UITableViewCellEditingStyleDelete){
+        
+        [ArrMembers removeObjectAtIndex:indexPath.row];
+        
+    }
+    [self.tableView reloadData];
+    
 }
 #pragma popover delegate
 -(void)popoverListSelctedItem:(NSString *)categoryName :(NSString *)CatType
@@ -215,9 +224,17 @@
 }
 - (IBAction)AddBtnAction:(id)sender {
    
-    [ArrMembers addObject:[[NSDictionary alloc]initWithObjectsAndKeys:self.TextFieldFirstName.text,@"firstname",self.TextFieldLastName.text,@"lastname",self.TextFieldAge.text,@"age",self.TextFieldDate.text,@"date",self.TextFieldGender.text,@"gender", nil]];
-    
-    [self.tableView reloadData];
+    if (self.TextFieldGender.text.length==0 || self.TextFieldFirstName.text.length==0 || self.TextFieldLastName.text.length==0 ||self.TextFieldAge.text.length==0 ||self.TextFieldDate.text.length==0) {
+        
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:nil message:@"All firlds are mandatory" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+        alert=nil;
+        
+    }else
+    {
+        [ArrMembers addObject:[[NSDictionary alloc]initWithObjectsAndKeys:self.TextFieldFirstName.text,@"firstname",self.TextFieldLastName.text,@"lastname",self.TextFieldAge.text,@"age",self.TextFieldDate.text,@"date",self.TextFieldGender.text,@"gender", nil]];
+        [self.tableView reloadData];
+    }
 }
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)pc {
     popOverForDatePicker = nil;

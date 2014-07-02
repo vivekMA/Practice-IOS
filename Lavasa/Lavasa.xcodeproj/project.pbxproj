@@ -140,9 +140,10 @@
 		E2DB673B195D51E600BE5483 /* PlanDetailTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB673A195D51E600BE5483 /* PlanDetailTVCell.m */; };
 		E2DB6740195D546F00BE5483 /* yadav.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB673F195D546F00BE5483 /* yadav.m */; };
 		E2DB674719618CB300BE5483 /* BookingPackageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB674619618CB300BE5483 /* BookingPackageVC.m */; };
-		E2DB67CB1962999200BE5483 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2DB67CA1962999200BE5483 /* FacebookSDK.framework */; };
 		E2DB67D11962D70300BE5483 /* PopoverTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB67D01962D70300BE5483 /* PopoverTableView.m */; };
 		E2DB67D41962E38F00BE5483 /* BookingTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB67D31962E38F00BE5483 /* BookingTVCell.m */; };
+		E2DB67D81963C4D900BE5483 /* UIApplication+AppDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB67D71963C4D900BE5483 /* UIApplication+AppDimension.m */; };
+		E2DB67DA1963C52500BE5483 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2DB67D91963C52500BE5483 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -367,11 +368,13 @@
 		E2DB673F195D546F00BE5483 /* yadav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = yadav.m; sourceTree = "<group>"; };
 		E2DB674519618CB300BE5483 /* BookingPackageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingPackageVC.h; sourceTree = "<group>"; };
 		E2DB674619618CB300BE5483 /* BookingPackageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingPackageVC.m; sourceTree = "<group>"; };
-		E2DB67CA1962999200BE5483 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "Lavasa nib/Third Party APIs/External framework/FacebookSDK.framework"; sourceTree = "<group>"; };
 		E2DB67CF1962D70300BE5483 /* PopoverTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverTableView.h; sourceTree = "<group>"; };
 		E2DB67D01962D70300BE5483 /* PopoverTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverTableView.m; sourceTree = "<group>"; };
 		E2DB67D21962E38F00BE5483 /* BookingTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingTVCell.h; sourceTree = "<group>"; };
 		E2DB67D31962E38F00BE5483 /* BookingTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingTVCell.m; sourceTree = "<group>"; };
+		E2DB67D61963C4D900BE5483 /* UIApplication+AppDimension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+AppDimension.h"; sourceTree = "<group>"; };
+		E2DB67D71963C4D900BE5483 /* UIApplication+AppDimension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+AppDimension.m"; sourceTree = "<group>"; };
+		E2DB67D91963C52500BE5483 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "Lavasa nib/Third Party APIs/External framework/FacebookSDK.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,7 +403,7 @@
 				E27A1F6D1947224D001F9A3C /* AddressBook.framework in Frameworks */,
 				E22143241945C140003E9535 /* libsqlite3.0.dylib in Frameworks */,
 				E27A1F6B19472233001F9A3C /* GooglePlus.framework in Frameworks */,
-				E2DB67CB1962999200BE5483 /* FacebookSDK.framework in Frameworks */,
+				E2DB67DA1963C52500BE5483 /* FacebookSDK.framework in Frameworks */,
 				CEB665C6195D6E63002E415B /* GoogleMaps.framework in Frameworks */,
 				E22142C21945980F003E9535 /* UIKit.framework in Frameworks */,
 				E22142BE1945980F003E9535 /* Foundation.framework in Frameworks */,
@@ -535,7 +538,7 @@
 		E22142BC1945980F003E9535 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E2DB67CA1962999200BE5483 /* FacebookSDK.framework */,
+				E2DB67D91963C52500BE5483 /* FacebookSDK.framework */,
 				CEB665C5195D6E63002E415B /* GoogleMaps.framework */,
 				CEB343DA195A9B070047E6C4 /* CoreData.framework */,
 				CEB343D6195A92380047E6C4 /* OpenGLES.framework */,
@@ -631,6 +634,7 @@
 		E22142F1194599F0003E9535 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E2DB67D51963C4D900BE5483 /* Category */,
 				CEB665AA195D4317002E415B /* App */,
 				CEACBA2D195C4CC200AA1E75 /* PlanTabVCs */,
 				E2A8EC8819515AAB00723FC6 /* Detail Tabs */,
@@ -909,6 +913,15 @@
 			path = "Detail Tabs";
 			sourceTree = "<group>";
 		};
+		E2DB67D51963C4D900BE5483 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				E2DB67D61963C4D900BE5483 /* UIApplication+AppDimension.h */,
+				E2DB67D71963C4D900BE5483 /* UIApplication+AppDimension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1108,6 +1121,7 @@
 				E221431F1945C107003E9535 /* FMDatabaseAdditions.m in Sources */,
 				CEACBA2C195C4CA900AA1E75 /* PlanTabVC.m in Sources */,
 				E26F01761952C48E00E3F714 /* DetailTabVC.m in Sources */,
+				E2DB67D81963C4D900BE5483 /* UIApplication+AppDimension.m in Sources */,
 				E221433B1945C255003E9535 /* SDImageCache.m in Sources */,
 				CEACBA39195C4CC200AA1E75 /* PlanTVC4.m in Sources */,
 				E2A8EC72195041AE00723FC6 /* AttractionTab4.m in Sources */,
@@ -1251,6 +1265,11 @@
 					Party,
 					APIs/External,
 					framework,
+					"$(PROJECT_DIR)/Lavasa",
+					nib/Third,
+					Party,
+					APIs/External,
+					framework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Lavasa nib/Lavasa-Prefix.pch";
@@ -1277,6 +1296,11 @@
 					APIs/External,
 					framework,
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Lavasa",
+					nib/Third,
+					Party,
+					APIs/External,
+					framework,
 					"$(PROJECT_DIR)/Lavasa",
 					nib/Third,
 					Party,
