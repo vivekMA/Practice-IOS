@@ -780,6 +780,14 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wfQ-IH-Rvy">
+                                            <rect key="frame" x="653" y="85" width="115" height="38"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <state key="normal" title="Panaroma View">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -795,18 +803,25 @@
                             <outlet property="delegate" destination="1MR-Pm-dwZ" id="kFa-BP-1YB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Xm2-SI-RpE"/>
+                    <navigationItem key="navigationItem" id="Xm2-SI-RpE">
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="FpW-LD-w7C">
+                            <connections>
+                                <action selector="goToMap:" destination="1MR-Pm-dwZ" id="xGw-6l-Cg0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="BtnBook" destination="bJh-fo-Rub" id="AYz-Nd-YHD"/>
                         <outlet property="ImgPackage" destination="rtT-6F-o65" id="4rP-dA-NdY"/>
                         <outlet property="LblAddress" destination="pLK-Lp-Nxx" id="75M-z3-Zdv"/>
                         <outlet property="LblPackage" destination="nAe-6Z-EWe" id="bb7-cz-ZbX"/>
                         <outlet property="LblPrice" destination="M2F-x1-HnN" id="UX4-9L-oDl"/>
+                        <segue destination="DdN-1T-Ycs" kind="push" identifier="goToPlanMap" id="4te-Jq-fz7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfG-I1-nhP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1848" y="8228"/>
+            <point key="canvasLocation" x="2016" y="8108"/>
         </scene>
         <!--Booking PackageVC-->
         <scene sceneID="M5j-fT-mEw">
@@ -952,7 +967,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rO6-2l-erj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2947" y="8258"/>
+            <point key="canvasLocation" x="3587" y="8610"/>
         </scene>
         <!--Navigation Controller - All-->
         <scene sceneID="tSV-UZ-lwy">
@@ -1202,27 +1217,6 @@
             </objects>
             <point key="canvasLocation" x="4995" y="2725"/>
         </scene>
-        <!--Map DetailVC - Map-->
-        <scene sceneID="V1K-wS-NgU">
-            <objects>
-                <viewController id="w3x-it-1nW" customClass="MapDetailVC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NtV-y1-FLp">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Map" id="562-Wg-M8L">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="8mi-fc-pYN">
-                            <connections>
-                                <action selector="backAction:" destination="w3x-it-1nW" id="iFJ-9O-s92"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Niu-Zj-JD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5040" y="5029"/>
-        </scene>
         <!--Detail Tab1-->
         <scene sceneID="TER-dq-4qh">
             <objects>
@@ -1379,7 +1373,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="w3x-it-1nW" kind="relationship" relationship="rootViewController" id="h6p-7D-RkP"/>
+                        <segue destination="ZEf-5K-0yJ" kind="push" id="e3r-SA-zEx"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zVj-s3-4PE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1579,7 +1573,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dgt-PU-GdB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5711" y="3944"/>
+            <point key="canvasLocation" x="6927" y="3984"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kap-BU-l9d">
@@ -1968,6 +1962,158 @@
             </objects>
             <point key="canvasLocation" x="-376" y="8842"/>
         </scene>
+        <!--Map DetailVC - Map-->
+        <scene sceneID="1UJ-vu-oGY">
+            <objects>
+                <viewController id="ZEf-5K-0yJ" customClass="MapDetailVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kkO-g2-MxN">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="oov-IP-bub">
+                                <rect key="frame" x="20" y="774" width="768" height="200"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OO1-JG-6C2">
+                                        <rect key="frame" x="20" y="150" width="125" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Get me there">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getMeThere:" destination="ZEf-5K-0yJ" eventType="touchUpInside" id="UtR-Xr-RYW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4NJ-ip-CR8">
+                                        <rect key="frame" x="576" y="150" width="169" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Near by places">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nearByPlaces:" destination="ZEf-5K-0yJ" eventType="touchUpInside" id="KMx-T3-Gz8"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CCK-cW-whe">
+                                        <rect key="frame" x="20" y="28" width="212" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y2b-mZ-E6a">
+                                        <rect key="frame" x="20" y="57" width="248" height="61"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" id="N6C-8e-cWh" customClass="DLStarRatingControl">
+                                        <rect key="frame" x="463" y="20" width="256" height="65"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.21499360919999999" green="1" blue="0.984823856" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map" id="78K-1r-ETL">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="0wx-zf-JQa">
+                            <connections>
+                                <action selector="backAction:" destination="ZEf-5K-0yJ" id="lp2-ba-aK1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="OverLayView" destination="oov-IP-bub" id="2pR-tg-j6b"/>
+                        <outlet property="addressLbl" destination="y2b-mZ-E6a" id="q3P-qu-YrN"/>
+                        <outlet property="nameLbl" destination="CCK-cW-whe" id="8d7-Bt-JKT"/>
+                        <outlet property="ratingView" destination="N6C-8e-cWh" id="cYk-Yn-nWP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5oA-sd-pgd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5100" y="5053"/>
+        </scene>
+        <!--Plan DetailTVC - Map-->
+        <scene sceneID="NPj-lz-BOj">
+            <objects>
+                <viewController id="DdN-1T-Ycs" customClass="PlanDetailTVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ena-fz-SwM">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="YvS-r3-m6q">
+                                <rect key="frame" x="20" y="774" width="768" height="200"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4zn-AM-0Zp">
+                                        <rect key="frame" x="20" y="150" width="125" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Get me there">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getMeThere:" destination="DdN-1T-Ycs" eventType="touchUpInside" id="Eco-Na-zUh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0UQ-GI-l6a">
+                                        <rect key="frame" x="576" y="150" width="169" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Near by places">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nearByPlaces:" destination="DdN-1T-Ycs" eventType="touchUpInside" id="uRD-8D-q6m"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nzq-hN-9RR">
+                                        <rect key="frame" x="20" y="28" width="212" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="leQ-bn-62o">
+                                        <rect key="frame" x="20" y="57" width="248" height="61"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" id="M1N-W2-wxC" customClass="DLStarRatingControl">
+                                        <rect key="frame" x="463" y="20" width="256" height="65"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.21499360919999999" green="1" blue="0.984823856" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map" id="rNH-k7-VaW">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="qsB-mZ-xSO">
+                            <connections>
+                                <action selector="backAction:" destination="DdN-1T-Ycs" id="o7E-3w-Ee7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="OverLayView" destination="YvS-r3-m6q" id="WQx-Ec-n5o"/>
+                        <outlet property="addressLbl" destination="leQ-bn-62o" id="YvE-qI-xYE"/>
+                        <outlet property="nameLbl" destination="nzq-hN-9RR" id="PZR-VU-vIJ"/>
+                        <outlet property="ratingView" destination="M1N-W2-wxC" id="QmA-hn-heP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yLF-1U-ozb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3524" y="7285"/>
+        </scene>
     </scenes>
     <resources>
         <image name="EXPLORE_SELECT.png" width="54" height="54"/>
@@ -1979,8 +2125,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="YyY-l3-3O4"/>
+        <segue reference="Q5u-Bu-ZyW"/>
         <segue reference="aUx-YD-ghf"/>
-        <segue reference="FLY-MM-6Jt"/>
+        <segue reference="YyY-l3-3O4"/>
     </inferredMetricsTieBreakers>
 </document>
