@@ -42,11 +42,11 @@ ReviewTableCell *reviewCell;
     [database open];
     FMResultSet *results;
     
-    results = [database executeQuery:@"SELECT * FROM review_demo ORDER BY id DESC"];
+    results = [database executeQuery:@"SELECT * FROM review ORDER BY id DESC"];
     
       while([results next]) {
    
-        [ArrayData addObject:[[NSDictionary alloc]initWithObjectsAndKeys:[results stringForColumn:@"title"],@"title",[results stringForColumn:@"rating"],@"rating",[results stringForColumn:@"description"],@"description" ,[results stringForColumn:@"id"],@"id",[results stringForColumn:@"icon"],@"icon",[results stringForColumn:@"user_like"],@"user_like",nil]];
+        [ArrayData addObject:[[NSDictionary alloc]initWithObjectsAndKeys:[results stringForColumn:@"user_profile_name"],@"title",[results stringForColumn:@"rating"],@"rating",[results stringForColumn:@"review"],@"description" ,[results stringForColumn:@"id"],@"id",[results stringForColumn:@"gplus_url"],@"icon",[results stringForColumn:@"user_like"],@"user_like",nil]];
         
           NSLog(@"%@",ArrayData);
     }
