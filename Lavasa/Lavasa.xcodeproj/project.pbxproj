@@ -145,6 +145,7 @@
 		E2DB674719618CB300BE5483 /* BookingPackageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB674619618CB300BE5483 /* BookingPackageVC.m */; };
 		E2DB67D11962D70300BE5483 /* PopoverTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB67D01962D70300BE5483 /* PopoverTableView.m */; };
 		E2DB67D41962E38F00BE5483 /* BookingTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB67D31962E38F00BE5483 /* BookingTVCell.m */; };
+		E2DB67E41963F04200BE5483 /* ParanomaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB67E31963F04200BE5483 /* ParanomaVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -378,6 +379,8 @@
 		E2DB67D01962D70300BE5483 /* PopoverTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverTableView.m; sourceTree = "<group>"; };
 		E2DB67D21962E38F00BE5483 /* BookingTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingTVCell.h; sourceTree = "<group>"; };
 		E2DB67D31962E38F00BE5483 /* BookingTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingTVCell.m; sourceTree = "<group>"; };
+		E2DB67E21963F04200BE5483 /* ParanomaVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParanomaVC.h; sourceTree = "<group>"; };
+		E2DB67E31963F04200BE5483 /* ParanomaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParanomaVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -458,6 +461,8 @@
 				E2DB67D01962D70300BE5483 /* PopoverTableView.m */,
 				CEAF1A261963D17D00894725 /* PlanMapVC.h */,
 				CEAF1A271963D17D00894725 /* PlanMapVC.m */,
+				E2DB67E21963F04200BE5483 /* ParanomaVC.h */,
+				E2DB67E31963F04200BE5483 /* ParanomaVC.m */,
 			);
 			path = PlanTabVCs;
 			sourceTree = "<group>";
@@ -1098,6 +1103,7 @@
 				CEACBA37195C4CC200AA1E75 /* PlanTVC2.m in Sources */,
 				CEB665AD195D4317002E415B /* lavasaAppDelegate.m in Sources */,
 				E2A8EC971951685A00723FC6 /* DetailTab4.m in Sources */,
+				E2DB67E41963F04200BE5483 /* ParanomaVC.m in Sources */,
 				E22CDF71195AFA8800D8B1D1 /* ReviewVC.m in Sources */,
 				CEB665CF195D78E4002E415B /* AppDataBase.m in Sources */,
 				CEB665D2195D7D36002E415B /* MapDetailVC.m in Sources */,

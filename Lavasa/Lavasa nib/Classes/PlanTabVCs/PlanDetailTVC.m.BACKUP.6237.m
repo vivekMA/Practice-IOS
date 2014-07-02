@@ -9,8 +9,6 @@
 #import "PlanDetailTVC.h"
 #import "PlanDetailTVCell.h"
 #import "AppDataBase.h"
-#import "PlanMapVC.h"
-
 @interface PlanDetailTVC ()
 
 @end
@@ -52,17 +50,20 @@
         NSDictionary *DicData=[[NSDictionary alloc]initWithObjectsAndKeys: [Result stringForColumn:@"icon"],@"icon",
                                [Result stringForColumn:@"place_name"],@"place_name",
                                [Result stringForColumn:@"id"],@"id",
+                               [Result stringForColumn:@"lat"],@"lat",
                                [Result stringForColumn:@"place_reference_id"],@"place_reference_id",
                                [Result stringForColumn:@"lng"],@"lng",
                                [Result stringForColumn:@"formatted_address"],@"formatted_address",
+                               [Result stringForColumn:@"overall_rating"],@"overall_rating",
                                [Result stringForColumn:@"formatted_phone_number"],@"formatted_phone_number",
                                [Result stringForColumn:@"open_now"],@"open_now",
                                [Result stringForColumn:@"user_location"],@"user_location",
-                               [Result stringForColumn:@"lat"],@"lat",
-                               [Result stringForColumn:@"overall_rating"],@"overall_rating",nil];
+                               nil];
       [ArrayData addObject:DicData];
-    NSLog(@"%@",ArrayData);
     }
+    
+    NSLog(@"%@",ArrayData);
+
 }
 - (void)didReceiveMemoryWarning
 {
@@ -119,6 +120,7 @@
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
     
 }
+<<<<<<< HEAD
 
 #pragma mark - Navigation
 
@@ -126,13 +128,20 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"goToPlanMap"]) {
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"GoToParanoma"])
-    {
-       
-      
         
+        PlanMapVC *planMap=segue.destinationViewController;
+        
+//        NSMutableArray *filterLatLong=[NSMutableArray new];
+//       
+//        for (NSDictionary *dict in ArrayData) {
+//            
+//            CLLocationDegrees lat=[[dict objectForKey:@"lat"] doubleValue ];
+//            CLLocationDegrees lng=[[dict objectForKey:@"lng"] doubleValue ];
+//            
+//            CLLocation *location = [[CLLocation alloc] initWithLatitude:lat longitude:lng];
+//            [filterLatLong addObject:location];
+//        }
+        planMap.latLongitudes=ArrayData;
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
@@ -142,4 +151,14 @@
     [self performSegueWithIdentifier:@"goToPlanMap" sender:nil];
 }
 @end
+=======
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"GoToParanoma"])
+    {
+       
+      
+        
+    }
 }@end
+>>>>>>> 19e70ac013a387f7dc3ff08e4d0b55fee841630c

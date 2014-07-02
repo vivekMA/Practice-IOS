@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *LblIternaryAddress;
 @property (weak, nonatomic) IBOutlet DLStarRatingControl *RatingView;
 @property (weak, nonatomic) IBOutlet UILabel *LblIterninaryName;
+@property (weak, nonatomic) IBOutlet UIButton *paranomaBtnAction;
 
 @end
