@@ -1373,7 +1373,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ZEf-5K-0yJ" kind="push" id="e3r-SA-zEx"/>
+                        <segue destination="ZEf-5K-0yJ" kind="relationship" relationship="rootViewController" id="8LW-K2-0uQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zVj-s3-4PE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2036,12 +2036,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5oA-sd-pgd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5100" y="5053"/>
+            <point key="canvasLocation" x="5356" y="5030"/>
         </scene>
-        <!--Plan DetailTVC - Map-->
+        <!--Plan MapVC - Map-->
         <scene sceneID="NPj-lz-BOj">
             <objects>
-                <viewController id="DdN-1T-Ycs" customClass="PlanDetailTVC" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="DdN-1T-Ycs" customClass="PlanMapVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ena-fz-SwM">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2096,13 +2096,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Map" id="rNH-k7-VaW">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="qsB-mZ-xSO">
-                            <connections>
-                                <action selector="backAction:" destination="DdN-1T-Ycs" id="o7E-3w-Ee7"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Map" id="rNH-k7-VaW"/>
                     <connections>
                         <outlet property="OverLayView" destination="YvS-r3-m6q" id="WQx-Ec-n5o"/>
                         <outlet property="addressLbl" destination="leQ-bn-62o" id="YvE-qI-xYE"/>

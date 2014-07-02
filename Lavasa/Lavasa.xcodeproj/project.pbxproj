@@ -23,6 +23,7 @@
 		CEACBA3C195C4CF900AA1E75 /* PlanTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEACBA3B195C4CF900AA1E75 /* PlanTVCell.m */; };
 		CEAF1A281963D17D00894725 /* PlanMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAF1A271963D17D00894725 /* PlanMapVC.m */; };
 		CEAF1A2C1963DD2B00894725 /* UIApplication+AppDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAF1A2B1963DD2B00894725 /* UIApplication+AppDimension.m */; };
+		CEAF1A2E1963E9C500894725 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAF1A2D1963E9C400894725 /* FacebookSDK.framework */; };
 		CEB211BA1957FD7D005C00DD /* ARCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB211A91957FD7D005C00DD /* ARCoordinate.m */; };
 		CEB211BB1957FD7D005C00DD /* ARGeoCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB211AB1957FD7D005C00DD /* ARGeoCoordinate.m */; };
 		CEB211BC1957FD7D005C00DD /* ARKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB211AD1957FD7D005C00DD /* ARKit.m */; };
@@ -142,7 +143,6 @@
 		E2DB673B195D51E600BE5483 /* PlanDetailTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB673A195D51E600BE5483 /* PlanDetailTVCell.m */; };
 		E2DB6740195D546F00BE5483 /* yadav.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB673F195D546F00BE5483 /* yadav.m */; };
 		E2DB674719618CB300BE5483 /* BookingPackageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB674619618CB300BE5483 /* BookingPackageVC.m */; };
-		E2DB67CB1962999200BE5483 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2DB67CA1962999200BE5483 /* FacebookSDK.framework */; };
 		E2DB67D11962D70300BE5483 /* PopoverTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB67D01962D70300BE5483 /* PopoverTableView.m */; };
 		E2DB67D41962E38F00BE5483 /* BookingTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DB67D31962E38F00BE5483 /* BookingTVCell.m */; };
 /* End PBXBuildFile section */
@@ -186,6 +186,7 @@
 		CEAF1A271963D17D00894725 /* PlanMapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanMapVC.m; sourceTree = "<group>"; };
 		CEAF1A2A1963DD2B00894725 /* UIApplication+AppDimension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+AppDimension.h"; sourceTree = "<group>"; };
 		CEAF1A2B1963DD2B00894725 /* UIApplication+AppDimension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+AppDimension.m"; sourceTree = "<group>"; };
+		CEAF1A2D1963E9C400894725 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "Lavasa nib/Third Party APIs/External framework/FacebookSDK.framework"; sourceTree = "<group>"; };
 		CEB211A81957FD7D005C00DD /* ARCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCoordinate.h; sourceTree = "<group>"; };
 		CEB211A91957FD7D005C00DD /* ARCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARCoordinate.m; sourceTree = "<group>"; };
 		CEB211AA1957FD7D005C00DD /* ARGeoCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARGeoCoordinate.h; sourceTree = "<group>"; };
@@ -373,7 +374,6 @@
 		E2DB673F195D546F00BE5483 /* yadav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = yadav.m; sourceTree = "<group>"; };
 		E2DB674519618CB300BE5483 /* BookingPackageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingPackageVC.h; sourceTree = "<group>"; };
 		E2DB674619618CB300BE5483 /* BookingPackageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingPackageVC.m; sourceTree = "<group>"; };
-		E2DB67CA1962999200BE5483 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "Lavasa nib/Third Party APIs/External framework/FacebookSDK.framework"; sourceTree = "<group>"; };
 		E2DB67CF1962D70300BE5483 /* PopoverTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverTableView.h; sourceTree = "<group>"; };
 		E2DB67D01962D70300BE5483 /* PopoverTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverTableView.m; sourceTree = "<group>"; };
 		E2DB67D21962E38F00BE5483 /* BookingTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingTVCell.h; sourceTree = "<group>"; };
@@ -406,7 +406,7 @@
 				E27A1F6D1947224D001F9A3C /* AddressBook.framework in Frameworks */,
 				E22143241945C140003E9535 /* libsqlite3.0.dylib in Frameworks */,
 				E27A1F6B19472233001F9A3C /* GooglePlus.framework in Frameworks */,
-				E2DB67CB1962999200BE5483 /* FacebookSDK.framework in Frameworks */,
+				CEAF1A2E1963E9C500894725 /* FacebookSDK.framework in Frameworks */,
 				CEB665C6195D6E63002E415B /* GoogleMaps.framework in Frameworks */,
 				E22142C21945980F003E9535 /* UIKit.framework in Frameworks */,
 				E22142BE1945980F003E9535 /* Foundation.framework in Frameworks */,
@@ -552,7 +552,7 @@
 		E22142BC1945980F003E9535 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E2DB67CA1962999200BE5483 /* FacebookSDK.framework */,
+				CEAF1A2D1963E9C400894725 /* FacebookSDK.framework */,
 				CEB665C5195D6E63002E415B /* GoogleMaps.framework */,
 				CEB343DA195A9B070047E6C4 /* CoreData.framework */,
 				CEB343D6195A92380047E6C4 /* OpenGLES.framework */,
@@ -1271,6 +1271,11 @@
 					Party,
 					APIs/External,
 					framework,
+					"$(PROJECT_DIR)/Lavasa",
+					nib/Third,
+					Party,
+					APIs/External,
+					framework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Lavasa nib/Lavasa-Prefix.pch";
@@ -1297,6 +1302,11 @@
 					APIs/External,
 					framework,
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Lavasa",
+					nib/Third,
+					Party,
+					APIs/External,
+					framework,
 					"$(PROJECT_DIR)/Lavasa",
 					nib/Third,
 					Party,
