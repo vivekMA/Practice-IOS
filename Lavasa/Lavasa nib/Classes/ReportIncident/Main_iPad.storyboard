@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="Ogt-Vn-Bpz">
     <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
@@ -985,7 +986,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGs-CN-EUV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2778" y="5736"/>
+            <point key="canvasLocation" x="2994" y="5940"/>
         </scene>
         <!--Navigation Controller - All-->
         <scene sceneID="tSV-UZ-lwy">
@@ -1235,27 +1236,6 @@
             </objects>
             <point key="canvasLocation" x="4995" y="2725"/>
         </scene>
-        <!--Map DetailVC - Map-->
-        <scene sceneID="V1K-wS-NgU">
-            <objects>
-                <viewController id="w3x-it-1nW" customClass="MapDetailVC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NtV-y1-FLp">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Map" id="562-Wg-M8L">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="8mi-fc-pYN">
-                            <connections>
-                                <action selector="backAction:" destination="w3x-it-1nW" id="iFJ-9O-s92"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Niu-Zj-JD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5016" y="5077"/>
-        </scene>
         <!--Detail Tab1-->
         <scene sceneID="TER-dq-4qh">
             <objects>
@@ -1422,7 +1402,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="w3x-it-1nW" kind="relationship" relationship="rootViewController" id="h6p-7D-RkP"/>
+                        <segue destination="ZEf-5K-0yJ" kind="relationship" relationship="rootViewController" id="gPR-vP-9d5"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zVj-s3-4PE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2085,7 +2065,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5oA-sd-pgd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5356" y="5030"/>
+            <point key="canvasLocation" x="5148" y="5066"/>
         </scene>
         <!--Plan MapVC - Map-->
         <scene sceneID="NPj-lz-BOj">
@@ -2155,7 +2135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLF-1U-ozb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3524" y="7285"/>
+            <point key="canvasLocation" x="3388" y="7489"/>
         </scene>
     </scenes>
     <resources>
